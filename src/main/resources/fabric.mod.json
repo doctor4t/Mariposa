@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "redwood",
+	"version": "${version}",
+	"name": "Redwood",
+	"description": "",
+	"authors": [
+		"doctor4t",
+		"Luxintrus"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/redwood",
+		"sources": "https://github.com/doctor4t/Redwood"
+	},
+	"license": "ARR",
+	"icon": "assets/redwood/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.doctor4t.redwood.Redwood"
+		],
+		"client": [
+			"dev.doctor4t.redwood.client.RedwoodClient"
+		],
+		"fabric-datagen": [
+			"dev.doctor4t.redwood.datagen.RedwoodDatagen"
+		],
+		"terrablender": [
+			"dev.doctor4t.redwood.Redwood"
+		]
+	},
+	"mixins": [
+		"redwood.mixins.json"
+	],
+	"accessWidener" : "redwood.accesswidener",
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

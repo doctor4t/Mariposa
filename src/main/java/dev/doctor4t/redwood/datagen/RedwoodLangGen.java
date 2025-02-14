@@ -1,0 +1,40 @@
+package dev.doctor4t.redwood.datagen;
+
+import dev.doctor4t.redwood.index.RedwoodBlocks;
+import dev.doctor4t.redwood.index.RedwoodItems;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.registry.RegistryWrapper;
+
+import java.util.concurrent.CompletableFuture;
+
+public class RedwoodLangGen extends FabricLanguageProvider {
+    protected RedwoodLangGen(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+        super(dataOutput, registryLookup);
+    }
+
+    @Override
+    public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
+        translationBuilder.add(RedwoodBlocks.SEQUOIA_PLANKS, "Sequoia Planks");
+        translationBuilder.add(RedwoodBlocks.SEQUOIA_SAPLING, "Sequoia Sapling");
+        translationBuilder.add(RedwoodBlocks.SEQUOIA_LOG, "Sequoia Log");
+        translationBuilder.add(RedwoodBlocks.STACKED_SEQUOIA_LOGS, "Stacked Sequoia Logs");
+        translationBuilder.add(RedwoodBlocks.STRIPPED_SEQUOIA_LOG, "Stripped Sequoia Log");
+        translationBuilder.add(RedwoodBlocks.SEQUOIA_WOOD, "Sequoia Wood");
+        translationBuilder.add(RedwoodBlocks.STRIPPED_SEQUOIA_WOOD, "Stripped Sequoia Wood");
+        translationBuilder.add(RedwoodBlocks.SEQUOIA_LEAVES, "Sequoia Leaves");
+        translationBuilder.add(RedwoodItems.SEQUOIA_SIGN, "Sequoia Sign");
+        translationBuilder.add(RedwoodItems.SEQUOIA_HANGING_SIGN, "Sequoia Hanging Sign");
+        translationBuilder.add(RedwoodBlocks.SEQUOIA_PRESSURE_PLATE, "Sequoia Pressure Plate");
+        translationBuilder.add(RedwoodBlocks.SEQUOIA_TRAPDOOR, "Sequoia Trapdoor");
+        translationBuilder.add(RedwoodBlocks.SEQUOIA_STAIRS, "Sequoia Stairs");
+        translationBuilder.add(RedwoodBlocks.POTTED_SEQUOIA_SAPLING, "Potted Sequoia Sapling");
+        translationBuilder.add(RedwoodBlocks.SEQUOIA_BUTTON, "Sequoia Button");
+        translationBuilder.add(RedwoodBlocks.SEQUOIA_SLAB, "Sequoia Slab");
+        translationBuilder.add(RedwoodBlocks.SEQUOIA_FENCE, "Sequoia Fence");
+        translationBuilder.add(RedwoodBlocks.SEQUOIA_FENCE_GATE, "Sequoia Fence Gate");
+        translationBuilder.add(RedwoodBlocks.SEQUOIA_DOOR, "Sequoia Door");
+
+        translationBuilder.add("tag.item.redwood.sequoia_logs", "Sequoia Logs");
+    }
+}

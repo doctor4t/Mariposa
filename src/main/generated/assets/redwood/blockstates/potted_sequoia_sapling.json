@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "redwood:block/potted_sequoia_sapling"
+    }
+  }
+}

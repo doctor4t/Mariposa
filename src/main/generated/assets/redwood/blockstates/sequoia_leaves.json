@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "redwood:block/sequoia_leaves"
+    }
+  }
+}

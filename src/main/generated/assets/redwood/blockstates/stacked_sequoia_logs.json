@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "redwood:block/stacked_sequoia_logs_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "redwood:block/stacked_sequoia_logs"
+    },
+    "axis=z": {
+      "model": "redwood:block/stacked_sequoia_logs_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_orientable_trapdoor_top",
+  "textures": {
+    "texture": "redwood:block/sequoia_trapdoor"
+  }
+}

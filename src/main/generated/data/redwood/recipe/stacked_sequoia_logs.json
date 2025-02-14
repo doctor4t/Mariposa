@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "stacked",
+  "key": {
+    "#": {
+      "item": "redwood:stripped_sequoia_log"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "redwood:stacked_sequoia_logs"
+  }
+}

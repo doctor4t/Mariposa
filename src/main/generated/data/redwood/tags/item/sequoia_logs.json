@@ -1,0 +1,9 @@
+{
+  "values": [
+    "redwood:sequoia_log",
+    "redwood:sequoia_wood",
+    "redwood:stripped_sequoia_log",
+    "redwood:stripped_sequoia_wood",
+    "redwood:stacked_sequoia_logs"
+  ]
+}
