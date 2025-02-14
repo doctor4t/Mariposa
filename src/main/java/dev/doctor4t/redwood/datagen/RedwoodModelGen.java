@@ -40,7 +40,7 @@ public class RedwoodModelGen extends FabricModelProvider {
         this.registerFamily(generator, SEQUOIA_BLOCK_FAMILY);
         generator.registerLog(RedwoodBlocks.SEQUOIA_LOG).log(RedwoodBlocks.SEQUOIA_LOG).wood(RedwoodBlocks.SEQUOIA_WOOD);
         generator.registerLog(RedwoodBlocks.STRIPPED_SEQUOIA_LOG).log(RedwoodBlocks.STRIPPED_SEQUOIA_LOG).wood(RedwoodBlocks.STRIPPED_SEQUOIA_WOOD);
-        generator.registerLog(RedwoodBlocks.STACKED_SEQUOIA_LOGS).log(RedwoodBlocks.STACKED_SEQUOIA_LOGS);
+        generator.registerLog(RedwoodBlocks.STACKED_SEQUOIA_LOGS).uvLockedLog(RedwoodBlocks.STACKED_SEQUOIA_LOGS);
         generator.registerHangingSign(RedwoodBlocks.STRIPPED_SEQUOIA_LOG, RedwoodBlocks.SEQUOIA_HANGING_SIGN, RedwoodBlocks.SEQUOIA_WALL_HANGING_SIGN);
         generator.registerFlowerPotPlant(RedwoodBlocks.SEQUOIA_SAPLING, RedwoodBlocks.POTTED_SEQUOIA_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         generator.registerSimpleCubeAll(RedwoodBlocks.SEQUOIA_LEAVES);
