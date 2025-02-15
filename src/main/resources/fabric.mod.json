@@ -1,42 +1,43 @@
 {
 	"schemaVersion": 1,
-	"id": "redwood",
+	"id": "mariposa",
 	"version": "${version}",
-	"name": "Redwood",
+	"name": "Mariposa",
 	"description": "",
 	"authors": [
 		"doctor4t",
 		"Luxintrus"
 	],
 	"contact": {
-		"homepage": "https://modrinth.com/mod/redwood",
-		"sources": "https://github.com/doctor4t/Redwood"
+		"homepage": "https://modrinth.com/mod/mariposa",
+		"sources": "https://github.com/doctor4t/Mariposa"
 	},
 	"license": "ARR",
-	"icon": "assets/redwood/icon.png",
+	"icon": "assets/mariposa/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"dev.doctor4t.redwood.Redwood"
+			"dev.doctor4t.mariposa.Mariposa"
 		],
 		"client": [
-			"dev.doctor4t.redwood.client.RedwoodClient"
+			"dev.doctor4t.mariposa.client.MariposaClient"
 		],
 		"fabric-datagen": [
-			"dev.doctor4t.redwood.datagen.RedwoodDatagen"
+			"dev.doctor4t.mariposa.datagen.MariposaDatagen"
 		],
 		"terrablender": [
-			"dev.doctor4t.redwood.Redwood"
+			"dev.doctor4t.mariposa.Mariposa"
 		]
 	},
 	"mixins": [
-		"redwood.mixins.json"
+		"mariposa.mixins.json"
 	],
-	"accessWidener" : "redwood.accesswidener",
+	"accessWidener" : "mariposa.accesswidener",
 	"depends": {
 		"fabricloader": ">=0.16.9",
 		"minecraft": "~1.21.1",
 		"java": ">=21",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"terrablender": "*"
 	}
 }

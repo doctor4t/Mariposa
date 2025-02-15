@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_uv_locked_y",
-  "textures": {
-    "end": "redwood:block/stacked_sequoia_logs_top",
-    "side": "redwood:block/stacked_sequoia_logs"
-  }
-}

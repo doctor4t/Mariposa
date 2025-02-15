@@ -1,0 +1,22 @@
+{
+  "block.mariposa.potted_sequoia_sapling": "Potted Sequoia Sapling",
+  "block.mariposa.sequoia_button": "Sequoia Button",
+  "block.mariposa.sequoia_door": "Sequoia Door",
+  "block.mariposa.sequoia_fence": "Sequoia Fence",
+  "block.mariposa.sequoia_fence_gate": "Sequoia Fence Gate",
+  "block.mariposa.sequoia_hanging_sign": "Sequoia Hanging Sign",
+  "block.mariposa.sequoia_leaves": "Sequoia Leaves",
+  "block.mariposa.sequoia_log": "Sequoia Log",
+  "block.mariposa.sequoia_planks": "Sequoia Planks",
+  "block.mariposa.sequoia_pressure_plate": "Sequoia Pressure Plate",
+  "block.mariposa.sequoia_sapling": "Sequoia Sapling",
+  "block.mariposa.sequoia_sign": "Sequoia Sign",
+  "block.mariposa.sequoia_slab": "Sequoia Slab",
+  "block.mariposa.sequoia_stairs": "Sequoia Stairs",
+  "block.mariposa.sequoia_trapdoor": "Sequoia Trapdoor",
+  "block.mariposa.sequoia_wood": "Sequoia Wood",
+  "block.mariposa.stacked_sequoia_logs": "Stacked Sequoia Logs",
+  "block.mariposa.stripped_sequoia_log": "Stripped Sequoia Log",
+  "block.mariposa.stripped_sequoia_wood": "Stripped Sequoia Wood",
+  "tag.item.mariposa.sequoia_logs": "Sequoia Logs"
+}

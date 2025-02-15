@@ -1,8 +1,0 @@
-{
-  "type": "redwood:giant_sequoia_log",
-  "config": {
-    "sequoia_structures": [
-      "redwood:fallen_sequoia_log"
-    ]
-  }
-}

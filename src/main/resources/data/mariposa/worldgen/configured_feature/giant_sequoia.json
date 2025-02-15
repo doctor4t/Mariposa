@@ -1,0 +1,15 @@
+{
+  "type": "mariposa:giant_sequoia_tree",
+  "config": {
+    "sequoia_structures": [
+      "mariposa:giant_sequoia_1",
+      "mariposa:giant_sequoia_2",
+      "mariposa:giant_sequoia_3",
+      "mariposa:giant_sequoia_4",
+      "mariposa:giant_sequoia_5",
+      "mariposa:giant_sequoia_6",
+      "mariposa:giant_sequoia_7"
+    ],
+    "min_floor_corners_allowed": 4
+  }
+}

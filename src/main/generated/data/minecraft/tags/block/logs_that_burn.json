@@ -1,6 +1,6 @@
 {
   "values": [
-    "#redwood:sequoia_logs",
-    "redwood:stacked_sequoia_logs"
+    "#mariposa:sequoia_logs",
+    "mariposa:stacked_sequoia_logs"
   ]
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right_open",
+  "textures": {
+    "bottom": "mariposa:block/sequoia_door_bottom",
+    "top": "mariposa:block/sequoia_door_top"
+  }
+}

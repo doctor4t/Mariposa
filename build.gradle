@@ -42,7 +42,7 @@ repositories {
 }
 
 loom {
-    accessWidenerPath = file("src/main/resources/redwood.accesswidener")
+    accessWidenerPath = file("src/main/resources/mariposa.accesswidener")
 }
 
 fabricApi {
