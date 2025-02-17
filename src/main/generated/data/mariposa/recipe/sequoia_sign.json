@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "wooden_sign",
   "key": {
-    "#": {
-      "item": "mariposa:sequoia_planks"
-    },
-    "X": {
-      "item": "minecraft:stick"
-    }
+    "#": "mariposa:sequoia_planks",
+    "X": "minecraft:stick"
   },
   "pattern": [
     "###",

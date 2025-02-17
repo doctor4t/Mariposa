@@ -5,18 +5,18 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+
+import java.util.function.Function;
 
 public interface MariposaItems {
-    Item SEQUOIA_SIGN = create("sequoia_sign", new SignItem(new Item.Settings().maxCount(16), MariposaBlocks.SEQUOIA_SIGN, MariposaBlocks.SEQUOIA_WALL_SIGN));
-    Item SEQUOIA_HANGING_SIGN = create(
-            "sequoia_hanging_sign", new HangingSignItem(MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN, new Item.Settings().maxCount(16))
-    );
-    Item SEQUOIA_DOOR = create("sequoia_door", new TallBlockItem(MariposaBlocks.SEQUOIA_DOOR, new Item.Settings()));
+    Item SEQUOIA_SIGN = create("sequoia_sign", settings -> new SignItem(MariposaBlocks.SEQUOIA_SIGN, MariposaBlocks.SEQUOIA_WALL_SIGN, settings), new Item.Settings().useBlockPrefixedTranslationKey().maxCount(16));
+    Item SEQUOIA_HANGING_SIGN = create("sequoia_hanging_sign", settings -> new HangingSignItem(MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN, settings), new Item.Settings().useBlockPrefixedTranslationKey().maxCount(16));
+    Item SEQUOIA_DOOR = create("sequoia_door", settings -> new TallBlockItem(MariposaBlocks.SEQUOIA_DOOR, settings), new Item.Settings().useBlockPrefixedTranslationKey());
 
-    static <T extends Item> T create(String name, T item) {
-        return Registry.register(Registries.ITEM, Mariposa.id(name), item);
+    static Item create(String name, Function<Item.Settings, Item> factory, Item.Settings settings) {
+        return Items.register(RegistryKey.of(RegistryKeys.ITEM, Mariposa.id(name)), factory, settings);
     }
 
     static void initialize() {

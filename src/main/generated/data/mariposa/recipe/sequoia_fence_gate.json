@@ -3,12 +3,8 @@
   "category": "redstone",
   "group": "wooden_fence_gate",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "mariposa:sequoia_planks"
-    }
+    "#": "minecraft:stick",
+    "W": "mariposa:sequoia_planks"
   },
   "pattern": [
     "#W#",

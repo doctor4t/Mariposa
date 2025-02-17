@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "wooden_fence",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "mariposa:sequoia_planks"
-    }
+    "#": "minecraft:stick",
+    "W": "mariposa:sequoia_planks"
   },
   "pattern": [
     "W#W",

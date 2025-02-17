@@ -3,9 +3,7 @@
   "category": "building",
   "group": "bark",
   "key": {
-    "#": {
-      "item": "mariposa:stripped_sequoia_log"
-    }
+    "#": "mariposa:stripped_sequoia_log"
   },
   "pattern": [
     "##",

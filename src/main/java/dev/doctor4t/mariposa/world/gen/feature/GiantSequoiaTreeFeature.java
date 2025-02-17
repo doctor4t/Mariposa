@@ -14,6 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.Heightmap;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
@@ -30,7 +31,7 @@ public class GiantSequoiaTreeFeature extends Feature<GiantSequoiaTreeFeatureConf
         StructureWorldAccess structureWorldAccess = context.getWorld();
 
         BlockPos origin = context.getOrigin();
-        BlockPos.Mutable blockPos = origin.withY(structureWorldAccess.getTopY()).mutableCopy();
+        BlockPos.Mutable blockPos = origin.withY(structureWorldAccess.getTopYInclusive()).mutableCopy();
         for (int y = 0; y < 500; y++) {
             blockPos.setY(blockPos.getY() - 1);
             BlockRotation blockRotation = BlockRotation.random(random);
@@ -44,7 +45,7 @@ public class GiantSequoiaTreeFeature extends Feature<GiantSequoiaTreeFeatureConf
                     structureWorldAccess.getBottomY(),
                     chunkPos.getStartZ() - 16,
                     chunkPos.getEndX() + 16,
-                    structureWorldAccess.getTopY(),
+                    structureWorldAccess.getTopYInclusive(),
                     chunkPos.getEndZ() + 16
             );
 

@@ -9,13 +9,10 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.data.family.BlockFamilies;
-import net.minecraft.data.family.BlockFamily;
-import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 
 import java.util.Optional;
@@ -36,190 +33,171 @@ public interface MariposaBlocks {
     );
     Block SEQUOIA_PLANKS = createWithItem(
             "sequoia_planks",
-            new Block(
-                    AbstractBlock.Settings.create()
-                            .mapColor(MapColor.RED)
-                            .instrument(NoteBlockInstrument.BASS)
-                            .strength(2.0F, 3.0F)
-                            .sounds(BlockSoundGroup.WOOD)
-                            .burnable()
-            )
+			Block::new, AbstractBlock.Settings.create()
+                    .mapColor(MapColor.RED)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(2.0F, 3.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()
     );
     Block SEQUOIA_SAPLING = createWithItem(
             "sequoia_sapling",
-            new SaplingBlock(
+            settings -> new SaplingBlock(
                     SEQUOIA_SAPLING_GENERATOR,
-                    AbstractBlock.Settings.create()
-                            .mapColor(MapColor.DARK_GREEN)
-                            .noCollision()
-                            .ticksRandomly()
-                            .breakInstantly()
-                            .sounds(BlockSoundGroup.GRASS)
-                            .pistonBehavior(PistonBehavior.DESTROY)
-            )
+                    settings
+            ), AbstractBlock.Settings.create()
+                    .mapColor(MapColor.DARK_GREEN)
+                    .noCollision()
+                    .ticksRandomly()
+                    .breakInstantly()
+                    .sounds(BlockSoundGroup.GRASS)
+                    .pistonBehavior(PistonBehavior.DESTROY)
     );
-    Block SEQUOIA_LOG = createWithItem("sequoia_log", Blocks.createLogBlock(MapColor.RED, MapColor.BROWN));
-    Block STACKED_SEQUOIA_LOGS = createWithItem("stacked_sequoia_logs", Blocks.createLogBlock(MapColor.RED, MapColor.BROWN));
-    Block STRIPPED_SEQUOIA_LOG = createWithItem("stripped_sequoia_log", Blocks.createLogBlock(MapColor.RED, MapColor.RED));
+    Block SEQUOIA_LOG = createWithItem("sequoia_log", PillarBlock::new, Blocks.createLogSettings(MapColor.RED, MapColor.BROWN, BlockSoundGroup.WOOD));
+    Block STACKED_SEQUOIA_LOGS = createWithItem("stacked_sequoia_logs", PillarBlock::new, Blocks.createLogSettings(MapColor.RED, MapColor.BROWN, BlockSoundGroup.WOOD));
+    Block STRIPPED_SEQUOIA_LOG = createWithItem("stripped_sequoia_log", PillarBlock::new, Blocks.createLogSettings(MapColor.RED, MapColor.RED, BlockSoundGroup.WOOD));
     Block SEQUOIA_WOOD = createWithItem(
             "sequoia_wood",
-            new PillarBlock(
-                    AbstractBlock.Settings.create().mapColor(MapColor.RED).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).burnable()
-            )
+			PillarBlock::new, AbstractBlock.Settings.create().mapColor(MapColor.RED).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).burnable()
     );
     Block STRIPPED_SEQUOIA_WOOD = createWithItem(
             "stripped_sequoia_wood",
-            new PillarBlock(
-                    AbstractBlock.Settings.create().mapColor(MapColor.RED).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).burnable()
-            )
+			PillarBlock::new, AbstractBlock.Settings.create().mapColor(MapColor.RED).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).burnable()
     );
-    Block SEQUOIA_LEAVES = createWithItem("sequoia_leaves", Blocks.createLeavesBlock(BlockSoundGroup.GRASS));
+    Block SEQUOIA_LEAVES = createWithItem("sequoia_leaves", LeavesBlock::new, Blocks.createLeavesSettings(BlockSoundGroup.GRASS));
     Block SEQUOIA_SIGN = create(
             "sequoia_sign",
-            new SignBlock(
+            settings -> new SignBlock(
                     SEQUOIA_WOOD_TYPE,
-                    AbstractBlock.Settings.create()
-                            .mapColor(SEQUOIA_LOG.getDefaultMapColor())
-                            .solid()
-                            .instrument(NoteBlockInstrument.BASS)
-                            .noCollision()
-                            .strength(1.0F)
-                            .burnable()
-            )
+                    settings
+            ), AbstractBlock.Settings.create()
+                    .mapColor(SEQUOIA_LOG.getDefaultMapColor())
+                    .solid()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .noCollision()
+                    .strength(1.0F)
+                    .burnable()
     );
     Block SEQUOIA_WALL_SIGN = create(
             "sequoia_wall_sign",
-            new WallSignBlock(
+            settings -> new WallSignBlock(
                     SEQUOIA_WOOD_TYPE,
-                    AbstractBlock.Settings.create()
-                            .mapColor(SEQUOIA_LOG.getDefaultMapColor())
-                            .solid()
-                            .instrument(NoteBlockInstrument.BASS)
-                            .noCollision()
-                            .strength(1.0F)
-                            .dropsLike(SEQUOIA_SIGN)
-                            .burnable()
-            )
+                    settings
+            ), AbstractBlock.Settings.create()
+                    .mapColor(SEQUOIA_LOG.getDefaultMapColor())
+                    .solid()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .noCollision()
+                    .strength(1.0F)
+                    .lootTable(SEQUOIA_SIGN.getLootTableKey())
+                    .burnable()
     );
     Block SEQUOIA_HANGING_SIGN = create(
             "sequoia_hanging_sign",
-            new HangingSignBlock(
+            settings -> new HangingSignBlock(
                     SEQUOIA_WOOD_TYPE,
-                    AbstractBlock.Settings.create()
-                            .mapColor(SEQUOIA_LOG.getDefaultMapColor())
-                            .solid()
-                            .instrument(NoteBlockInstrument.BASS)
-                            .noCollision()
-                            .strength(1.0F)
-                            .burnable()
-            )
+                    settings
+            ), AbstractBlock.Settings.create()
+                    .mapColor(SEQUOIA_LOG.getDefaultMapColor())
+                    .solid()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .noCollision()
+                    .strength(1.0F)
+                    .burnable()
     );
     Block SEQUOIA_WALL_HANGING_SIGN = create(
             "sequoia_wall_hanging_sign",
-            new WallHangingSignBlock(
+            settings -> new WallHangingSignBlock(
                     SEQUOIA_WOOD_TYPE,
-                    AbstractBlock.Settings.create()
-                            .mapColor(MapColor.OAK_TAN)
-                            .solid()
-                            .instrument(NoteBlockInstrument.BASS)
-                            .noCollision()
-                            .strength(1.0F)
-                            .dropsLike(SEQUOIA_HANGING_SIGN)
-                            .burnable()
-            )
+                    settings
+            ), AbstractBlock.Settings.create()
+                    .mapColor(MapColor.OAK_TAN)
+                    .solid()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .noCollision()
+                    .strength(1.0F)
+                    .lootTable(SEQUOIA_HANGING_SIGN.getLootTableKey())
+                    .burnable()
     );
     Block SEQUOIA_PRESSURE_PLATE = createWithItem(
             "sequoia_pressure_plate",
-            new PressurePlateBlock(
+            settings -> new PressurePlateBlock(
                     SEQUOIA_BLOCK_SET_TYPE,
-                    AbstractBlock.Settings.create()
-                            .mapColor(SEQUOIA_PLANKS.getDefaultMapColor())
-                            .solid()
-                            .instrument(NoteBlockInstrument.BASS)
-                            .noCollision()
-                            .strength(0.5F)
-                            .burnable()
-                            .pistonBehavior(PistonBehavior.DESTROY)
-            )
+                    settings
+            ), AbstractBlock.Settings.create()
+                    .mapColor(SEQUOIA_PLANKS.getDefaultMapColor())
+                    .solid()
+                    .instrument(NoteBlockInstrument.BASS)
+                    .noCollision()
+                    .strength(0.5F)
+                    .burnable()
+                    .pistonBehavior(PistonBehavior.DESTROY)
     );
     Block SEQUOIA_TRAPDOOR = createWithItem(
             "sequoia_trapdoor",
-            new TrapdoorBlock(
+            settings -> new TrapdoorBlock(
                     SEQUOIA_BLOCK_SET_TYPE,
-                    AbstractBlock.Settings.create()
-                            .mapColor(MapColor.RED)
-                            .instrument(NoteBlockInstrument.BASS)
-                            .strength(3.0F)
-                            .nonOpaque()
-                            .allowsSpawning(Blocks::never)
-                            .burnable()
-            )
+                    settings
+            ), AbstractBlock.Settings.create()
+                    .mapColor(MapColor.RED)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(3.0F)
+                    .nonOpaque()
+                    .allowsSpawning(Blocks::never)
+                    .burnable()
     );
-    Block SEQUOIA_STAIRS = createWithItem("sequoia_stairs", createStairsBlock(SEQUOIA_PLANKS));
-    Block POTTED_SEQUOIA_SAPLING = create("potted_sequoia_sapling", Blocks.createFlowerPotBlock(SEQUOIA_SAPLING));
-    Block SEQUOIA_BUTTON = createWithItem("sequoia_button", Blocks.createWoodenButtonBlock(SEQUOIA_BLOCK_SET_TYPE));
+    Block SEQUOIA_STAIRS = createWithItem("sequoia_stairs",
+            settings -> new StairsBlock(SEQUOIA_PLANKS.getDefaultState(), settings),
+            AbstractBlock.Settings.copy(SEQUOIA_PLANKS));
+    Block POTTED_SEQUOIA_SAPLING = create("potted_sequoia_sapling", settings -> new FlowerPotBlock(SEQUOIA_SAPLING, settings), Blocks.createFlowerPotSettings());
+    Block SEQUOIA_BUTTON = createWithItem("sequoia_button", settings -> new ButtonBlock(SEQUOIA_BLOCK_SET_TYPE, 30, settings), Blocks.createButtonSettings());
     Block SEQUOIA_SLAB = createWithItem(
             "sequoia_slab",
-            new SlabBlock(
-                    AbstractBlock.Settings.create()
-                            .mapColor(MapColor.RED)
-                            .instrument(NoteBlockInstrument.BASS)
-                            .strength(2.0F, 3.0F)
-                            .sounds(BlockSoundGroup.WOOD)
-                            .burnable()
-            )
+			SlabBlock::new, AbstractBlock.Settings.create()
+                    .mapColor(MapColor.RED)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(2.0F, 3.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()
     );
     Block SEQUOIA_FENCE_GATE = createWithItem(
             "sequoia_fence_gate",
-            new FenceGateBlock(
+            settings -> new FenceGateBlock(
                     SEQUOIA_WOOD_TYPE,
-                    AbstractBlock.Settings.create().mapColor(SEQUOIA_PLANKS.getDefaultMapColor()).solid().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).burnable()
-            )
+                    settings
+            ), AbstractBlock.Settings.create().mapColor(SEQUOIA_PLANKS.getDefaultMapColor()).solid().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).burnable()
     );
     Block SEQUOIA_FENCE = createWithItem(
             "sequoia_fence",
-            new FenceBlock(
-                    AbstractBlock.Settings.create()
-                            .mapColor(SEQUOIA_PLANKS.getDefaultMapColor())
-                            .instrument(NoteBlockInstrument.BASS)
-                            .strength(2.0F, 3.0F)
-                            .burnable()
-                            .sounds(BlockSoundGroup.WOOD)
-            )
+			FenceBlock::new,  AbstractBlock.Settings.create()
+                    .mapColor(SEQUOIA_PLANKS.getDefaultMapColor())
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(2.0F, 3.0F)
+                    .burnable()
+                    .sounds(BlockSoundGroup.WOOD)
     );
     Block SEQUOIA_DOOR = create(
             "sequoia_door",
-            new DoorBlock(
+            settings -> new DoorBlock(
                     SEQUOIA_BLOCK_SET_TYPE,
-                    AbstractBlock.Settings.create()
-                            .mapColor(SEQUOIA_PLANKS.getDefaultMapColor())
-                            .instrument(NoteBlockInstrument.BASS)
-                            .strength(3.0F)
-                            .nonOpaque()
-                            .burnable()
-                            .pistonBehavior(PistonBehavior.DESTROY)
-            )
+                    settings
+            ), AbstractBlock.Settings.create()
+                    .mapColor(SEQUOIA_PLANKS.getDefaultMapColor())
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(3.0F)
+                    .nonOpaque()
+                    .burnable()
+                    .pistonBehavior(PistonBehavior.DESTROY)
     );
 
-    static <T extends Block> T create(String name, T block) {
-        return Registry.register(Registries.BLOCK, Mariposa.id(name), block);
+    static Block create(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
+        return Blocks.register(RegistryKey.of(RegistryKeys.BLOCK, Mariposa.id(name)), factory, settings);
     }
 
-    static <T extends Block> T createWithItem(String name, T block) {
-        return createWithItem(name, block, new Item.Settings());
-    }
-
-    static <T extends Block> T createWithItem(String name, T block, Item.Settings settings) {
-        return createWithItem(name, block, b -> new BlockItem(b, settings));
-    }
-
-    static <T extends Block> T createWithItem(String name, T block, Function<T, BlockItem> itemGenerator) {
-        MariposaItems.create(name, itemGenerator.apply(block));
-        return MariposaBlocks.create(name, block);
-    }
-
-    private static Block createStairsBlock(Block base) {
-        return new StairsBlock(base.getDefaultState(), AbstractBlock.Settings.copy(base));
+    static Block createWithItem(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
+        Block block = create(name, factory, settings);
+        MariposaItems.create(name, itemSettings -> new BlockItem(block, itemSettings), new Item.Settings().useBlockPrefixedTranslationKey());
+        return block;
     }
 
     static void initialize() {

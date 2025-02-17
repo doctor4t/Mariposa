@@ -47,7 +47,7 @@ public class GiantSequoiaLogFeature extends Feature<GiantSequoiaLogFeatureConfig
                 structureWorldAccess.getBottomY(),
                 chunkPos.getStartZ() - 16,
                 chunkPos.getEndX() + 16,
-                structureWorldAccess.getTopY(),
+                structureWorldAccess.getTopYInclusive(),
                 chunkPos.getEndZ() + 16
         );
 

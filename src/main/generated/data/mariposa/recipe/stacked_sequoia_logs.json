@@ -3,9 +3,7 @@
   "category": "building",
   "group": "stacked",
   "key": {
-    "#": {
-      "item": "mariposa:stripped_sequoia_log"
-    }
+    "#": "mariposa:stripped_sequoia_log"
   },
   "pattern": [
     "###",
