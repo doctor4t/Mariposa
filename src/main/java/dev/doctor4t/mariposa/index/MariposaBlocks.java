@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.data.family.BlockFamilies;
@@ -224,5 +225,9 @@ public interface MariposaBlocks {
     static void initialize() {
         StrippableBlockRegistry.register(MariposaBlocks.SEQUOIA_WOOD, MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
         StrippableBlockRegistry.register(MariposaBlocks.SEQUOIA_LOG, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
+        BlockEntityType.SIGN.addSupportedBlock(MariposaBlocks.SEQUOIA_SIGN);
+        BlockEntityType.SIGN.addSupportedBlock(MariposaBlocks.SEQUOIA_WALL_SIGN);
+        BlockEntityType.HANGING_SIGN.addSupportedBlock(MariposaBlocks.SEQUOIA_HANGING_SIGN);
+        BlockEntityType.HANGING_SIGN.addSupportedBlock(MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN);
     }
 }
