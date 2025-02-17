@@ -12,6 +12,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.world.biome.Biome;
 
 import java.util.concurrent.CompletableFuture;
@@ -110,6 +111,10 @@ public class MariposaTagGen {
 
         @Override
         protected void configure(RegistryWrapper.WrapperLookup arg) {
+            this.getOrCreateTagBuilder(ItemTags.PLANKS)
+                    .add(
+                            MariposaBlocks.SEQUOIA_PLANKS.asItem()
+                    );
             this.getOrCreateTagBuilder(MariposaTags.SEQUOIA_LOGS_ITEM).add(
                     MariposaBlocks.SEQUOIA_LOG.asItem(),
                     MariposaBlocks.SEQUOIA_WOOD.asItem(),
