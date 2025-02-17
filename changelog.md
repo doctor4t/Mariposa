@@ -1,4 +1,10 @@
 ------------------------------------------------------
+Mariposa 1.0.2 - 1.21.4
+------------------------------------------------------
+- Update to 1.21.4 thanks to MoriyaShiine
+- Added Turkish translation thanks to Hexasan
+
+------------------------------------------------------
 Mariposa 1.0.1 - 1.21.1
 ------------------------------------------------------
 - Added Sequoia planks to the planks item tag
