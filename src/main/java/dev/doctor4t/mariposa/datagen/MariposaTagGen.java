@@ -5,7 +5,7 @@ import dev.doctor4t.mariposa.index.MariposaTags;
 import dev.doctor4t.mariposa.world.gen.MariposaBiomes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
+//import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -50,20 +50,20 @@ public class MariposaTagGen {
                     .add(
                             MariposaBlocks.SEQUOIA_FENCE
                     );
-            this.getOrCreateTagBuilder(BlockTags.SAPLINGS)
-                    .add(
-                            MariposaBlocks.SEQUOIA_SAPLING
-                    );
+//            this.getOrCreateTagBuilder(BlockTags.SAPLINGS)
+//                    .add(
+//                            MariposaBlocks.SEQUOIA_SAPLING
+//                    );
             this.getOrCreateTagBuilder(MariposaTags.SEQUOIA_LOGS).add(MariposaBlocks.SEQUOIA_LOG, MariposaBlocks.SEQUOIA_WOOD, MariposaBlocks.STRIPPED_SEQUOIA_LOG, MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
             this.getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
                     .addTag(MariposaTags.SEQUOIA_LOGS)
                     .add(MariposaBlocks.STACKED_SEQUOIA_LOGS);
             this.getOrCreateTagBuilder(BlockTags.OVERWORLD_NATURAL_LOGS)
                     .add(MariposaBlocks.SEQUOIA_LOG);
-            this.getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
-                    .add(
-                            MariposaBlocks.POTTED_SEQUOIA_SAPLING
-                    );
+//            this.getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
+//                    .add(
+//                            MariposaBlocks.POTTED_SEQUOIA_SAPLING
+//                    );
             this.getOrCreateTagBuilder(BlockTags.WOODEN_PRESSURE_PLATES)
                     .add(
                             MariposaBlocks.SEQUOIA_PRESSURE_PLATE
@@ -132,15 +132,25 @@ public class MariposaTagGen {
 
         @Override
         protected void configure(RegistryWrapper.WrapperLookup arg) {
-            this.getOrCreateTagBuilder(ConventionalBiomeTags.IS_FOREST).addOptional(
+            this.getOrCreateTagBuilder(BiomeTags.IS_FOREST).addOptional(
                     MariposaBiomes.REDWOOD_FOREST
             );
-            this.getOrCreateTagBuilder(ConventionalBiomeTags.IS_OVERWORLD).addOptional(
+            this.getOrCreateTagBuilder(BiomeTags.IS_OVERWORLD).addOptional(
                     MariposaBiomes.REDWOOD_FOREST
             );
-            this.getOrCreateTagBuilder(ConventionalBiomeTags.IS_TEMPERATE_OVERWORLD).addOptional(
-                    MariposaBiomes.REDWOOD_FOREST
-            );
+//            this.getOrCreateTagBuilder(BiomeTags.IS_TEMPERATE_OVERWORLD).addOptional(
+//                    MariposaBiomes.REDWOOD_FOREST
+//            );
+
+//            this.getOrCreateTagBuilder(ConventionalBiomeTags.IS_FOREST).addOptional(
+//                    MariposaBiomes.REDWOOD_FOREST
+//            );
+//            this.getOrCreateTagBuilder(ConventionalBiomeTags.IS_OVERWORLD).addOptional(
+//                    MariposaBiomes.REDWOOD_FOREST
+//            );
+//            this.getOrCreateTagBuilder(ConventionalBiomeTags.IS_TEMPERATE_OVERWORLD).addOptional(
+//                    MariposaBiomes.REDWOOD_FOREST
+//            );
         }
     }
 }

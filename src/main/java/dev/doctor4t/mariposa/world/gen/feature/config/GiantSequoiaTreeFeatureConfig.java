@@ -1,6 +1,7 @@
 package dev.doctor4t.mariposa.world.gen.feature.config;
 
 import com.mojang.serialization.Codec;
+
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.FeatureConfig;

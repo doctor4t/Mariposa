@@ -15,13 +15,14 @@ import java.util.function.Function;
 
 public class MariposaBlockLootTableGen extends FabricBlockLootTableProvider {
     protected MariposaBlockLootTableGen(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
-        super(dataOutput, registryLookup);
+        super(dataOutput);
+//        super(dataOutput, registryLookup);
     }
 
     @Override
     public void generate() {
         this.addDrop(MariposaBlocks.SEQUOIA_PLANKS);
-        this.addDrop(MariposaBlocks.SEQUOIA_SAPLING);
+//        this.addDrop(MariposaBlocks.SEQUOIA_SAPLING);
         this.addDrop(MariposaBlocks.SEQUOIA_LOG);
         this.addDrop(MariposaBlocks.STACKED_SEQUOIA_LOGS);
         this.addDrop(MariposaBlocks.STRIPPED_SEQUOIA_LOG);
@@ -35,11 +36,10 @@ public class MariposaBlockLootTableGen extends FabricBlockLootTableProvider {
         this.addDrop(MariposaBlocks.SEQUOIA_BUTTON);
         this.addDrop(MariposaBlocks.SEQUOIA_FENCE_GATE);
         this.addDrop(MariposaBlocks.SEQUOIA_FENCE);
-        this.addPottedPlantDrops(MariposaBlocks.POTTED_SEQUOIA_SAPLING);
+//        this.addPottedPlantDrops(MariposaBlocks.POTTED_SEQUOIA_SAPLING);
         this.addDrop(MariposaBlocks.SEQUOIA_SLAB, this::slabDrops);
         this.addDrop(MariposaBlocks.SEQUOIA_DOOR, this::doorDrops);
-        this.addDrop(MariposaBlocks.SEQUOIA_LEAVES, block -> this.leavesDrops(block, MariposaBlocks.SEQUOIA_SAPLING, SAPLING_DROP_CHANCE));
-
+//        this.addDrop(MariposaBlocks.SEQUOIA_LEAVES, block -> this.leavesDrops(block, MariposaBlocks.SEQUOIA_SAPLING, SAPLING_DROP_CHANCE));
     }
 
     protected void addFamily(BlockFamily family) {

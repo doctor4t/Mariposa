@@ -46,7 +46,7 @@ public interface MariposaItems {
     private static void addNaturalEntries(FabricItemGroupEntries fabricItemGroupEntries) {
         fabricItemGroupEntries.addAfter(Blocks.CHERRY_LOG, MariposaBlocks.SEQUOIA_LOG);
         fabricItemGroupEntries.addAfter(Blocks.CHERRY_LEAVES, MariposaBlocks.SEQUOIA_LEAVES);
-        fabricItemGroupEntries.addAfter(Blocks.CHERRY_SAPLING, MariposaBlocks.SEQUOIA_SAPLING);
+//        fabricItemGroupEntries.addAfter(Blocks.CHERRY_SAPLING, MariposaBlocks.SEQUOIA_SAPLING);
     }
 
     private static void addFunctionalEntries(FabricItemGroupEntries fabricItemGroupEntries) {
