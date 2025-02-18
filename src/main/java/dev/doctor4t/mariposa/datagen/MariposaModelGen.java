@@ -24,15 +24,15 @@ public class MariposaModelGen extends FabricModelProvider {
     }
 
     public static BlockFamily SEQUOIA_BLOCK_FAMILY = BlockFamilies.register(MariposaBlocks.SEQUOIA_PLANKS)
-//            .button(MariposaBlocks.SEQUOIA_BUTTON)
+            .button(MariposaBlocks.SEQUOIA_BUTTON)
             .fence(MariposaBlocks.SEQUOIA_FENCE)
-//            .fenceGate(MariposaBlocks.SEQUOIA_FENCE_GATE)
-//            .pressurePlate(MariposaBlocks.SEQUOIA_PRESSURE_PLATE)
-//            .sign(MariposaBlocks.SEQUOIA_SIGN, MariposaBlocks.SEQUOIA_WALL_SIGN)
+            .fenceGate(MariposaBlocks.SEQUOIA_FENCE_GATE)
+            .pressurePlate(MariposaBlocks.SEQUOIA_PRESSURE_PLATE)
+            .sign(MariposaBlocks.SEQUOIA_SIGN, MariposaBlocks.SEQUOIA_WALL_SIGN)
             .slab(MariposaBlocks.SEQUOIA_SLAB)
             .stairs(MariposaBlocks.SEQUOIA_STAIRS)
-//            .door(MariposaBlocks.SEQUOIA_DOOR)
-//            .trapdoor(MariposaBlocks.SEQUOIA_TRAPDOOR)
+            .door(MariposaBlocks.SEQUOIA_DOOR)
+            .trapdoor(MariposaBlocks.SEQUOIA_TRAPDOOR)
             .group("wooden")
             .unlockCriterionName("has_planks")
             .build();
