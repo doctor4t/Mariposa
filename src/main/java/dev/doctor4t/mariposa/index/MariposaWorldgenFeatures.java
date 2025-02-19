@@ -27,6 +27,5 @@ public interface MariposaWorldgenFeatures {
 
     static void initialize() {
         FEATURES.forEach((block, id) -> Registry.register(Registries.FEATURE, id, block));
-        FEATURES.forEach((block, id) -> System.out.println("Registered feature: " + id));
     }
 }

@@ -15,15 +15,4 @@ public class SequoiaSaplingGenerator extends SaplingGenerator {
     protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
         return MariposaConfiguredFeatures.SEQUOIA;
     }
-
-//    SaplingGenerator SEQUOIA = new SaplingGenerator(
-//            "sequoia",
-//            0.5F,
-//            Optional.of(TreeConfiguredFeatures.MEGA_SPRUCE),
-//            Optional.of(TreeConfiguredFeatures.MEGA_PINE),
-//            Optional.of(TreeConfiguredFeatures.SPRUCE),
-//            Optional.empty(),
-//            Optional.empty(),
-//            Optional.empty()
-//    );
 }

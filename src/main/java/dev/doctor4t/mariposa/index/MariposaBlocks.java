@@ -1,27 +1,20 @@
 package dev.doctor4t.mariposa.index;
 
 import dev.doctor4t.mariposa.Mariposa;
-import dev.doctor4t.mariposa.datagen.MariposaConfiguredFeatures;
 import dev.doctor4t.mariposa.tree.SequoiaSaplingGenerator;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.*;
-import net.minecraft.block.entity.BlockEntityType;
-//import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.block.sapling.SaplingGenerator;
-import net.minecraft.data.family.BlockFamilies;
-import net.minecraft.data.family.BlockFamily;
-import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 
-import java.util.Optional;
 import java.util.function.Function;
 
 public interface MariposaBlocks {

@@ -11,7 +11,6 @@ import net.minecraft.data.client.TexturedModel;
 import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
 import org.spongepowered.include.com.google.common.collect.ImmutableMap;
-//import com.google.common.collect.ImmutableMap;
 
 import java.util.Map;
 
