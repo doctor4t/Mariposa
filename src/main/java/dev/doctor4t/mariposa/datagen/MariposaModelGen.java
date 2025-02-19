@@ -1,6 +1,5 @@
 package dev.doctor4t.mariposa.datagen;
 
-
 import dev.doctor4t.mariposa.index.MariposaBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
