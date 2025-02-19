@@ -50,20 +50,20 @@ public class MariposaTagGen {
                     .add(
                             MariposaBlocks.SEQUOIA_FENCE
                     );
-//            this.getOrCreateTagBuilder(BlockTags.SAPLINGS)
-//                    .add(
-//                            MariposaBlocks.SEQUOIA_SAPLING
-//                    );
+            this.getOrCreateTagBuilder(BlockTags.SAPLINGS)
+                    .add(
+                            MariposaBlocks.SEQUOIA_SAPLING
+                    );
             this.getOrCreateTagBuilder(MariposaTags.SEQUOIA_LOGS).add(MariposaBlocks.SEQUOIA_LOG, MariposaBlocks.SEQUOIA_WOOD, MariposaBlocks.STRIPPED_SEQUOIA_LOG, MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
             this.getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
                     .addTag(MariposaTags.SEQUOIA_LOGS)
                     .add(MariposaBlocks.STACKED_SEQUOIA_LOGS);
             this.getOrCreateTagBuilder(BlockTags.OVERWORLD_NATURAL_LOGS)
                     .add(MariposaBlocks.SEQUOIA_LOG);
-//            this.getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
-//                    .add(
-//                            MariposaBlocks.POTTED_SEQUOIA_SAPLING
-//                    );
+            this.getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
+                    .add(
+                            MariposaBlocks.POTTED_SEQUOIA_SAPLING
+                    );
             this.getOrCreateTagBuilder(BlockTags.WOODEN_PRESSURE_PLATES)
                     .add(
                             MariposaBlocks.SEQUOIA_PRESSURE_PLATE
@@ -138,9 +138,9 @@ public class MariposaTagGen {
             this.getOrCreateTagBuilder(BiomeTags.IS_OVERWORLD).addOptional(
                     MariposaBiomes.REDWOOD_FOREST
             );
-//            this.getOrCreateTagBuilder(BiomeTags.IS_TEMPERATE_OVERWORLD).addOptional(
-//                    MariposaBiomes.REDWOOD_FOREST
-//            );
+            this.getOrCreateTagBuilder(BiomeTags.SPAWNS_COLD_VARIANT_FROGS).addOptional(  // ???
+                    MariposaBiomes.REDWOOD_FOREST
+            );
 
 //            this.getOrCreateTagBuilder(ConventionalBiomeTags.IS_FOREST).addOptional(
 //                    MariposaBiomes.REDWOOD_FOREST

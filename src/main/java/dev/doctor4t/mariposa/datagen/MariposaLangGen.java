@@ -17,7 +17,7 @@ public class MariposaLangGen extends FabricLanguageProvider {
     @Override
     public void generateTranslations(TranslationBuilder translationBuilder) {
         translationBuilder.add(MariposaBlocks.SEQUOIA_PLANKS, "Sequoia Planks");
-//        translationBuilder.add(MariposaBlocks.SEQUOIA_SAPLING, "Sequoia Sapling");
+        translationBuilder.add(MariposaBlocks.SEQUOIA_SAPLING, "Sequoia Sapling");
         translationBuilder.add(MariposaBlocks.SEQUOIA_LOG, "Sequoia Log");
         translationBuilder.add(MariposaBlocks.STACKED_SEQUOIA_LOGS, "Stacked Sequoia Logs");
         translationBuilder.add(MariposaBlocks.STRIPPED_SEQUOIA_LOG, "Stripped Sequoia Log");
@@ -29,7 +29,7 @@ public class MariposaLangGen extends FabricLanguageProvider {
         translationBuilder.add(MariposaBlocks.SEQUOIA_PRESSURE_PLATE, "Sequoia Pressure Plate");
         translationBuilder.add(MariposaBlocks.SEQUOIA_TRAPDOOR, "Sequoia Trapdoor");
         translationBuilder.add(MariposaBlocks.SEQUOIA_STAIRS, "Sequoia Stairs");
-//        translationBuilder.add(MariposaBlocks.POTTED_SEQUOIA_SAPLING, "Potted Sequoia Sapling");
+        translationBuilder.add(MariposaBlocks.POTTED_SEQUOIA_SAPLING, "Potted Sequoia Sapling");
         translationBuilder.add(MariposaBlocks.SEQUOIA_BUTTON, "Sequoia Button");
         translationBuilder.add(MariposaBlocks.SEQUOIA_SLAB, "Sequoia Slab");
         translationBuilder.add(MariposaBlocks.SEQUOIA_FENCE, "Sequoia Fence");

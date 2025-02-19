@@ -2,6 +2,7 @@ package dev.doctor4t.mariposa.index;
 
 import dev.doctor4t.mariposa.Mariposa;
 import dev.doctor4t.mariposa.datagen.MariposaConfiguredFeatures;
+import dev.doctor4t.mariposa.tree.SequoiaSaplingGenerator;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
@@ -10,6 +11,7 @@ import net.minecraft.block.entity.BlockEntityType;
 //import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.AxeItem;
@@ -25,6 +27,7 @@ import java.util.function.Function;
 public interface MariposaBlocks {
     BlockSetType SEQUOIA_BLOCK_SET_TYPE = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Mariposa.id("sequoia"));
     WoodType SEQUOIA_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).register(Mariposa.id("sequoia"), SEQUOIA_BLOCK_SET_TYPE);
+    SaplingGenerator SEQUOIA_SAPLING_GENERATOR = new SequoiaSaplingGenerator();
 //    SaplingGenerator SEQUOIA_SAPLING_GENERATOR = new SaplingGenerator(
 //            "sequoia",
 //            0.5F,
@@ -46,19 +49,19 @@ public interface MariposaBlocks {
                             .burnable()
             )
     );
-//    Block SEQUOIA_SAPLING = createWithItem(
-//            "sequoia_sapling",
-//            new SaplingBlock(
-//                    SEQUOIA_SAPLING_GENERATOR,
-//                    AbstractBlock.Settings.create()
-//                            .mapColor(MapColor.DARK_GREEN)
-//                            .noCollision()
-//                            .ticksRandomly()
-//                            .breakInstantly()
-//                            .sounds(BlockSoundGroup.GRASS)
-//                            .pistonBehavior(PistonBehavior.DESTROY)
-//            )
-//    );
+    Block SEQUOIA_SAPLING = createWithItem(
+            "sequoia_sapling",
+            new SaplingBlock(
+                    SEQUOIA_SAPLING_GENERATOR,
+                    AbstractBlock.Settings.create()
+                            .mapColor(MapColor.DARK_GREEN)
+                            .noCollision()
+                            .ticksRandomly()
+                            .breakInstantly()
+                            .sounds(BlockSoundGroup.GRASS)
+                            .pistonBehavior(PistonBehavior.DESTROY)
+            )
+    );
     Block SEQUOIA_LOG = createWithItem("sequoia_log", Blocks.createLogBlock(MapColor.RED, MapColor.BROWN));
     Block STACKED_SEQUOIA_LOGS = createWithItem("stacked_sequoia_logs", Blocks.createLogBlock(MapColor.RED, MapColor.BROWN));
     Block STRIPPED_SEQUOIA_LOG = createWithItem("stripped_sequoia_log", Blocks.createLogBlock(MapColor.RED, MapColor.RED));
@@ -158,7 +161,7 @@ public interface MariposaBlocks {
             )
     );
     Block SEQUOIA_STAIRS = createWithItem("sequoia_stairs", createStairsBlock(SEQUOIA_PLANKS));
-//    Block POTTED_SEQUOIA_SAPLING = create("potted_sequoia_sapling", Blocks.createFlowerPotBlock(SEQUOIA_SAPLING));
+    Block POTTED_SEQUOIA_SAPLING = create("potted_sequoia_sapling", Blocks.createFlowerPotBlock(SEQUOIA_SAPLING));
     Block SEQUOIA_BUTTON = createWithItem("sequoia_button", Blocks.createWoodenButtonBlock(SEQUOIA_BLOCK_SET_TYPE));
     Block SEQUOIA_SLAB = createWithItem(
             "sequoia_slab",

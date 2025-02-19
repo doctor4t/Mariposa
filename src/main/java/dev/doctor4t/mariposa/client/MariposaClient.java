@@ -20,10 +20,10 @@ public class MariposaClient implements ClientModInitializer {
                 RenderLayer.getCutout(),
                 /* --- Blocks --- */
                 MariposaBlocks.SEQUOIA_LEAVES,
-//                MariposaBlocks.SEQUOIA_SAPLING,
+                MariposaBlocks.SEQUOIA_SAPLING,
                 MariposaBlocks.SEQUOIA_DOOR,
-                MariposaBlocks.SEQUOIA_TRAPDOOR
-//                MariposaBlocks.POTTED_SEQUOIA_SAPLING
+                MariposaBlocks.SEQUOIA_TRAPDOOR,
+                MariposaBlocks.POTTED_SEQUOIA_SAPLING
         );
     }
 }

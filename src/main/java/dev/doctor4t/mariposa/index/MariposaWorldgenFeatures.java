@@ -8,7 +8,6 @@ import dev.doctor4t.mariposa.world.gen.feature.config.GiantSequoiaTreeFeatureCon
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
 
@@ -28,5 +27,6 @@ public interface MariposaWorldgenFeatures {
 
     static void initialize() {
         FEATURES.forEach((block, id) -> Registry.register(Registries.FEATURE, id, block));
+        FEATURES.forEach((block, id) -> System.out.println("Registered feature: " + id));
     }
 }

@@ -44,7 +44,7 @@ public class MariposaModelGen extends FabricModelProvider {
         generator.registerLog(MariposaBlocks.STRIPPED_SEQUOIA_LOG).log(MariposaBlocks.STRIPPED_SEQUOIA_LOG).wood(MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
         generator.registerLog(MariposaBlocks.STACKED_SEQUOIA_LOGS).uvLockedLog(MariposaBlocks.STACKED_SEQUOIA_LOGS);
         generator.registerHangingSign(MariposaBlocks.STRIPPED_SEQUOIA_LOG, MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN);
-//        generator.registerFlowerPotPlant(MariposaBlocks.SEQUOIA_SAPLING, MariposaBlocks.POTTED_SEQUOIA_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(MariposaBlocks.SEQUOIA_SAPLING, MariposaBlocks.POTTED_SEQUOIA_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         generator.registerSimpleCubeAll(MariposaBlocks.SEQUOIA_LEAVES);
     }
 
