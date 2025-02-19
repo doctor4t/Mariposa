@@ -14,7 +14,7 @@ public class MariposaSurfaceRuleData {
     private static final MaterialRules.MaterialCondition STONE_DEPTH_FLOOR_DOWN_1_WITH_DEPTH = MaterialRules.stoneDepth(1, true, VerticalSurfaceType.FLOOR);
 
     public static MaterialRules.MaterialRule makeRules() {
-        MaterialRules.MaterialCondition isAtOrAboveWaterLevel = MaterialRules.water(-1, 0);
+//        MaterialRules.MaterialCondition isAtOrAboveWaterLevel = MaterialRules.water(-1, 0);
 
         return MaterialRules.sequence(
                 MaterialRules.condition(STONE_DEPTH_FLOOR_DOWN_1_WITH_DEPTH,

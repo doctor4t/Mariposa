@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "mariposa:sequoia_log",
+    "mariposa:sequoia_wood",
+    "mariposa:stripped_sequoia_log",
+    "mariposa:stripped_sequoia_wood",
+    "mariposa:stacked_sequoia_logs"
+  ]
+}

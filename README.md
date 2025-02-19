@@ -1,8 +1,21 @@
 # Mariposa
 
-Giant sequoia forests inspired by Mariposa Grove in Yosemite National Park. Adds a new Sequoia tree, wood set (minus a boat cause BoatTypes in 1.21.1 are my bane), redwood forest biome and a new building block: stacked logs!
+*Unofficial 1.20.1 port*
 
-Giant Sequoia trees by Zerpen7: https://www.planetminecraft.com/project/epic-trees-huge-trees-pack-repository/
+### Giant sequoia forests inspired by Mariposa Grove in Yosemite National Park
+
+<hr>
+
+Adds a new Sequoia tree, 
+wood set (minus a boat cause BoatTypes in 1.21.1 are my bane), 
+redwood forest biome 
+and a new building block: stacked logs!
+
+<hr>
+
+Giant Sequoia trees by ***Zerpen7***: https://www.planetminecraft.com/project/epic-trees-huge-trees-pack-repository/
+
+<hr>
 
 ![https://cdn.modrinth.com/data/udFHwV9z/images/80f94f1415e6756f49adc48ac9576181eb9f9f8b.jpeg](https://cdn.modrinth.com/data/udFHwV9z/images/80f94f1415e6756f49adc48ac9576181eb9f9f8b.jpeg)
 ![https://cdn.modrinth.com/data/udFHwV9z/images/5005ed9fcff69f17c4902cd1be41ec3184d89c60.jpeg](https://cdn.modrinth.com/data/udFHwV9z/images/5005ed9fcff69f17c4902cd1be41ec3184d89c60.jpeg)

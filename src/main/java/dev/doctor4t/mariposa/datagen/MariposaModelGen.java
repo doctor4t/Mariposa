@@ -1,6 +1,5 @@
 package dev.doctor4t.mariposa.datagen;
 
-import com.google.common.collect.ImmutableMap;
 import dev.doctor4t.mariposa.index.MariposaBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -10,6 +9,7 @@ import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.TexturedModel;
 import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
+import org.spongepowered.include.com.google.common.collect.ImmutableMap;
 
 import java.util.Map;
 

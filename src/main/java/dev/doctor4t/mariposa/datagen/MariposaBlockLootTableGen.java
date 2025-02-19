@@ -15,7 +15,8 @@ import java.util.function.Function;
 
 public class MariposaBlockLootTableGen extends FabricBlockLootTableProvider {
     protected MariposaBlockLootTableGen(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
-        super(dataOutput, registryLookup);
+        super(dataOutput);
+//        super(dataOutput, registryLookup);
     }
 
     @Override
@@ -39,7 +40,6 @@ public class MariposaBlockLootTableGen extends FabricBlockLootTableProvider {
         this.addDrop(MariposaBlocks.SEQUOIA_SLAB, this::slabDrops);
         this.addDrop(MariposaBlocks.SEQUOIA_DOOR, this::doorDrops);
         this.addDrop(MariposaBlocks.SEQUOIA_LEAVES, block -> this.leavesDrops(block, MariposaBlocks.SEQUOIA_SAPLING, SAPLING_DROP_CHANCE));
-
     }
 
     protected void addFamily(BlockFamily family) {
