@@ -34,6 +34,9 @@ public class Mariposa implements ModInitializer, TerraBlenderApi {
         Regions.register(new MariposaRegion(id("overworld"), 4));
 
         // Register our surface rules
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, MariposaSurfaceRuleData.makeRules());
+        SurfaceRuleManager.addSurfaceRules(
+                SurfaceRuleManager.RuleCategory.OVERWORLD,
+                MOD_ID,
+                MariposaSurfaceRuleData.makeRules());
     }
 }
