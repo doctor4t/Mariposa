@@ -1,6 +1,10 @@
 package dev.doctor4t.mariposa.index;
 
 import dev.doctor4t.mariposa.Mariposa;
+import dev.doctor4t.mariposa.block.MariposaHangingSignBlock;
+import dev.doctor4t.mariposa.block.MariposaSignBlock;
+import dev.doctor4t.mariposa.block.MariposaWallHangingSignBlock;
+import dev.doctor4t.mariposa.block.MariposaWallSignBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
@@ -58,10 +62,10 @@ public interface MariposaBlocks {
     Block SEQUOIA_LEAVES = createWithItem("sequoia_leaves", LeavesBlock::new, createLeavesSettings(BlockSoundGroup.GRASS));
     Block SEQUOIA_SIGN = create(
             "sequoia_sign",
-            settings -> new SignBlock(
+            settings -> new MariposaSignBlock(
                     settings,
                     SEQUOIA_WOOD_TYPE
-            ), AbstractBlock.Settings.create()
+            ), AbstractBlock.Settings.copy(Blocks.OAK_SIGN)
                     .mapColor(SEQUOIA_LOG.getDefaultMapColor())
                     .solid()
                     .instrument(Instrument.BASS)
@@ -71,24 +75,25 @@ public interface MariposaBlocks {
     );
     Block SEQUOIA_WALL_SIGN = create(
             "sequoia_wall_sign",
-            settings -> new WallSignBlock(
+            settings -> new MariposaWallSignBlock(
                     settings,
                     SEQUOIA_WOOD_TYPE
-            ), AbstractBlock.Settings.create()
+            ), AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)
                     .mapColor(SEQUOIA_LOG.getDefaultMapColor())
                     .solid()
                     .instrument(Instrument.BASS)
                     .noCollision()
                     .strength(1.0F)
+                    .dropsLike(SEQUOIA_SIGN)
                     //.lootTable(SEQUOIA_SIGN.getLootTableKey())
                     .burnable()
     );
     Block SEQUOIA_HANGING_SIGN = create(
             "sequoia_hanging_sign",
-            settings -> new HangingSignBlock(
+            settings -> new MariposaHangingSignBlock(
                     settings,
                     SEQUOIA_WOOD_TYPE
-            ), AbstractBlock.Settings.create()
+            ), AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)
                     .mapColor(SEQUOIA_LOG.getDefaultMapColor())
                     .solid()
                     .instrument(Instrument.BASS)
@@ -98,15 +103,16 @@ public interface MariposaBlocks {
     );
     Block SEQUOIA_WALL_HANGING_SIGN = create(
             "sequoia_wall_hanging_sign",
-            settings -> new WallHangingSignBlock(
+            settings -> new MariposaWallHangingSignBlock(
                     settings,
                     SEQUOIA_WOOD_TYPE
-            ), AbstractBlock.Settings.create()
+            ), AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)
                     .mapColor(MapColor.OAK_TAN)
                     .solid()
                     .instrument(Instrument.BASS)
                     .noCollision()
                     .strength(1.0F)
+                    .dropsLike(SEQUOIA_HANGING_SIGN)
                     //.lootTable(SEQUOIA_HANGING_SIGN.getLootTableKey())
                     .burnable()
     );
@@ -141,8 +147,12 @@ public interface MariposaBlocks {
     Block SEQUOIA_STAIRS = createWithItem("sequoia_stairs",
             settings -> new StairsBlock(SEQUOIA_PLANKS.getDefaultState(), settings),
             AbstractBlock.Settings.copy(SEQUOIA_PLANKS));
-    Block POTTED_SEQUOIA_SAPLING = create("potted_sequoia_sapling", settings -> new FlowerPotBlock(SEQUOIA_SAPLING, settings), createFlowerPotSettings());
-    Block SEQUOIA_BUTTON = createWithItem("sequoia_button", settings -> new ButtonBlock(settings, SEQUOIA_BLOCK_SET_TYPE, 30, true), createButtonSettings());
+    Block POTTED_SEQUOIA_SAPLING = create("potted_sequoia_sapling",
+            settings -> new FlowerPotBlock(SEQUOIA_SAPLING, settings),
+            createFlowerPotSettings());
+    Block SEQUOIA_BUTTON = createWithItem("sequoia_button",
+            settings -> new ButtonBlock(settings, SEQUOIA_BLOCK_SET_TYPE, 30, true),
+            createButtonSettings());
     Block SEQUOIA_SLAB = createWithItem(
             "sequoia_slab",
             SlabBlock::new, AbstractBlock.Settings.create()
