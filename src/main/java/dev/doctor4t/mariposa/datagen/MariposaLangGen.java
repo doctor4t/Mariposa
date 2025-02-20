@@ -4,17 +4,14 @@ import dev.doctor4t.mariposa.index.MariposaBlocks;
 import dev.doctor4t.mariposa.index.MariposaItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.registry.RegistryWrapper;
-
-import java.util.concurrent.CompletableFuture;
 
 public class MariposaLangGen extends FabricLanguageProvider {
-    protected MariposaLangGen(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
-        super(dataOutput, registryLookup);
+    protected MariposaLangGen(FabricDataOutput dataOutput) {
+        super(dataOutput);
     }
 
     @Override
-    public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
+    public void generateTranslations(TranslationBuilder translationBuilder) {
         translationBuilder.add(MariposaBlocks.SEQUOIA_PLANKS, "Sequoia Planks");
         translationBuilder.add(MariposaBlocks.SEQUOIA_SAPLING, "Sequoia Sapling");
         translationBuilder.add(MariposaBlocks.SEQUOIA_LOG, "Sequoia Log");
