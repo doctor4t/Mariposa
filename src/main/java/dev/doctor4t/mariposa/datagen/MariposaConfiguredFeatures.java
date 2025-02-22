@@ -18,11 +18,9 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.MegaPineFoliagePlacer;
-import net.minecraft.world.gen.foliage.SpruceFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.treedecorator.AlterGroundTreeDecorator;
 import net.minecraft.world.gen.trunk.GiantTrunkPlacer;
-import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -39,7 +37,7 @@ public class MariposaConfiguredFeatures extends FabricDynamicRegistryProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup, Entries entries) {
-        entries.addAll(wrapperLookup.getOrThrow(RegistryKeys.CONFIGURED_FEATURE));
+        entries.addAll(wrapperLookup.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE));
     }
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> featureRegisterable) {

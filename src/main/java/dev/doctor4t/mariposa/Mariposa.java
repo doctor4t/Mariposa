@@ -1,5 +1,6 @@
 package dev.doctor4t.mariposa;
 
+import dev.doctor4t.mariposa.index.MariposaBlockEntities;
 import dev.doctor4t.mariposa.index.MariposaBlocks;
 import dev.doctor4t.mariposa.index.MariposaItems;
 import dev.doctor4t.mariposa.index.MariposaWorldgenFeatures;
@@ -25,6 +26,7 @@ public class Mariposa implements ModInitializer, TerraBlenderApi {
     public void onInitialize() {
         MariposaItems.initialize();
         MariposaBlocks.initialize();
+        MariposaBlockEntities.initialize();
         MariposaWorldgenFeatures.initialize();
     }
 

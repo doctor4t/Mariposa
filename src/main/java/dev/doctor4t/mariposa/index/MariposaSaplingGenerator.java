@@ -1,19 +1,25 @@
 package dev.doctor4t.mariposa.index;
 
-import net.minecraft.block.SaplingGenerator;
-import net.minecraft.world.gen.feature.TreeConfiguredFeatures;
+import dev.doctor4t.mariposa.datagen.MariposaConfiguredFeatures;
+import net.minecraft.block.sapling.LargeTreeSaplingGenerator;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.Optional;
-
+@SuppressWarnings("unused")
 public interface MariposaSaplingGenerator {
-    SaplingGenerator SEQUOIA = new SaplingGenerator(
-            "sequoia",
-            0.5F,
-            Optional.of(TreeConfiguredFeatures.MEGA_SPRUCE),
-            Optional.of(TreeConfiguredFeatures.MEGA_PINE),
-            Optional.of(TreeConfiguredFeatures.SPRUCE),
-            Optional.empty(),
-            Optional.empty(),
-            Optional.empty()
-    );
+    class SEQUOIA extends LargeTreeSaplingGenerator {
+        @Nullable
+        @Override
+        protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
+            return null;
+        }
+
+        @Nullable
+        @Override
+        protected RegistryKey<ConfiguredFeature<?, ?>> getLargeTreeFeature(Random random) {
+            return MariposaConfiguredFeatures.SEQUOIA;
+        }
+    }
 }

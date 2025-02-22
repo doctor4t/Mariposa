@@ -29,7 +29,7 @@ public class GiantSequoiaLogFeature extends Feature<GiantSequoiaLogFeatureConfig
         StructureWorldAccess structureWorldAccess = context.getWorld();
 
         BlockPos origin = context.getOrigin();
-        BlockPos.Mutable blockPos = origin.withY(structureWorldAccess.getTopY(Heightmap.Type.WORLD_SURFACE_WG, origin.getX(), origin.getZ())-3).mutableCopy();
+        BlockPos.Mutable blockPos = origin.withY(structureWorldAccess.getTopY(Heightmap.Type.WORLD_SURFACE_WG, origin.getX(), origin.getZ()) - 3).mutableCopy();
 
         if (!structureWorldAccess.getBlockState(blockPos.down()).isIn(BlockTags.DIRT)) {
             return false;
@@ -47,7 +47,7 @@ public class GiantSequoiaLogFeature extends Feature<GiantSequoiaLogFeatureConfig
                 structureWorldAccess.getBottomY(),
                 chunkPos.getStartZ() - 16,
                 chunkPos.getEndX() + 16,
-                structureWorldAccess.getTopYInclusive(),
+                structureWorldAccess.getTopY(),
                 chunkPos.getEndZ() + 16
         );
 

@@ -5,12 +5,9 @@ import dev.doctor4t.mariposa.index.MariposaTags;
 import dev.doctor4t.mariposa.world.gen.MariposaBiomes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
+import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.world.biome.Biome;
@@ -132,13 +129,13 @@ public class MariposaTagGen {
 
         @Override
         protected void configure(RegistryWrapper.WrapperLookup arg) {
-            this.getOrCreateTagBuilder(ConventionalBiomeTags.IS_FOREST).addOptional(
+            this.getOrCreateTagBuilder(ConventionalBiomeTags.FOREST).addOptional(
                     MariposaBiomes.REDWOOD_FOREST
             );
-            this.getOrCreateTagBuilder(ConventionalBiomeTags.IS_OVERWORLD).addOptional(
+            this.getOrCreateTagBuilder(ConventionalBiomeTags.IN_OVERWORLD).addOptional(
                     MariposaBiomes.REDWOOD_FOREST
             );
-            this.getOrCreateTagBuilder(ConventionalBiomeTags.IS_TEMPERATE_OVERWORLD).addOptional(
+            this.getOrCreateTagBuilder(ConventionalBiomeTags.CLIMATE_TEMPERATE).addOptional(
                     MariposaBiomes.REDWOOD_FOREST
             );
         }
