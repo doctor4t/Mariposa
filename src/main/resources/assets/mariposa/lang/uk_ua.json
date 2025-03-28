@@ -1,0 +1,22 @@
+{
+  "block.mariposa.potted_sequoia_sapling": "Паросток секвої в горщику",
+  "block.mariposa.sequoia_button": "Секвоєва кнопка",
+  "block.mariposa.sequoia_door": "Секвоєві двері",
+  "block.mariposa.sequoia_fence": "Секвоєвий паркан",
+  "block.mariposa.sequoia_fence_gate": "Секвоєва хвіртка",
+  "block.mariposa.sequoia_hanging_sign": "Секвоєва вивіска",
+  "block.mariposa.sequoia_leaves": "Секвоєве листя",
+  "block.mariposa.sequoia_log": "Секвоєва колода",
+  "block.mariposa.sequoia_planks": "Секвоєві дошки",
+  "block.mariposa.sequoia_pressure_plate": "Секвоєва натискна плита",
+  "block.mariposa.sequoia_sapling": "Паросток секвої",
+  "block.mariposa.sequoia_sign": "Секвоєва табличка",
+  "block.mariposa.sequoia_slab": "Секвоєва плита",
+  "block.mariposa.sequoia_stairs": "Секвоєві сходи",
+  "block.mariposa.sequoia_trapdoor": "Секвоєвий люк",
+  "block.mariposa.sequoia_wood": "Секвоєва деревина",
+  "block.mariposa.stacked_sequoia_logs": "Складені секвоєві колоди",
+  "block.mariposa.stripped_sequoia_log": "Обтесана секвоєва колода",
+  "block.mariposa.stripped_sequoia_wood": "Обтесана секвоєва деревина",
+  "tag.item.mariposa.sequoia_logs": "Секвоєві колоди"
+}
