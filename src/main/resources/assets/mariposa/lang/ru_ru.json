@@ -1,0 +1,22 @@
+{
+  "block.mariposa.potted_sequoia_sapling": "Саженец секвойи в горшке",
+  "block.mariposa.sequoia_button": "Секвойная кнопка",
+  "block.mariposa.sequoia_door": "Секвойная дверь",
+  "block.mariposa.sequoia_fence": "Секвойный забор",
+  "block.mariposa.sequoia_fence_gate": "Секвойная калитка",
+  "block.mariposa.sequoia_hanging_sign": "Секвойная подвесная табличка",
+  "block.mariposa.sequoia_leaves": "Секвойные листья",
+  "block.mariposa.sequoia_log": "Секвойное бревно",
+  "block.mariposa.sequoia_planks": "Секвойные доски",
+  "block.mariposa.sequoia_pressure_plate": "Секвойная нажимная плита",
+  "block.mariposa.sequoia_sapling": "Саженец секвойи",
+  "block.mariposa.sequoia_sign": "Секвойная табличка",
+  "block.mariposa.sequoia_slab": "Секвойная плита",
+  "block.mariposa.sequoia_stairs": "Секвойные ступеньки",
+  "block.mariposa.sequoia_trapdoor": "Секвойный люк",
+  "block.mariposa.sequoia_wood": "Секвойя",
+  "block.mariposa.stacked_sequoia_logs": "Сложенные секвойные брёвна",
+  "block.mariposa.stripped_sequoia_log": "Обтёсанное секвойное бревно",
+  "block.mariposa.stripped_sequoia_wood": "Обтёсанная секвойя",
+  "tag.item.mariposa.sequoia_logs": "Секвойные брёвна"
+}
