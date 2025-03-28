@@ -1,4 +1,12 @@
 ------------------------------------------------------
+Mariposa 1.0.3 - 1.21.4
+------------------------------------------------------
+- Fix sequoia sapling having a block model instead of a flat model
+- Add Russian translation thanks to DexFlexYT
+- Add Dutch, German, and Polish translations thanks to IDoTheHax and Qubimium
+- Add Ukrainian translation thanks to unroman
+
+------------------------------------------------------
 Mariposa 1.0.2 - 1.21.4
 ------------------------------------------------------
 - Update to 1.21.4 thanks to MoriyaShiine
