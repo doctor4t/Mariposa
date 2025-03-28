@@ -38,9 +38,9 @@ public class MariposaModelGen extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator generator) {
         this.registerFamily(generator, SEQUOIA_BLOCK_FAMILY);
-        generator.registerLog(MariposaBlocks.SEQUOIA_LOG).log(MariposaBlocks.SEQUOIA_LOG).wood(MariposaBlocks.SEQUOIA_WOOD);
-        generator.registerLog(MariposaBlocks.STRIPPED_SEQUOIA_LOG).log(MariposaBlocks.STRIPPED_SEQUOIA_LOG).wood(MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
-        generator.registerLog(MariposaBlocks.STACKED_SEQUOIA_LOGS).uvLockedLog(MariposaBlocks.STACKED_SEQUOIA_LOGS);
+        generator.createLogTexturePool(MariposaBlocks.SEQUOIA_LOG).log(MariposaBlocks.SEQUOIA_LOG).wood(MariposaBlocks.SEQUOIA_WOOD);
+        generator.createLogTexturePool(MariposaBlocks.STRIPPED_SEQUOIA_LOG).log(MariposaBlocks.STRIPPED_SEQUOIA_LOG).wood(MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
+        generator.createLogTexturePool(MariposaBlocks.STACKED_SEQUOIA_LOGS).uvLockedLog(MariposaBlocks.STACKED_SEQUOIA_LOGS);
         generator.registerHangingSign(MariposaBlocks.STRIPPED_SEQUOIA_LOG, MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN);
         generator.registerFlowerPotPlantAndItem(MariposaBlocks.SEQUOIA_SAPLING, MariposaBlocks.POTTED_SEQUOIA_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
         generator.registerSimpleCubeAll(MariposaBlocks.SEQUOIA_LEAVES);

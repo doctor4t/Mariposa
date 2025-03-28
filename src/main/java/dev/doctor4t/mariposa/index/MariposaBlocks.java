@@ -1,6 +1,7 @@
 package dev.doctor4t.mariposa.index;
 
 import dev.doctor4t.mariposa.Mariposa;
+import dev.doctor4t.mariposa.block.SequoiaLeavesBlock;
 import dev.doctor4t.mariposa.datagen.MariposaConfiguredFeatures;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
@@ -64,7 +65,7 @@ public interface MariposaBlocks {
             "stripped_sequoia_wood",
 			PillarBlock::new, AbstractBlock.Settings.create().mapColor(MapColor.RED).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).burnable()
     );
-    Block SEQUOIA_LEAVES = createWithItem("sequoia_leaves", LeavesBlock::new, Blocks.createLeavesSettings(BlockSoundGroup.GRASS));
+    Block SEQUOIA_LEAVES = createWithItem("sequoia_leaves", settings -> new SequoiaLeavesBlock(0.01F, settings), Blocks.createLeavesSettings(BlockSoundGroup.GRASS));
     Block SEQUOIA_SIGN = create(
             "sequoia_sign",
             settings -> new SignBlock(
