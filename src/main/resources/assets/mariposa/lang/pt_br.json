@@ -1,0 +1,22 @@
+{
+  "block.mariposa.potted_sequoia_sapling": "Muda de sequoia envasada",
+  "block.mariposa.sequoia_button": "Botão de sequoia",
+  "block.mariposa.sequoia_door": "Porta de sequoia",
+  "block.mariposa.sequoia_fence": "Cerca de sequoia",
+  "block.mariposa.sequoia_fence_gate": "Portão de sequoia",
+  "block.mariposa.sequoia_hanging_sign": "Placa suspensa de sequoia",
+  "block.mariposa.sequoia_leaves": "Folhas de sequoia",
+  "block.mariposa.sequoia_log": "Tronco de sequoia",
+  "block.mariposa.sequoia_planks": "Tábuas de sequoia",
+  "block.mariposa.sequoia_pressure_plate": "Placa de pressão de sequoia",
+  "block.mariposa.sequoia_sapling": "Muda de sequoia",
+  "block.mariposa.sequoia_sign": "Placa de sequoia",
+  "block.mariposa.sequoia_slab": "Laje de sequoia",
+  "block.mariposa.sequoia_stairs": "Escadas de sequoia",
+  "block.mariposa.sequoia_trapdoor": "Alçapão de sequoia",
+  "block.mariposa.sequoia_wood": "Madeira de sequoia",
+  "block.mariposa.stacked_sequoia_logs": "Troncos de sequoia empilhados",
+  "block.mariposa.stripped_sequoia_log": "Tronco de sequoia descascado",
+  "block.mariposa.stripped_sequoia_wood": "Madeira de sequoia descascada",
+  "tag.item.mariposa.sequoia_logs": "Troncos de sequoia"
+}
