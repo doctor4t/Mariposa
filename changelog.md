@@ -1,4 +1,10 @@
 ------------------------------------------------------
+Mariposa 1.0.4 - 1.21.6
+------------------------------------------------------
+- Update to 1.21.6 thanks to MoriyaShiine
+- Add Brazilian Portuguese translation thanks to Digabi1
+
+------------------------------------------------------
 Mariposa 1.0.3 - 1.21.5
 ------------------------------------------------------
 - Update to 1.21.5 thanks to MoriyaShiine
