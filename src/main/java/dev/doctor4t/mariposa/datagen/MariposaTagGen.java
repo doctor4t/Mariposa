@@ -6,11 +6,8 @@ import dev.doctor4t.mariposa.world.gen.MariposaBiomes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.world.biome.Biome;
@@ -26,78 +23,78 @@ public class MariposaTagGen {
 
         @Override
         protected void configure(RegistryWrapper.WrapperLookup arg) {
-            this.getOrCreateTagBuilder(BlockTags.PLANKS)
+            valueLookupBuilder(BlockTags.PLANKS)
                     .add(
                             MariposaBlocks.SEQUOIA_PLANKS
                     );
-            this.getOrCreateTagBuilder(BlockTags.WOODEN_BUTTONS)
+            valueLookupBuilder(BlockTags.WOODEN_BUTTONS)
                     .add(
                             MariposaBlocks.SEQUOIA_BUTTON
                     );
-            this.getOrCreateTagBuilder(BlockTags.WOODEN_DOORS)
+            valueLookupBuilder(BlockTags.WOODEN_DOORS)
                     .add(
                             MariposaBlocks.SEQUOIA_DOOR
                     );
-            this.getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS)
+            valueLookupBuilder(BlockTags.WOODEN_STAIRS)
                     .add(
                             MariposaBlocks.SEQUOIA_STAIRS
                     );
-            this.getOrCreateTagBuilder(BlockTags.WOODEN_SLABS)
+            valueLookupBuilder(BlockTags.WOODEN_SLABS)
                     .add(
                             MariposaBlocks.SEQUOIA_SLAB
                     );
-            this.getOrCreateTagBuilder(BlockTags.WOODEN_FENCES)
+            valueLookupBuilder(BlockTags.WOODEN_FENCES)
                     .add(
                             MariposaBlocks.SEQUOIA_FENCE
                     );
-            this.getOrCreateTagBuilder(BlockTags.SAPLINGS)
+            valueLookupBuilder(BlockTags.SAPLINGS)
                     .add(
                             MariposaBlocks.SEQUOIA_SAPLING
                     );
-            this.getOrCreateTagBuilder(MariposaTags.SEQUOIA_LOGS).add(MariposaBlocks.SEQUOIA_LOG, MariposaBlocks.SEQUOIA_WOOD, MariposaBlocks.STRIPPED_SEQUOIA_LOG, MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
-            this.getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
+            valueLookupBuilder(MariposaTags.SEQUOIA_LOGS).add(MariposaBlocks.SEQUOIA_LOG, MariposaBlocks.SEQUOIA_WOOD, MariposaBlocks.STRIPPED_SEQUOIA_LOG, MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
+            valueLookupBuilder(BlockTags.LOGS_THAT_BURN)
                     .addTag(MariposaTags.SEQUOIA_LOGS)
                     .add(MariposaBlocks.STACKED_SEQUOIA_LOGS);
-            this.getOrCreateTagBuilder(BlockTags.OVERWORLD_NATURAL_LOGS)
+            valueLookupBuilder(BlockTags.OVERWORLD_NATURAL_LOGS)
                     .add(MariposaBlocks.SEQUOIA_LOG);
-            this.getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
+            valueLookupBuilder(BlockTags.FLOWER_POTS)
                     .add(
                             MariposaBlocks.POTTED_SEQUOIA_SAPLING
                     );
-            this.getOrCreateTagBuilder(BlockTags.WOODEN_PRESSURE_PLATES)
+            valueLookupBuilder(BlockTags.WOODEN_PRESSURE_PLATES)
                     .add(
                             MariposaBlocks.SEQUOIA_PRESSURE_PLATE
                     );
-            this.getOrCreateTagBuilder(BlockTags.LEAVES)
+            valueLookupBuilder(BlockTags.LEAVES)
                     .add(
                             MariposaBlocks.SEQUOIA_LEAVES
                     );
-            this.getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS)
+            valueLookupBuilder(BlockTags.WOODEN_TRAPDOORS)
                     .add(
                             MariposaBlocks.SEQUOIA_TRAPDOOR
                     );
-            this.getOrCreateTagBuilder(BlockTags.STANDING_SIGNS)
+            valueLookupBuilder(BlockTags.STANDING_SIGNS)
                     .add(
                             MariposaBlocks.SEQUOIA_SIGN
                     );
-            this.getOrCreateTagBuilder(BlockTags.WALL_SIGNS)
+            valueLookupBuilder(BlockTags.WALL_SIGNS)
                     .add(
                             MariposaBlocks.SEQUOIA_WALL_SIGN
                     );
-            this.getOrCreateTagBuilder(BlockTags.SIGNS).addTag(BlockTags.STANDING_SIGNS).addTag(BlockTags.WALL_SIGNS);
-            this.getOrCreateTagBuilder(BlockTags.CEILING_HANGING_SIGNS)
+            valueLookupBuilder(BlockTags.SIGNS).addTag(BlockTags.STANDING_SIGNS).addTag(BlockTags.WALL_SIGNS);
+            valueLookupBuilder(BlockTags.CEILING_HANGING_SIGNS)
                     .add(
                             MariposaBlocks.SEQUOIA_HANGING_SIGN
                     );
-            this.getOrCreateTagBuilder(BlockTags.WALL_HANGING_SIGNS)
+            valueLookupBuilder(BlockTags.WALL_HANGING_SIGNS)
                     .add(
                             MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN
                     );
-            this.getOrCreateTagBuilder(BlockTags.FENCE_GATES)
+            valueLookupBuilder(BlockTags.FENCE_GATES)
                     .add(
                             MariposaBlocks.SEQUOIA_FENCE_GATE
                     );
-            this.getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
+            valueLookupBuilder(BlockTags.HOE_MINEABLE)
                     .add(
                             MariposaBlocks.SEQUOIA_LEAVES
                     );
@@ -111,11 +108,11 @@ public class MariposaTagGen {
 
         @Override
         protected void configure(RegistryWrapper.WrapperLookup arg) {
-            this.getOrCreateTagBuilder(ItemTags.PLANKS)
+            valueLookupBuilder(ItemTags.PLANKS)
                     .add(
                             MariposaBlocks.SEQUOIA_PLANKS.asItem()
                     );
-            this.getOrCreateTagBuilder(MariposaTags.SEQUOIA_LOGS_ITEM).add(
+            valueLookupBuilder(MariposaTags.SEQUOIA_LOGS_ITEM).add(
                     MariposaBlocks.SEQUOIA_LOG.asItem(),
                     MariposaBlocks.SEQUOIA_WOOD.asItem(),
                     MariposaBlocks.STRIPPED_SEQUOIA_LOG.asItem(),
@@ -132,13 +129,13 @@ public class MariposaTagGen {
 
         @Override
         protected void configure(RegistryWrapper.WrapperLookup arg) {
-            this.getOrCreateTagBuilder(ConventionalBiomeTags.IS_FOREST).addOptional(
+            builder(ConventionalBiomeTags.IS_FOREST).addOptional(
                     MariposaBiomes.REDWOOD_FOREST
             );
-            this.getOrCreateTagBuilder(ConventionalBiomeTags.IS_OVERWORLD).addOptional(
+            builder(ConventionalBiomeTags.IS_OVERWORLD).addOptional(
                     MariposaBiomes.REDWOOD_FOREST
             );
-            this.getOrCreateTagBuilder(ConventionalBiomeTags.IS_TEMPERATE_OVERWORLD).addOptional(
+            builder(ConventionalBiomeTags.IS_TEMPERATE_OVERWORLD).addOptional(
                     MariposaBiomes.REDWOOD_FOREST
             );
         }
