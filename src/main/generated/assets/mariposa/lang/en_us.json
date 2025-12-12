@@ -18,5 +18,7 @@
   "block.mariposa.stacked_sequoia_logs": "Stacked Sequoia Logs",
   "block.mariposa.stripped_sequoia_log": "Stripped Sequoia Log",
   "block.mariposa.stripped_sequoia_wood": "Stripped Sequoia Wood",
+  "item.mariposa.sequoia_boat": "Sequoia Boat",
+  "item.mariposa.sequoia_chest_boat": "Sequoia Chest Boat",
   "tag.item.mariposa.sequoia_logs": "Sequoia Logs"
 }

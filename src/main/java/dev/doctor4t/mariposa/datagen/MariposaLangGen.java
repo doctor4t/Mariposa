@@ -25,6 +25,8 @@ public class MariposaLangGen extends FabricLanguageProvider {
         translationBuilder.add(MariposaBlocks.SEQUOIA_LEAVES, "Sequoia Leaves");
         translationBuilder.add(MariposaItems.SEQUOIA_SIGN, "Sequoia Sign");
         translationBuilder.add(MariposaItems.SEQUOIA_HANGING_SIGN, "Sequoia Hanging Sign");
+		translationBuilder.add(MariposaItems.SEQUOIA_BOAT, "Sequoia Boat");
+		translationBuilder.add(MariposaItems.SEQUOIA_CHEST_BOAT, "Sequoia Chest Boat");
         translationBuilder.add(MariposaBlocks.SEQUOIA_PRESSURE_PLATE, "Sequoia Pressure Plate");
         translationBuilder.add(MariposaBlocks.SEQUOIA_TRAPDOOR, "Sequoia Trapdoor");
         translationBuilder.add(MariposaBlocks.SEQUOIA_STAIRS, "Sequoia Stairs");

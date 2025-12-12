@@ -32,6 +32,8 @@ public class MariposaRecipeGen extends FabricRecipeProvider {
                 offerBarkBlockRecipe(MariposaBlocks.STRIPPED_SEQUOIA_WOOD, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
                 offerStackedBlockRecipe(this, recipeExporter, MariposaBlocks.STACKED_SEQUOIA_LOGS, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
                 offerHangingSignRecipe(MariposaItems.SEQUOIA_HANGING_SIGN, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
+				offerBoatRecipe(MariposaItems.SEQUOIA_BOAT, MariposaBlocks.SEQUOIA_PLANKS);
+				offerChestBoatRecipe(MariposaItems.SEQUOIA_CHEST_BOAT, MariposaItems.SEQUOIA_BOAT);
             }
         };
     }

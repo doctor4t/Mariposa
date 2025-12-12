@@ -1,14 +1,18 @@
 package dev.doctor4t.mariposa.datagen;
 
 import dev.doctor4t.mariposa.index.MariposaBlocks;
+import dev.doctor4t.mariposa.index.MariposaEntityTypes;
+import dev.doctor4t.mariposa.index.MariposaItems;
 import dev.doctor4t.mariposa.index.MariposaTags;
 import dev.doctor4t.mariposa.world.gen.MariposaBiomes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalEntityTypeTags;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.EntityTypeTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.world.biome.Biome;
 
@@ -22,7 +26,7 @@ public class MariposaTagGen {
         }
 
         @Override
-        protected void configure(RegistryWrapper.WrapperLookup arg) {
+        protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
             valueLookupBuilder(BlockTags.PLANKS)
                     .add(
                             MariposaBlocks.SEQUOIA_PLANKS
@@ -107,20 +111,39 @@ public class MariposaTagGen {
         }
 
         @Override
-        protected void configure(RegistryWrapper.WrapperLookup arg) {
+        protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
             valueLookupBuilder(ItemTags.PLANKS)
-                    .add(
-                            MariposaBlocks.SEQUOIA_PLANKS.asItem()
-                    );
+                    .add(MariposaBlocks.SEQUOIA_PLANKS.asItem());
             valueLookupBuilder(MariposaTags.SEQUOIA_LOGS_ITEM).add(
                     MariposaBlocks.SEQUOIA_LOG.asItem(),
                     MariposaBlocks.SEQUOIA_WOOD.asItem(),
                     MariposaBlocks.STRIPPED_SEQUOIA_LOG.asItem(),
                     MariposaBlocks.STRIPPED_SEQUOIA_WOOD.asItem(),
                     MariposaBlocks.STACKED_SEQUOIA_LOGS.asItem()
-            );
+			);
+
+			valueLookupBuilder(ItemTags.BOATS)
+					.add(MariposaItems.SEQUOIA_BOAT);
+			valueLookupBuilder(ItemTags.CHEST_BOATS)
+					.add(MariposaItems.SEQUOIA_CHEST_BOAT);
         }
     }
+
+	public static class MariposaEntityTypeTagGen extends FabricTagProvider.EntityTypeTagProvider {
+		public MariposaEntityTypeTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+			super(output, registriesFuture);
+		}
+
+		@Override
+		protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+			// CONVENTIONAL
+			valueLookupBuilder(ConventionalEntityTypeTags.BOATS)
+					.add(MariposaEntityTypes.SEQUOIA_CHEST_BOAT);
+			// VANILLA
+			valueLookupBuilder(EntityTypeTags.BOAT)
+					.add(MariposaEntityTypes.SEQUOIA_BOAT);
+		}
+	}
 
     public static class MariposaBiomeTagGen extends FabricTagProvider<Biome> {
         public MariposaBiomeTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
@@ -128,7 +151,7 @@ public class MariposaTagGen {
         }
 
         @Override
-        protected void configure(RegistryWrapper.WrapperLookup arg) {
+        protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
             builder(ConventionalBiomeTags.IS_FOREST).addOptional(
                     MariposaBiomes.REDWOOD_FOREST
             );

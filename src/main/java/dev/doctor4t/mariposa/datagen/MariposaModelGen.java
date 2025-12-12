@@ -2,11 +2,13 @@ package dev.doctor4t.mariposa.datagen;
 
 import com.google.common.collect.ImmutableMap;
 import dev.doctor4t.mariposa.index.MariposaBlocks;
+import dev.doctor4t.mariposa.index.MariposaItems;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.block.Block;
 import net.minecraft.client.data.BlockStateModelGenerator;
 import net.minecraft.client.data.ItemModelGenerator;
+import net.minecraft.client.data.Models;
 import net.minecraft.client.data.TexturedModel;
 import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
@@ -47,7 +49,9 @@ public class MariposaModelGen extends FabricModelProvider {
     }
 
     @Override
-    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+    public void generateItemModels(ItemModelGenerator generator) {
+		generator.register(MariposaItems.SEQUOIA_BOAT, Models.GENERATED);
+		generator.register(MariposaItems.SEQUOIA_CHEST_BOAT, Models.GENERATED);
     }
 
     private void registerFamily(BlockStateModelGenerator generator, BlockFamily family) {

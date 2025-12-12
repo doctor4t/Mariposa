@@ -13,7 +13,8 @@ public class MariposaDatagen implements DataGeneratorEntrypoint {
         pack.addProvider(MariposaModelGen::new);
 
         pack.addProvider(MariposaTagGen.MariposaBlockTagGen::new);
-        pack.addProvider(MariposaTagGen.MariposaItemTagGen::new);
+		pack.addProvider(MariposaTagGen.MariposaItemTagGen::new);
+		pack.addProvider(MariposaTagGen.MariposaEntityTypeTagGen::new);
         pack.addProvider(MariposaTagGen.MariposaBiomeTagGen::new);
 
         pack.addProvider(MariposaLangGen::new);
