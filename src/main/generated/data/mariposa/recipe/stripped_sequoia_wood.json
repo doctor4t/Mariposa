@@ -3,14 +3,14 @@
   "category": "building",
   "group": "bark",
   "key": {
-    "#": "mariposa:stripped_sequoia_log"
+	"#": "mariposa:stripped_sequoia_log"
   },
   "pattern": [
-    "##",
-    "##"
+	"##",
+	"##"
   ],
   "result": {
-    "count": 3,
-    "id": "mariposa:stripped_sequoia_wood"
+	"count": 3,
+	"id": "mariposa:stripped_sequoia_wood"
   }
 }
