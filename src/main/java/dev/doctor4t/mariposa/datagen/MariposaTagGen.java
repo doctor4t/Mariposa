@@ -28,80 +28,52 @@ public class MariposaTagGen {
         @Override
         protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
             valueLookupBuilder(BlockTags.PLANKS)
-                    .add(
-                            MariposaBlocks.SEQUOIA_PLANKS
-                    );
+                    .add(MariposaBlocks.SEQUOIA_PLANKS);
             valueLookupBuilder(BlockTags.WOODEN_BUTTONS)
-                    .add(
-                            MariposaBlocks.SEQUOIA_BUTTON
-                    );
+                    .add(MariposaBlocks.SEQUOIA_BUTTON);
             valueLookupBuilder(BlockTags.WOODEN_DOORS)
-                    .add(
-                            MariposaBlocks.SEQUOIA_DOOR
-                    );
+                    .add(MariposaBlocks.SEQUOIA_DOOR);
             valueLookupBuilder(BlockTags.WOODEN_STAIRS)
-                    .add(
-                            MariposaBlocks.SEQUOIA_STAIRS
-                    );
+                    .add(MariposaBlocks.SEQUOIA_STAIRS);
             valueLookupBuilder(BlockTags.WOODEN_SLABS)
-                    .add(
-                            MariposaBlocks.SEQUOIA_SLAB
-                    );
+                    .add(MariposaBlocks.SEQUOIA_SLAB);
             valueLookupBuilder(BlockTags.WOODEN_FENCES)
-                    .add(
-                            MariposaBlocks.SEQUOIA_FENCE
-                    );
+                    .add(MariposaBlocks.SEQUOIA_FENCE);
             valueLookupBuilder(BlockTags.SAPLINGS)
-                    .add(
-                            MariposaBlocks.SEQUOIA_SAPLING
-                    );
-            valueLookupBuilder(MariposaTags.SEQUOIA_LOGS).add(MariposaBlocks.SEQUOIA_LOG, MariposaBlocks.SEQUOIA_WOOD, MariposaBlocks.STRIPPED_SEQUOIA_LOG, MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
+                    .add(MariposaBlocks.SEQUOIA_SAPLING);
+            valueLookupBuilder(MariposaTags.SEQUOIA_LOGS).add(
+					MariposaBlocks.SEQUOIA_LOG,
+					MariposaBlocks.SEQUOIA_WOOD,
+					MariposaBlocks.STRIPPED_SEQUOIA_LOG,
+					MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
             valueLookupBuilder(BlockTags.LOGS_THAT_BURN)
                     .addTag(MariposaTags.SEQUOIA_LOGS)
                     .add(MariposaBlocks.STACKED_SEQUOIA_LOGS);
             valueLookupBuilder(BlockTags.OVERWORLD_NATURAL_LOGS)
                     .add(MariposaBlocks.SEQUOIA_LOG);
             valueLookupBuilder(BlockTags.FLOWER_POTS)
-                    .add(
-                            MariposaBlocks.POTTED_SEQUOIA_SAPLING
-                    );
+                    .add(MariposaBlocks.POTTED_SEQUOIA_SAPLING);
             valueLookupBuilder(BlockTags.WOODEN_PRESSURE_PLATES)
-                    .add(
-                            MariposaBlocks.SEQUOIA_PRESSURE_PLATE
-                    );
+                    .add(MariposaBlocks.SEQUOIA_PRESSURE_PLATE);
             valueLookupBuilder(BlockTags.LEAVES)
-                    .add(
-                            MariposaBlocks.SEQUOIA_LEAVES
-                    );
+                    .add(MariposaBlocks.SEQUOIA_LEAVES);
             valueLookupBuilder(BlockTags.WOODEN_TRAPDOORS)
-                    .add(
-                            MariposaBlocks.SEQUOIA_TRAPDOOR
-                    );
+                    .add(MariposaBlocks.SEQUOIA_TRAPDOOR);
             valueLookupBuilder(BlockTags.STANDING_SIGNS)
-                    .add(
-                            MariposaBlocks.SEQUOIA_SIGN
-                    );
+                    .add(MariposaBlocks.SEQUOIA_SIGN);
             valueLookupBuilder(BlockTags.WALL_SIGNS)
-                    .add(
-                            MariposaBlocks.SEQUOIA_WALL_SIGN
-                    );
-            valueLookupBuilder(BlockTags.SIGNS).addTag(BlockTags.STANDING_SIGNS).addTag(BlockTags.WALL_SIGNS);
+                    .add(MariposaBlocks.SEQUOIA_WALL_SIGN);
+            valueLookupBuilder(BlockTags.SIGNS)
+					.addTag(BlockTags.STANDING_SIGNS)
+					.addTag(BlockTags.WALL_SIGNS);
             valueLookupBuilder(BlockTags.CEILING_HANGING_SIGNS)
-                    .add(
-                            MariposaBlocks.SEQUOIA_HANGING_SIGN
-                    );
+                    .add(MariposaBlocks.SEQUOIA_HANGING_SIGN);
             valueLookupBuilder(BlockTags.WALL_HANGING_SIGNS)
-                    .add(
-                            MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN
-                    );
+                    .add(MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN);
             valueLookupBuilder(BlockTags.FENCE_GATES)
-                    .add(
-                            MariposaBlocks.SEQUOIA_FENCE_GATE
-                    );
+                    .add(MariposaBlocks.SEQUOIA_FENCE_GATE);
             valueLookupBuilder(BlockTags.HOE_MINEABLE)
-                    .add(
-                            MariposaBlocks.SEQUOIA_LEAVES
-                    );
+                    .add(MariposaBlocks.SEQUOIA_LEAVES);
         }
     }
 
@@ -119,8 +91,7 @@ public class MariposaTagGen {
                     MariposaBlocks.SEQUOIA_WOOD.asItem(),
                     MariposaBlocks.STRIPPED_SEQUOIA_LOG.asItem(),
                     MariposaBlocks.STRIPPED_SEQUOIA_WOOD.asItem(),
-                    MariposaBlocks.STACKED_SEQUOIA_LOGS.asItem()
-			);
+                    MariposaBlocks.STACKED_SEQUOIA_LOGS.asItem());
 
 			valueLookupBuilder(ItemTags.BOATS)
 					.add(MariposaItems.SEQUOIA_BOAT);
@@ -152,15 +123,12 @@ public class MariposaTagGen {
 
         @Override
         protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-            builder(ConventionalBiomeTags.IS_FOREST).addOptional(
-                    MariposaBiomes.REDWOOD_FOREST
-            );
-            builder(ConventionalBiomeTags.IS_OVERWORLD).addOptional(
-                    MariposaBiomes.REDWOOD_FOREST
-            );
-            builder(ConventionalBiomeTags.IS_TEMPERATE_OVERWORLD).addOptional(
-                    MariposaBiomes.REDWOOD_FOREST
-            );
+            builder(ConventionalBiomeTags.IS_FOREST)
+					.addOptional(MariposaBiomes.REDWOOD_FOREST);
+            builder(ConventionalBiomeTags.IS_OVERWORLD)
+					.addOptional(MariposaBiomes.REDWOOD_FOREST);
+            builder(ConventionalBiomeTags.IS_TEMPERATE_OVERWORLD)
+					.addOptional(MariposaBiomes.REDWOOD_FOREST);
         }
     }
 }
