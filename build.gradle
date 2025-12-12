@@ -41,10 +41,6 @@ repositories {
     maven { url = 'https://maven.minecraftforge.net/' }
 }
 
-loom {
-    accessWidenerPath = file("src/main/resources/mariposa.accesswidener")
-}
-
 fabricApi {
     configureDataGeneration() {
         client = true

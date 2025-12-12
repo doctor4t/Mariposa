@@ -29,10 +29,6 @@
 			"dev.doctor4t.mariposa.Mariposa"
 		]
 	},
-	"mixins": [
-		"mariposa.mixins.json"
-	],
-	"accessWidener" : "mariposa.accesswidener",
 	"depends": {
 		"fabricloader": "*",
 		"minecraft": "~1.21.10",
