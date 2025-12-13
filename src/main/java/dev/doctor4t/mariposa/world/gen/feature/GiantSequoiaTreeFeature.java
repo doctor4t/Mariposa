@@ -14,7 +14,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.Heightmap;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
@@ -82,7 +81,7 @@ public class GiantSequoiaTreeFeature extends Feature<GiantSequoiaTreeFeatureConf
     private static int getCornersInGround(StructureWorldAccess world, BlockBox box) {
         MutableInt mutableInt = new MutableInt(0);
         box.forEachVertex(pos -> {
-            if (mutableInt.getValue() == -1) {
+            if (mutableInt.intValue() == -1) {
                 return;
             }
 
@@ -97,6 +96,6 @@ public class GiantSequoiaTreeFeature extends Feature<GiantSequoiaTreeFeatureConf
                 }
             }
         });
-        return mutableInt.getValue();
+        return mutableInt.intValue();
     }
 }
