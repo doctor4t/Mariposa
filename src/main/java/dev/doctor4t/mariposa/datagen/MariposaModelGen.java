@@ -19,7 +19,7 @@ public class MariposaModelGen extends FabricModelProvider {
     private final Map<Block, TexturedModel> uniqueModels = ImmutableMap.<Block, TexturedModel>builder()
             .build();
 
-    public static BlockFamily SEQUOIA_BLOCK_FAMILY = BlockFamilies.register(MariposaBlocks.SEQUOIA_PLANKS)
+    public static final BlockFamily SEQUOIA_BLOCK_FAMILY = BlockFamilies.register(MariposaBlocks.SEQUOIA_PLANKS)
             .button(MariposaBlocks.SEQUOIA_BUTTON)
             .fence(MariposaBlocks.SEQUOIA_FENCE)
             .fenceGate(MariposaBlocks.SEQUOIA_FENCE_GATE)
