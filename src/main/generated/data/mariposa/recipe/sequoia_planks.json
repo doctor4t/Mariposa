@@ -3,10 +3,10 @@
   "category": "building",
   "group": "planks",
   "ingredients": [
-	"#mariposa:sequoia_logs"
+    "#mariposa:sequoia_logs"
   ],
   "result": {
-	"count": 4,
-	"id": "mariposa:sequoia_planks"
+    "count": 4,
+    "id": "mariposa:sequoia_planks"
   }
 }

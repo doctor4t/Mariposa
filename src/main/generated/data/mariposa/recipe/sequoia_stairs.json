@@ -3,15 +3,15 @@
   "category": "building",
   "group": "wooden_stairs",
   "key": {
-	"#": "mariposa:sequoia_planks"
+    "#": "mariposa:sequoia_planks"
   },
   "pattern": [
-	"#  ",
-	"## ",
-	"###"
+    "#  ",
+    "## ",
+    "###"
   ],
   "result": {
-	"count": 4,
-	"id": "mariposa:sequoia_stairs"
+    "count": 4,
+    "id": "mariposa:sequoia_stairs"
   }
 }

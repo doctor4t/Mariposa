@@ -3,14 +3,14 @@
   "category": "building",
   "group": "stacked",
   "key": {
-	"#": "mariposa:stripped_sequoia_log"
+    "#": "mariposa:stripped_sequoia_log"
   },
   "pattern": [
-	"###",
-	"###"
+    "###",
+    "###"
   ],
   "result": {
-	"count": 6,
-	"id": "mariposa:stacked_sequoia_logs"
+    "count": 6,
+    "id": "mariposa:stacked_sequoia_logs"
   }
 }

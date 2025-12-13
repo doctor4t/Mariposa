@@ -3,13 +3,13 @@
   "category": "redstone",
   "group": "wooden_pressure_plate",
   "key": {
-	"#": "mariposa:sequoia_planks"
+    "#": "mariposa:sequoia_planks"
   },
   "pattern": [
-	"##"
+    "##"
   ],
   "result": {
-	"count": 1,
-	"id": "mariposa:sequoia_pressure_plate"
+    "count": 1,
+    "id": "mariposa:sequoia_pressure_plate"
   }
 }
