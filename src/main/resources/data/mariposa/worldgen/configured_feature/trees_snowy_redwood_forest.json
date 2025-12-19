@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "mariposa:snowy_sequoia_checked",
+    "features": [
+      {
+        "chance": 0.33333334,
+        "feature": "minecraft:spruce_checked"
+      },
+      {
+        "chance": 0.33333334,
+        "feature": "minecraft:pine_checked"
+      }
+    ]
+  }
+}

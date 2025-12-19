@@ -36,6 +36,9 @@ public class MariposaRegion extends Region {
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
-        this.addModifiedVanillaOverworldBiomes(mapper, builder -> builder.replaceBiome(BiomeKeys.TAIGA, MariposaBiomes.REDWOOD_FOREST));
+        this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
+            builder.replaceBiome(BiomeKeys.TAIGA, MariposaBiomes.REDWOOD_FOREST);
+            builder.replaceBiome(BiomeKeys.SNOWY_TAIGA, MariposaBiomes.SNOWY_REDWOOD_FOREST);
+        });
     }
 }

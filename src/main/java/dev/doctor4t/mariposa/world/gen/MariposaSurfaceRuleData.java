@@ -11,10 +11,12 @@ public class MariposaSurfaceRuleData {
     private static final MaterialRules.MaterialRule GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
     private static final MaterialRules.MaterialRule PODZOL = makeStateRule(Blocks.PODZOL);
     private static final MaterialRules.MaterialRule COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
+    private static final MaterialRules.MaterialRule SNOW_BLOCK = makeStateRule(Blocks.SNOW_BLOCK);
     private static final MaterialRules.MaterialCondition STONE_DEPTH_FLOOR_DOWN_1_WITH_DEPTH = MaterialRules.stoneDepth(1, true, VerticalSurfaceType.FLOOR);
 
     public static MaterialRules.MaterialRule makeRules() {
         return MaterialRules.sequence(
+                // redwood forest
                 MaterialRules.condition(STONE_DEPTH_FLOOR_DOWN_1_WITH_DEPTH,
                         MaterialRules.condition(MaterialRules.biome(MariposaBiomes.REDWOOD_FOREST),
                                 MaterialRules.condition(surfaceNoiseThreshold (1.75), COARSE_DIRT))),
@@ -24,7 +26,19 @@ public class MariposaSurfaceRuleData {
                                         MaterialRules.condition(surfaceNoiseThreshold (-.95), PODZOL),
                                         GRASS_BLOCK
                                 )))),
-                MaterialRules.condition(STONE_DEPTH_FLOOR_DOWN_1_WITH_DEPTH, MaterialRules.condition(MaterialRules.biome(MariposaBiomes.REDWOOD_FOREST), DIRT))
+                MaterialRules.condition(STONE_DEPTH_FLOOR_DOWN_1_WITH_DEPTH, MaterialRules.condition(MaterialRules.biome(MariposaBiomes.REDWOOD_FOREST), DIRT)),
+
+                // snowy redwood forest
+                MaterialRules.condition(STONE_DEPTH_FLOOR_DOWN_1_WITH_DEPTH,
+                        MaterialRules.condition(MaterialRules.biome(MariposaBiomes.SNOWY_REDWOOD_FOREST),
+                                MaterialRules.condition(surfaceNoiseThreshold (1.75), SNOW_BLOCK))),
+                MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR,
+                        MaterialRules.condition(MaterialRules.water(0, 0),
+                                MaterialRules.condition(MaterialRules.biome(MariposaBiomes.SNOWY_REDWOOD_FOREST), MaterialRules.sequence(
+                                        MaterialRules.condition(surfaceNoiseThreshold (-.95), SNOW_BLOCK),
+                                        GRASS_BLOCK
+                                )))),
+                MaterialRules.condition(STONE_DEPTH_FLOOR_DOWN_1_WITH_DEPTH, MaterialRules.condition(MaterialRules.biome(MariposaBiomes.SNOWY_REDWOOD_FOREST), DIRT))
         );
     }
 

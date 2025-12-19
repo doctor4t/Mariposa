@@ -11,6 +11,7 @@ import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalEntityTypeTags;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.EntityTypeTags;
 import net.minecraft.registry.tag.ItemTags;
@@ -122,13 +123,30 @@ public class MariposaTagGen {
         }
 
         @Override
-        protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+        protected void configure(RegistryWrapper.WrapperLookup arg) {
             builder(ConventionalBiomeTags.IS_FOREST)
-					.addOptional(MariposaBiomes.REDWOOD_FOREST);
+                    .addOptional(MariposaBiomes.REDWOOD_FOREST)
+                    .addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+            ;
             builder(ConventionalBiomeTags.IS_OVERWORLD)
-					.addOptional(MariposaBiomes.REDWOOD_FOREST);
+                    .addOptional(MariposaBiomes.REDWOOD_FOREST)
+                    .addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+            ;
             builder(ConventionalBiomeTags.IS_TEMPERATE_OVERWORLD)
-					.addOptional(MariposaBiomes.REDWOOD_FOREST);
+                    .addOptional(MariposaBiomes.REDWOOD_FOREST)
+            ;
+            builder(ConventionalBiomeTags.IS_COLD_OVERWORLD)
+                    .addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+            ;
+            builder(ConventionalBiomeTags.IS_SNOWY)
+                    .addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+            ;
+            builder(BiomeTags.SPAWNS_SNOW_FOXES)
+                    .addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+            ;
+            builder(BiomeTags.SPAWNS_WHITE_RABBITS)
+                    .addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+            ;
         }
     }
 }

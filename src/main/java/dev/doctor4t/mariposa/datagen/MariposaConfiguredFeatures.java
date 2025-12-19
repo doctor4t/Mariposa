@@ -26,6 +26,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class MariposaConfiguredFeatures extends FabricDynamicRegistryProvider {
     public static final RegistryKey<ConfiguredFeature<?, ?>> SEQUOIA = of("sequoia");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> SNOWY_SEQUOIA = of("snowy_sequoia");
 
     public static RegistryKey<ConfiguredFeature<?, ?>> of(String name) {
         return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Mariposa.id(name));
@@ -53,6 +54,20 @@ public class MariposaConfiguredFeatures extends FabricDynamicRegistryProvider {
                         new TwoLayersFeatureSize(1, 1, 2)
                 )
                         .decorators(ImmutableList.of(new AlterGroundTreeDecorator(BlockStateProvider.of(Blocks.PODZOL))))
+                        .build()
+        );
+        ConfiguredFeatures.register(
+                featureRegisterable,
+                SNOWY_SEQUOIA,
+                Feature.TREE,
+                new TreeFeatureConfig.Builder(
+                        BlockStateProvider.of(MariposaBlocks.SEQUOIA_LOG),
+                        new GiantTrunkPlacer(13, 2, 14),
+                        BlockStateProvider.of(MariposaBlocks.SEQUOIA_LEAVES),
+                        new MegaPineFoliagePlacer(ConstantIntProvider.create(0), ConstantIntProvider.create(0), UniformIntProvider.create(10, 14)),
+                        new TwoLayersFeatureSize(1, 1, 2)
+                )
+                        .decorators(ImmutableList.of(new AlterGroundTreeDecorator(BlockStateProvider.of(Blocks.SNOW_BLOCK))))
                         .build()
         );
     }

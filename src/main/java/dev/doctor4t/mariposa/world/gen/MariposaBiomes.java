@@ -25,6 +25,7 @@ import net.minecraft.world.biome.Biome;
 
 public class MariposaBiomes {
     public static final RegistryKey<Biome> REDWOOD_FOREST = register("redwood_forest");
+    public static final RegistryKey<Biome> SNOWY_REDWOOD_FOREST = register("snowy_redwood_forest");
 
     private static RegistryKey<Biome> register(String name) {
         return RegistryKey.of(RegistryKeys.BIOME, Identifier.of(Mariposa.MOD_ID, name));
