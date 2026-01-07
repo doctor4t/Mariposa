@@ -11,13 +11,13 @@ import net.minecraft.registry.RegistryKeys;
 import java.util.function.Function;
 
 public interface MariposaItems {
-    Item SEQUOIA_SIGN = create("sequoia_sign", settings -> new SignItem(MariposaBlocks.SEQUOIA_SIGN, MariposaBlocks.SEQUOIA_WALL_SIGN, settings), new Item.Settings().useBlockPrefixedTranslationKey().maxCount(16));
-    Item SEQUOIA_HANGING_SIGN = create("sequoia_hanging_sign", settings -> new HangingSignItem(MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN, settings), new Item.Settings().useBlockPrefixedTranslationKey().maxCount(16));
-    Item SEQUOIA_DOOR = create("sequoia_door", settings -> new TallBlockItem(MariposaBlocks.SEQUOIA_DOOR, settings), new Item.Settings().useBlockPrefixedTranslationKey());
-	Item SEQUOIA_BOAT = create("sequoia_boat", settings -> new BoatItem(MariposaEntityTypes.SEQUOIA_BOAT, settings), new Item.Settings().maxCount(1));
-	Item SEQUOIA_CHEST_BOAT = create("sequoia_chest_boat", settings -> new BoatItem(MariposaEntityTypes.SEQUOIA_CHEST_BOAT, settings), new Item.Settings().maxCount(1));
+	Item SEQUOIA_DOOR = register("sequoia_door", settings -> new TallBlockItem(MariposaBlocks.SEQUOIA_DOOR, settings), new Item.Settings().useBlockPrefixedTranslationKey());
+	Item SEQUOIA_SIGN = register("sequoia_sign", settings -> new SignItem(MariposaBlocks.SEQUOIA_SIGN, MariposaBlocks.SEQUOIA_WALL_SIGN, settings), new Item.Settings().useBlockPrefixedTranslationKey().maxCount(16));
+    Item SEQUOIA_HANGING_SIGN = register("sequoia_hanging_sign", settings -> new HangingSignItem(MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN, settings), new Item.Settings().useBlockPrefixedTranslationKey().maxCount(16));
+	Item SEQUOIA_BOAT = register("sequoia_boat", settings -> new BoatItem(MariposaEntityTypes.SEQUOIA_BOAT, settings), new Item.Settings().maxCount(1));
+	Item SEQUOIA_CHEST_BOAT = register("sequoia_chest_boat", settings -> new BoatItem(MariposaEntityTypes.SEQUOIA_CHEST_BOAT, settings), new Item.Settings().maxCount(1));
 
-    static Item create(String name, Function<Item.Settings, Item> factory, Item.Settings settings) {
+    static Item register(String name, Function<Item.Settings, Item> factory, Item.Settings settings) {
         return Items.register(RegistryKey.of(RegistryKeys.ITEM, Mariposa.id(name)), factory, settings);
     }
 
