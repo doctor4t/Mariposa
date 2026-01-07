@@ -14,24 +14,24 @@ public class MariposaBlockLootTableGen extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        this.addDrop(MariposaBlocks.SEQUOIA_PLANKS);
-        this.addDrop(MariposaBlocks.SEQUOIA_SAPLING);
-        this.addDrop(MariposaBlocks.SEQUOIA_LOG);
-        this.addDrop(MariposaBlocks.STACKED_SEQUOIA_LOGS);
-        this.addDrop(MariposaBlocks.STRIPPED_SEQUOIA_LOG);
-        this.addDrop(MariposaBlocks.SEQUOIA_WOOD);
-        this.addDrop(MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
-        this.addDrop(MariposaBlocks.SEQUOIA_SIGN);
-        this.addDrop(MariposaBlocks.SEQUOIA_HANGING_SIGN);
-        this.addDrop(MariposaBlocks.SEQUOIA_PRESSURE_PLATE);
-        this.addDrop(MariposaBlocks.SEQUOIA_TRAPDOOR);
-        this.addDrop(MariposaBlocks.SEQUOIA_STAIRS);
-        this.addDrop(MariposaBlocks.SEQUOIA_BUTTON);
-        this.addDrop(MariposaBlocks.SEQUOIA_FENCE_GATE);
-        this.addDrop(MariposaBlocks.SEQUOIA_FENCE);
-        this.addPottedPlantDrops(MariposaBlocks.POTTED_SEQUOIA_SAPLING);
-        this.addDrop(MariposaBlocks.SEQUOIA_SLAB, this::slabDrops);
-        this.addDrop(MariposaBlocks.SEQUOIA_DOOR, this::doorDrops);
-        this.addDrop(MariposaBlocks.SEQUOIA_LEAVES, block -> this.leavesDrops(block, MariposaBlocks.SEQUOIA_SAPLING, SAPLING_DROP_CHANCE));
+		addDrop(MariposaBlocks.SEQUOIA_SAPLING);
+		addPottedPlantDrops(MariposaBlocks.POTTED_SEQUOIA_SAPLING);
+		addDrop(MariposaBlocks.SEQUOIA_LOG);
+		addDrop(MariposaBlocks.SEQUOIA_WOOD);
+		addDrop(MariposaBlocks.STRIPPED_SEQUOIA_LOG);
+		addDrop(MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
+		addDrop(MariposaBlocks.STACKED_SEQUOIA_LOGS);
+		addDrop(MariposaBlocks.SEQUOIA_LEAVES, block -> leavesDrops(block, MariposaBlocks.SEQUOIA_SAPLING, SAPLING_DROP_CHANCE));
+		addDrop(MariposaBlocks.SEQUOIA_PLANKS);
+		addDrop(MariposaBlocks.SEQUOIA_STAIRS);
+		addDrop(MariposaBlocks.SEQUOIA_SLAB, this::slabDrops);
+		addDrop(MariposaBlocks.SEQUOIA_FENCE);
+		addDrop(MariposaBlocks.SEQUOIA_FENCE_GATE);
+		addDrop(MariposaBlocks.SEQUOIA_DOOR, this::doorDrops);
+		addDrop(MariposaBlocks.SEQUOIA_TRAPDOOR);
+		addDrop(MariposaBlocks.SEQUOIA_PRESSURE_PLATE);
+		addDrop(MariposaBlocks.SEQUOIA_BUTTON);
+		addDrop(MariposaBlocks.SEQUOIA_SIGN);
+		addDrop(MariposaBlocks.SEQUOIA_HANGING_SIGN);
     }
 }
