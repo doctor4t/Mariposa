@@ -13,11 +13,10 @@ import net.minecraft.client.render.entity.model.BoatEntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 
 public class MariposaClient implements ClientModInitializer {
-
-    @Override
-    public void onInitializeClient() {
-        // Map special render layers to blocks
-        BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT, MariposaBlocks.SEQUOIA_LEAVES, MariposaBlocks.SEQUOIA_SAPLING, MariposaBlocks.SEQUOIA_DOOR, MariposaBlocks.SEQUOIA_TRAPDOOR, MariposaBlocks.POTTED_SEQUOIA_SAPLING);
+	@Override
+	public void onInitializeClient() {
+		// Map special render layers to blocks
+		BlockRenderLayerMap.putBlocks(BlockRenderLayer.CUTOUT, MariposaBlocks.SEQUOIA_LEAVES, MariposaBlocks.SEQUOIA_SAPLING, MariposaBlocks.SEQUOIA_DOOR, MariposaBlocks.SEQUOIA_TRAPDOOR, MariposaBlocks.POTTED_SEQUOIA_SAPLING);
 		// Entity types
 		EntityModelLayer normal = new EntityModelLayer(Mariposa.id("boat/sequoia"), "main");
 		EntityModelLayerRegistry.registerModelLayer(normal, BoatEntityModel::getTexturedModelData);
@@ -26,5 +25,5 @@ public class MariposaClient implements ClientModInitializer {
 		EntityModelLayer chest = new EntityModelLayer(Mariposa.id("chest_boat/sequoia"), "main");
 		EntityModelLayerRegistry.registerModelLayer(chest, BoatEntityModel::getChestTexturedModelData);
 		EntityRendererFactories.register(MariposaEntityTypes.SEQUOIA_CHEST_BOAT, context -> new BoatEntityRenderer(context, chest));
-    }
+	}
 }

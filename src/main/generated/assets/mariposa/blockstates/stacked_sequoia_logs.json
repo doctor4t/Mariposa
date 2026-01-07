@@ -1,13 +1,13 @@
 {
   "variants": {
-    "axis=x": {
-      "model": "mariposa:block/stacked_sequoia_logs_x"
-    },
-    "axis=y": {
-      "model": "mariposa:block/stacked_sequoia_logs_y"
-    },
-    "axis=z": {
-      "model": "mariposa:block/stacked_sequoia_logs_z"
-    }
+	"axis=x": {
+	  "model": "mariposa:block/stacked_sequoia_logs_x"
+	},
+	"axis=y": {
+	  "model": "mariposa:block/stacked_sequoia_logs_y"
+	},
+	"axis=z": {
+	  "model": "mariposa:block/stacked_sequoia_logs_z"
+	}
   }
 }

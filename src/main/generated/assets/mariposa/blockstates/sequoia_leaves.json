@@ -1,7 +1,7 @@
 {
   "variants": {
-    "": {
-      "model": "mariposa:block/sequoia_leaves"
-    }
+	"": {
+	  "model": "mariposa:block/sequoia_leaves"
+	}
   }
 }

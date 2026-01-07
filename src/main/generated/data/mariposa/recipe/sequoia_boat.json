@@ -3,14 +3,14 @@
   "category": "misc",
   "group": "boat",
   "key": {
-    "#": "mariposa:sequoia_planks"
+	"#": "mariposa:sequoia_planks"
   },
   "pattern": [
-    "# #",
-    "###"
+	"# #",
+	"###"
   ],
   "result": {
-    "count": 1,
-    "id": "mariposa:sequoia_boat"
+	"count": 1,
+	"id": "mariposa:sequoia_boat"
   }
 }

@@ -13,26 +13,26 @@ import terrablender.api.SurfaceRuleManager;
 import terrablender.api.TerraBlenderApi;
 
 public class Mariposa implements ModInitializer, TerraBlenderApi {
-    public static final String MOD_ID = "mariposa";
+	public static final String MOD_ID = "mariposa";
 
-    public static Identifier id(String string) {
-        return Identifier.of(MOD_ID, string);
-    }
+	public static Identifier id(String string) {
+		return Identifier.of(MOD_ID, string);
+	}
 
-    @Override
-    public void onInitialize() {
-        MariposaItems.initialize();
-        MariposaBlocks.initialize();
+	@Override
+	public void onInitialize() {
+		MariposaItems.initialize();
+		MariposaBlocks.initialize();
 		MariposaEntityTypes.initialize();
-        MariposaWorldgenFeatures.initialize();
-    }
+		MariposaWorldgenFeatures.initialize();
+	}
 
-    @Override
-    public void onTerraBlenderInitialized() {
-        // Weights are kept intentionally low as we add minimal biomes
-        Regions.register(new MariposaRegion(id("overworld"), 4));
+	@Override
+	public void onTerraBlenderInitialized() {
+		// Weights are kept intentionally low as we add minimal biomes
+		Regions.register(new MariposaRegion(id("overworld"), 4));
 
-        // Register our surface rules
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, MariposaSurfaceRuleData.makeRules());
-    }
+		// Register our surface rules
+		SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, MariposaSurfaceRuleData.makeRules());
+	}
 }

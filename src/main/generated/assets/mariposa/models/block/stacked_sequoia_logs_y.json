@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column_uv_locked_y",
   "textures": {
-    "end": "mariposa:block/stacked_sequoia_logs_top",
-    "side": "mariposa:block/stacked_sequoia_logs"
+	"end": "mariposa:block/stacked_sequoia_logs_top",
+	"side": "mariposa:block/stacked_sequoia_logs"
   }
 }

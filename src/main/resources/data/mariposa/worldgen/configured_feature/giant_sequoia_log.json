@@ -1,8 +1,8 @@
 {
   "type": "mariposa:giant_sequoia_log",
   "config": {
-    "sequoia_structures": [
-      "mariposa:fallen_sequoia_log"
-    ]
+	"sequoia_structures": [
+	  "mariposa:fallen_sequoia_log"
+	]
   }
 }

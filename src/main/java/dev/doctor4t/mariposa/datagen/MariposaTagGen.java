@@ -21,13 +21,13 @@ import net.minecraft.world.biome.Biome;
 import java.util.concurrent.CompletableFuture;
 
 public class MariposaTagGen {
-    public static class MariposaBlockTagGen extends FabricTagProvider.BlockTagProvider {
-        public MariposaBlockTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-            super(output, registriesFuture);
-        }
+	public static class MariposaBlockTagGen extends FabricTagProvider.BlockTagProvider {
+		public MariposaBlockTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+			super(output, registriesFuture);
+		}
 
-        @Override
-        protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+		@Override
+		protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
 			valueLookupBuilder(MariposaTags.SEQUOIA_LOGS).add(
 					MariposaBlocks.SEQUOIA_LOG,
 					MariposaBlocks.SEQUOIA_WOOD,
@@ -81,31 +81,31 @@ public class MariposaTagGen {
 
 			valueLookupBuilder(BlockTags.HOE_MINEABLE)
 					.add(MariposaBlocks.SEQUOIA_LEAVES);
-        }
-    }
+		}
+	}
 
-    public static class MariposaItemTagGen extends FabricTagProvider.ItemTagProvider {
-        public MariposaItemTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-            super(output, registriesFuture);
-        }
+	public static class MariposaItemTagGen extends FabricTagProvider.ItemTagProvider {
+		public MariposaItemTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+			super(output, registriesFuture);
+		}
 
-        @Override
-        protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-            valueLookupBuilder(ItemTags.PLANKS)
-                    .add(MariposaBlocks.SEQUOIA_PLANKS.asItem());
-            valueLookupBuilder(MariposaTags.SEQUOIA_LOGS_ITEM).add(
-                    MariposaBlocks.SEQUOIA_LOG.asItem(),
-                    MariposaBlocks.SEQUOIA_WOOD.asItem(),
-                    MariposaBlocks.STRIPPED_SEQUOIA_LOG.asItem(),
-                    MariposaBlocks.STRIPPED_SEQUOIA_WOOD.asItem(),
-                    MariposaBlocks.STACKED_SEQUOIA_LOGS.asItem());
+		@Override
+		protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+			valueLookupBuilder(ItemTags.PLANKS)
+					.add(MariposaBlocks.SEQUOIA_PLANKS.asItem());
+			valueLookupBuilder(MariposaTags.SEQUOIA_LOGS_ITEM).add(
+					MariposaBlocks.SEQUOIA_LOG.asItem(),
+					MariposaBlocks.SEQUOIA_WOOD.asItem(),
+					MariposaBlocks.STRIPPED_SEQUOIA_LOG.asItem(),
+					MariposaBlocks.STRIPPED_SEQUOIA_WOOD.asItem(),
+					MariposaBlocks.STACKED_SEQUOIA_LOGS.asItem());
 
 			valueLookupBuilder(ItemTags.BOATS)
 					.add(MariposaItems.SEQUOIA_BOAT);
 			valueLookupBuilder(ItemTags.CHEST_BOATS)
 					.add(MariposaItems.SEQUOIA_CHEST_BOAT);
-        }
-    }
+		}
+	}
 
 	public static class MariposaEntityTypeTagGen extends FabricTagProvider.EntityTypeTagProvider {
 		public MariposaEntityTypeTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
@@ -123,36 +123,36 @@ public class MariposaTagGen {
 		}
 	}
 
-    public static class MariposaBiomeTagGen extends FabricTagProvider<Biome> {
-        public MariposaBiomeTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-            super(output, RegistryKeys.BIOME, registriesFuture);
-        }
+	public static class MariposaBiomeTagGen extends FabricTagProvider<Biome> {
+		public MariposaBiomeTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+			super(output, RegistryKeys.BIOME, registriesFuture);
+		}
 
-        @Override
-        protected void configure(RegistryWrapper.WrapperLookup arg) {
-            builder(ConventionalBiomeTags.IS_FOREST)
-                    .addOptional(MariposaBiomes.REDWOOD_FOREST)
-                    .addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-            ;
-            builder(ConventionalBiomeTags.IS_OVERWORLD)
-                    .addOptional(MariposaBiomes.REDWOOD_FOREST)
-                    .addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-            ;
-            builder(ConventionalBiomeTags.IS_TEMPERATE_OVERWORLD)
-                    .addOptional(MariposaBiomes.REDWOOD_FOREST)
-            ;
-            builder(ConventionalBiomeTags.IS_COLD_OVERWORLD)
-                    .addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-            ;
-            builder(ConventionalBiomeTags.IS_SNOWY)
-                    .addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-            ;
-            builder(BiomeTags.SPAWNS_SNOW_FOXES)
-                    .addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-            ;
-            builder(BiomeTags.SPAWNS_WHITE_RABBITS)
-                    .addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-            ;
-        }
-    }
+		@Override
+		protected void configure(RegistryWrapper.WrapperLookup arg) {
+			builder(ConventionalBiomeTags.IS_FOREST)
+					.addOptional(MariposaBiomes.REDWOOD_FOREST)
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+			;
+			builder(ConventionalBiomeTags.IS_OVERWORLD)
+					.addOptional(MariposaBiomes.REDWOOD_FOREST)
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+			;
+			builder(ConventionalBiomeTags.IS_TEMPERATE_OVERWORLD)
+					.addOptional(MariposaBiomes.REDWOOD_FOREST)
+			;
+			builder(ConventionalBiomeTags.IS_COLD_OVERWORLD)
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+			;
+			builder(ConventionalBiomeTags.IS_SNOWY)
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+			;
+			builder(BiomeTags.SPAWNS_SNOW_FOXES)
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+			;
+			builder(BiomeTags.SPAWNS_WHITE_RABBITS)
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+			;
+		}
+	}
 }

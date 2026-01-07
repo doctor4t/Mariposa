@@ -9,12 +9,12 @@ import net.minecraft.registry.RegistryWrapper;
 import java.util.concurrent.CompletableFuture;
 
 public class MariposaLangGen extends FabricLanguageProvider {
-    protected MariposaLangGen(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
-        super(dataOutput, registryLookup);
-    }
+	protected MariposaLangGen(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+		super(dataOutput, registryLookup);
+	}
 
-    @Override
-    public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
+	@Override
+	public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
 		translationBuilder.add(MariposaBlocks.SEQUOIA_SAPLING, "Sequoia Sapling");
 		translationBuilder.add(MariposaBlocks.POTTED_SEQUOIA_SAPLING, "Potted Sequoia Sapling");
 		translationBuilder.add(MariposaBlocks.SEQUOIA_LOG, "Sequoia Log");
@@ -37,6 +37,6 @@ public class MariposaLangGen extends FabricLanguageProvider {
 		translationBuilder.add(MariposaItems.SEQUOIA_BOAT, "Sequoia Boat");
 		translationBuilder.add(MariposaItems.SEQUOIA_CHEST_BOAT, "Sequoia Chest Boat");
 
-        translationBuilder.add("tag.item.mariposa.sequoia_logs", "Sequoia Logs");
-    }
+		translationBuilder.add("tag.item.mariposa.sequoia_logs", "Sequoia Logs");
+	}
 }

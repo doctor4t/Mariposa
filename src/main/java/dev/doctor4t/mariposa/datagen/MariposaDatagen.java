@@ -6,26 +6,25 @@ import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 
 public class MariposaDatagen implements DataGeneratorEntrypoint {
+	@Override
+	public void onInitializeDataGenerator(FabricDataGenerator dataGenerator) {
+		FabricDataGenerator.Pack pack = dataGenerator.createPack();
+		pack.addProvider(MariposaModelGen::new);
 
-    @Override
-    public void onInitializeDataGenerator(FabricDataGenerator dataGenerator) {
-        FabricDataGenerator.Pack pack = dataGenerator.createPack();
-        pack.addProvider(MariposaModelGen::new);
-
-        pack.addProvider(MariposaTagGen.MariposaBlockTagGen::new);
+		pack.addProvider(MariposaTagGen.MariposaBlockTagGen::new);
 		pack.addProvider(MariposaTagGen.MariposaItemTagGen::new);
 		pack.addProvider(MariposaTagGen.MariposaEntityTypeTagGen::new);
-        pack.addProvider(MariposaTagGen.MariposaBiomeTagGen::new);
+		pack.addProvider(MariposaTagGen.MariposaBiomeTagGen::new);
 
-        pack.addProvider(MariposaLangGen::new);
-        pack.addProvider(MariposaBlockLootTableGen::new);
-        pack.addProvider(MariposaRecipeGen::new);
+		pack.addProvider(MariposaLangGen::new);
+		pack.addProvider(MariposaBlockLootTableGen::new);
+		pack.addProvider(MariposaRecipeGen::new);
 
-        pack.addProvider(MariposaConfiguredFeatures::new);
-    }
+		pack.addProvider(MariposaConfiguredFeatures::new);
+	}
 
-    @Override
-    public void buildRegistry(RegistryBuilder registryBuilder) {
-        registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, MariposaConfiguredFeatures::bootstrap);
-    }
+	@Override
+	public void buildRegistry(RegistryBuilder registryBuilder) {
+		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, MariposaConfiguredFeatures::bootstrap);
+	}
 }

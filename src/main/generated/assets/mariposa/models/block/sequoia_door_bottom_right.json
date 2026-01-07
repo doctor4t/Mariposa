@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/door_bottom_right",
   "textures": {
-    "bottom": "mariposa:block/sequoia_door_bottom",
-    "top": "mariposa:block/sequoia_door_top"
+	"bottom": "mariposa:block/sequoia_door_bottom",
+	"top": "mariposa:block/sequoia_door_top"
   }
 }

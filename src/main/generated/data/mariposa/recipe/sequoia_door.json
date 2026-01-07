@@ -3,15 +3,15 @@
   "category": "redstone",
   "group": "wooden_door",
   "key": {
-    "#": "mariposa:sequoia_planks"
+	"#": "mariposa:sequoia_planks"
   },
   "pattern": [
-    "##",
-    "##",
-    "##"
+	"##",
+	"##",
+	"##"
   ],
   "result": {
-    "count": 3,
-    "id": "mariposa:sequoia_door"
+	"count": 3,
+	"id": "mariposa:sequoia_door"
   }
 }

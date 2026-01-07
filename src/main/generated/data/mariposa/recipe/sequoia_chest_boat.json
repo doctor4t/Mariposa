@@ -3,11 +3,11 @@
   "category": "misc",
   "group": "chest_boat",
   "ingredients": [
-    "minecraft:chest",
-    "mariposa:sequoia_boat"
+	"minecraft:chest",
+	"mariposa:sequoia_boat"
   ],
   "result": {
-    "count": 1,
-    "id": "mariposa:sequoia_chest_boat"
+	"count": 1,
+	"id": "mariposa:sequoia_chest_boat"
   }
 }

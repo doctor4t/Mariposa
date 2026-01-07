@@ -23,26 +23,26 @@ import static net.minecraft.block.AbstractBlock.Settings.copy;
 import static net.minecraft.block.AbstractBlock.Settings.create;
 
 public interface MariposaBlocks {
-    BlockSetType SEQUOIA_BLOCK_SET_TYPE = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Mariposa.id("sequoia"));
-    WoodType SEQUOIA_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).register(Mariposa.id("sequoia"), SEQUOIA_BLOCK_SET_TYPE);
-    SaplingGenerator SEQUOIA_SAPLING_GENERATOR = new SaplingGenerator(
-            "sequoia",
-            0.5F,
-            Optional.of(MariposaConfiguredFeatures.SEQUOIA),
-            Optional.empty(),
-            Optional.empty(),
-            Optional.empty(),
-            Optional.empty(),
-            Optional.empty()
-    );
+	BlockSetType SEQUOIA_BLOCK_SET_TYPE = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Mariposa.id("sequoia"));
+	WoodType SEQUOIA_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).register(Mariposa.id("sequoia"), SEQUOIA_BLOCK_SET_TYPE);
+	SaplingGenerator SEQUOIA_SAPLING_GENERATOR = new SaplingGenerator(
+			"sequoia",
+			0.5F,
+			Optional.of(MariposaConfiguredFeatures.SEQUOIA),
+			Optional.empty(),
+			Optional.empty(),
+			Optional.empty(),
+			Optional.empty(),
+			Optional.empty()
+	);
 
 	Block SEQUOIA_SAPLING = registerWithItem("sequoia_sapling", settings -> new SaplingBlock(SEQUOIA_SAPLING_GENERATOR, settings), create()
-					.mapColor(MapColor.DARK_GREEN)
-					.noCollision()
-					.ticksRandomly()
-					.breakInstantly()
-					.sounds(BlockSoundGroup.GRASS)
-					.pistonBehavior(PistonBehavior.DESTROY)
+			.mapColor(MapColor.DARK_GREEN)
+			.noCollision()
+			.ticksRandomly()
+			.breakInstantly()
+			.sounds(BlockSoundGroup.GRASS)
+			.pistonBehavior(PistonBehavior.DESTROY)
 	);
 	Block POTTED_SEQUOIA_SAPLING = register("potted_sequoia_sapling", settings -> new FlowerPotBlock(SEQUOIA_SAPLING, settings), Blocks.createFlowerPotSettings());
 	Block SEQUOIA_LOG = registerWithItem("sequoia_log", PillarBlock::new, Blocks.createLogSettings(MapColor.RED, MapColor.BROWN, BlockSoundGroup.WOOD));
@@ -67,7 +67,7 @@ public interface MariposaBlocks {
 			.strength(2, 3)
 			.sounds(BlockSoundGroup.WOOD)
 			.burnable()
-    );
+	);
 	Block SEQUOIA_STAIRS = registerWithItem("sequoia_stairs", settings -> new StairsBlock(SEQUOIA_PLANKS.getDefaultState(), settings), copy(SEQUOIA_PLANKS));
 	Block SEQUOIA_SLAB = registerWithItem("sequoia_slab", SlabBlock::new, create()
 			.mapColor(MapColor.RED)
@@ -116,15 +116,15 @@ public interface MariposaBlocks {
 			.pistonBehavior(PistonBehavior.DESTROY)
 	);
 	Block SEQUOIA_BUTTON = registerWithItem("sequoia_button", settings -> new ButtonBlock(SEQUOIA_BLOCK_SET_TYPE, 30, settings), Blocks.createButtonSettings());
-    Block SEQUOIA_SIGN = register("sequoia_sign", settings -> new SignBlock(SEQUOIA_WOOD_TYPE, settings), create()
+	Block SEQUOIA_SIGN = register("sequoia_sign", settings -> new SignBlock(SEQUOIA_WOOD_TYPE, settings), create()
 			.mapColor(SEQUOIA_LOG.getDefaultMapColor())
 			.solid()
 			.instrument(NoteBlockInstrument.BASS)
 			.noCollision()
 			.strength(1)
 			.burnable()
-    );
-    Block SEQUOIA_WALL_SIGN = register("sequoia_wall_sign", settings -> new WallSignBlock(SEQUOIA_WOOD_TYPE, settings), create()
+	);
+	Block SEQUOIA_WALL_SIGN = register("sequoia_wall_sign", settings -> new WallSignBlock(SEQUOIA_WOOD_TYPE, settings), create()
 			.mapColor(SEQUOIA_LOG.getDefaultMapColor())
 			.solid()
 			.instrument(NoteBlockInstrument.BASS)
@@ -132,16 +132,16 @@ public interface MariposaBlocks {
 			.strength(1)
 			.lootTable(SEQUOIA_SIGN.getLootTableKey())
 			.burnable()
-    );
-    Block SEQUOIA_HANGING_SIGN = register("sequoia_hanging_sign", settings -> new HangingSignBlock(SEQUOIA_WOOD_TYPE, settings), create()
+	);
+	Block SEQUOIA_HANGING_SIGN = register("sequoia_hanging_sign", settings -> new HangingSignBlock(SEQUOIA_WOOD_TYPE, settings), create()
 			.mapColor(SEQUOIA_LOG.getDefaultMapColor())
 			.solid()
 			.instrument(NoteBlockInstrument.BASS)
 			.noCollision()
 			.strength(1)
 			.burnable()
-    );
-    Block SEQUOIA_WALL_HANGING_SIGN = register("sequoia_wall_hanging_sign", settings -> new WallHangingSignBlock(SEQUOIA_WOOD_TYPE, settings), create()
+	);
+	Block SEQUOIA_WALL_HANGING_SIGN = register("sequoia_wall_hanging_sign", settings -> new WallHangingSignBlock(SEQUOIA_WOOD_TYPE, settings), create()
 			.mapColor(MapColor.OAK_TAN)
 			.solid()
 			.instrument(NoteBlockInstrument.BASS)
@@ -149,24 +149,24 @@ public interface MariposaBlocks {
 			.strength(1)
 			.lootTable(SEQUOIA_HANGING_SIGN.getLootTableKey())
 			.burnable()
-    );
+	);
 
-    static Block register(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
-        return Blocks.register(RegistryKey.of(RegistryKeys.BLOCK, Mariposa.id(name)), factory, settings);
-    }
+	static Block register(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
+		return Blocks.register(RegistryKey.of(RegistryKeys.BLOCK, Mariposa.id(name)), factory, settings);
+	}
 
-    static Block registerWithItem(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
-        Block block = register(name, factory, settings);
-        MariposaItems.register(name, itemSettings -> new BlockItem(block, itemSettings), new Item.Settings().useBlockPrefixedTranslationKey());
-        return block;
-    }
+	static Block registerWithItem(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
+		Block block = register(name, factory, settings);
+		MariposaItems.register(name, itemSettings -> new BlockItem(block, itemSettings), new Item.Settings().useBlockPrefixedTranslationKey());
+		return block;
+	}
 
-    static void initialize() {
-        StrippableBlockRegistry.register(MariposaBlocks.SEQUOIA_WOOD, MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
-        StrippableBlockRegistry.register(MariposaBlocks.SEQUOIA_LOG, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
-        BlockEntityType.SIGN.addSupportedBlock(MariposaBlocks.SEQUOIA_SIGN);
-        BlockEntityType.SIGN.addSupportedBlock(MariposaBlocks.SEQUOIA_WALL_SIGN);
-        BlockEntityType.HANGING_SIGN.addSupportedBlock(MariposaBlocks.SEQUOIA_HANGING_SIGN);
-        BlockEntityType.HANGING_SIGN.addSupportedBlock(MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN);
-    }
+	static void initialize() {
+		StrippableBlockRegistry.register(MariposaBlocks.SEQUOIA_WOOD, MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
+		StrippableBlockRegistry.register(MariposaBlocks.SEQUOIA_LOG, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
+		BlockEntityType.SIGN.addSupportedBlock(MariposaBlocks.SEQUOIA_SIGN);
+		BlockEntityType.SIGN.addSupportedBlock(MariposaBlocks.SEQUOIA_WALL_SIGN);
+		BlockEntityType.HANGING_SIGN.addSupportedBlock(MariposaBlocks.SEQUOIA_HANGING_SIGN);
+		BlockEntityType.HANGING_SIGN.addSupportedBlock(MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN);
+	}
 }

@@ -1,8 +1,8 @@
 {
   "values": [
-    {
-      "id": "mariposa:snowy_redwood_forest",
-      "required": false
-    }
+	{
+	  "id": "mariposa:snowy_redwood_forest",
+	  "required": false
+	}
   ]
 }

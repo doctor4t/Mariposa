@@ -1,7 +1,7 @@
 {
   "variants": {
-    "": {
-      "model": "mariposa:block/sequoia_sign"
-    }
+	"": {
+	  "model": "mariposa:block/sequoia_sign"
+	}
   }
 }

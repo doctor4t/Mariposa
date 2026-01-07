@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column_horizontal",
   "textures": {
-    "end": "mariposa:block/sequoia_log_top",
-    "side": "mariposa:block/sequoia_log"
+	"end": "mariposa:block/sequoia_log_top",
+	"side": "mariposa:block/sequoia_log"
   }
 }

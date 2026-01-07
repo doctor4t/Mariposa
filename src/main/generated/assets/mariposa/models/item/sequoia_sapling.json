@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mariposa:block/sequoia_sapling"
+	"layer0": "mariposa:block/sequoia_sapling"
   }
 }

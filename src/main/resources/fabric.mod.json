@@ -1,39 +1,39 @@
 {
-	"schemaVersion": 1,
-	"id": "mariposa",
-	"version": "${version}",
-	"name": "Mariposa",
-	"description": "",
-	"authors": [
-		"doctor4t",
-		"Luxintrus"
+  "schemaVersion": 1,
+  "id": "mariposa",
+  "version": "${version}",
+  "name": "Mariposa",
+  "description": "",
+  "authors": [
+	"doctor4t",
+	"Luxintrus"
+  ],
+  "contact": {
+	"homepage": "https://modrinth.com/mod/mariposa",
+	"sources": "https://github.com/doctor4t/Mariposa"
+  },
+  "license": "ARR",
+  "icon": "assets/mariposa/icon.png",
+  "environment": "*",
+  "entrypoints": {
+	"main": [
+	  "dev.doctor4t.mariposa.Mariposa"
 	],
-	"contact": {
-		"homepage": "https://modrinth.com/mod/mariposa",
-		"sources": "https://github.com/doctor4t/Mariposa"
-	},
-	"license": "ARR",
-	"icon": "assets/mariposa/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"dev.doctor4t.mariposa.Mariposa"
-		],
-		"client": [
-			"dev.doctor4t.mariposa.client.MariposaClient"
-		],
-		"fabric-datagen": [
-			"dev.doctor4t.mariposa.datagen.MariposaDatagen"
-		],
-		"terrablender": [
-			"dev.doctor4t.mariposa.Mariposa"
-		]
-	},
-	"depends": {
-		"fabricloader": "*",
-		"minecraft": "~1.21.10",
-		"java": ">=21",
-		"fabric-api": "*",
-		"terrablender": "*"
-	}
+	"client": [
+	  "dev.doctor4t.mariposa.client.MariposaClient"
+	],
+	"fabric-datagen": [
+	  "dev.doctor4t.mariposa.datagen.MariposaDatagen"
+	],
+	"terrablender": [
+	  "dev.doctor4t.mariposa.Mariposa"
+	]
+  },
+  "depends": {
+	"fabricloader": "*",
+	"minecraft": "~1.21.10",
+	"java": ">=21",
+	"fabric-api": "*",
+	"terrablender": "*"
+  }
 }

@@ -8,12 +8,12 @@ import net.minecraft.world.gen.feature.FeatureConfig;
 import java.util.List;
 
 public record GiantSequoiaLogFeatureConfig(
-        List<Identifier> sequoiaStructures
+		List<Identifier> sequoiaStructures
 ) implements FeatureConfig {
-    public static final Codec<GiantSequoiaLogFeatureConfig> CODEC = RecordCodecBuilder.create(
-            instance -> instance.group(
-                            Identifier.CODEC.listOf().fieldOf("sequoia_structures").forGetter(config -> config.sequoiaStructures)
-                    )
-                    .apply(instance, GiantSequoiaLogFeatureConfig::new)
-    );
+	public static final Codec<GiantSequoiaLogFeatureConfig> CODEC = RecordCodecBuilder.create(
+			instance -> instance.group(
+							Identifier.CODEC.listOf().fieldOf("sequoia_structures").forGetter(config -> config.sequoiaStructures)
+					)
+					.apply(instance, GiantSequoiaLogFeatureConfig::new)
+	);
 }

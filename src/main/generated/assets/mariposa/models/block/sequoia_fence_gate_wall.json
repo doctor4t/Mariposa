@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_fence_gate_wall",
   "textures": {
-    "texture": "mariposa:block/sequoia_planks"
+	"texture": "mariposa:block/sequoia_planks"
   }
 }

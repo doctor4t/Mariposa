@@ -1,6 +1,6 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "mariposa:block/sequoia_button_inventory"
+	"type": "minecraft:model",
+	"model": "mariposa:block/sequoia_button_inventory"
   }
 }

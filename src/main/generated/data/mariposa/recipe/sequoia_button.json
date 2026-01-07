@@ -3,10 +3,10 @@
   "category": "redstone",
   "group": "wooden_button",
   "ingredients": [
-    "mariposa:sequoia_planks"
+	"mariposa:sequoia_planks"
   ],
   "result": {
-    "count": 1,
-    "id": "mariposa:sequoia_button"
+	"count": 1,
+	"id": "mariposa:sequoia_button"
   }
 }

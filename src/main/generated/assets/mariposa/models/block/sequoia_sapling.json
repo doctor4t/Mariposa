@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "mariposa:block/sequoia_sapling"
+	"cross": "mariposa:block/sequoia_sapling"
   }
 }

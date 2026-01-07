@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mariposa:item/sequoia_hanging_sign"
+	"layer0": "mariposa:item/sequoia_hanging_sign"
   }
 }

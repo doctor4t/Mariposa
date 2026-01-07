@@ -1,13 +1,13 @@
 {
   "variants": {
-    "type=bottom": {
-      "model": "mariposa:block/sequoia_slab"
-    },
-    "type=double": {
-      "model": "mariposa:block/sequoia_planks"
-    },
-    "type=top": {
-      "model": "mariposa:block/sequoia_slab_top"
-    }
+	"type=bottom": {
+	  "model": "mariposa:block/sequoia_slab"
+	},
+	"type=double": {
+	  "model": "mariposa:block/sequoia_planks"
+	},
+	"type=top": {
+	  "model": "mariposa:block/sequoia_slab_top"
+	}
   }
 }

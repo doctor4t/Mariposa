@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/fence_post",
   "textures": {
-    "texture": "mariposa:block/sequoia_planks"
+	"texture": "mariposa:block/sequoia_planks"
   }
 }

@@ -30,15 +30,15 @@ import terrablender.api.RegionType;
 import java.util.function.Consumer;
 
 public class MariposaRegion extends Region {
-    public MariposaRegion(Identifier name, int weight) {
-        super(name, RegionType.OVERWORLD, weight);
-    }
+	public MariposaRegion(Identifier name, int weight) {
+		super(name, RegionType.OVERWORLD, weight);
+	}
 
-    @Override
-    public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
-        this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
-            builder.replaceBiome(BiomeKeys.TAIGA, MariposaBiomes.REDWOOD_FOREST);
-            builder.replaceBiome(BiomeKeys.SNOWY_TAIGA, MariposaBiomes.SNOWY_REDWOOD_FOREST);
-        });
-    }
+	@Override
+	public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
+		this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
+			builder.replaceBiome(BiomeKeys.TAIGA, MariposaBiomes.REDWOOD_FOREST);
+			builder.replaceBiome(BiomeKeys.SNOWY_TAIGA, MariposaBiomes.SNOWY_REDWOOD_FOREST);
+		});
+	}
 }

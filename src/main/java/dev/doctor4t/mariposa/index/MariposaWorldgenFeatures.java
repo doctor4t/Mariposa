@@ -11,12 +11,12 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
 
 public interface MariposaWorldgenFeatures {
-    static void create(String name, Feature<? extends FeatureConfig> feature) {
-        Registry.register(Registries.FEATURE, Mariposa.id(name), feature);
-    }
+	static void create(String name, Feature<? extends FeatureConfig> feature) {
+		Registry.register(Registries.FEATURE, Mariposa.id(name), feature);
+	}
 
-    static void initialize() {
-        create("giant_sequoia_tree", new GiantSequoiaTreeFeature(GiantSequoiaTreeFeatureConfig.CODEC));
-        create("giant_sequoia_log", new GiantSequoiaLogFeature(GiantSequoiaLogFeatureConfig.CODEC));
-    }
+	static void initialize() {
+		create("giant_sequoia_tree", new GiantSequoiaTreeFeature(GiantSequoiaTreeFeatureConfig.CODEC));
+		create("giant_sequoia_log", new GiantSequoiaLogFeature(GiantSequoiaLogFeatureConfig.CODEC));
+	}
 }

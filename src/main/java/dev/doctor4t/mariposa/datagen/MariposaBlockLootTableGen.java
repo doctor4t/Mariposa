@@ -8,12 +8,12 @@ import net.minecraft.registry.RegistryWrapper;
 import java.util.concurrent.CompletableFuture;
 
 public class MariposaBlockLootTableGen extends FabricBlockLootTableProvider {
-    protected MariposaBlockLootTableGen(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
-        super(dataOutput, registryLookup);
-    }
+	protected MariposaBlockLootTableGen(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+		super(dataOutput, registryLookup);
+	}
 
-    @Override
-    public void generate() {
+	@Override
+	public void generate() {
 		addDrop(MariposaBlocks.SEQUOIA_SAPLING);
 		addPottedPlantDrops(MariposaBlocks.POTTED_SEQUOIA_SAPLING);
 		addDrop(MariposaBlocks.SEQUOIA_LOG);
@@ -33,5 +33,5 @@ public class MariposaBlockLootTableGen extends FabricBlockLootTableProvider {
 		addDrop(MariposaBlocks.SEQUOIA_BUTTON);
 		addDrop(MariposaBlocks.SEQUOIA_SIGN);
 		addDrop(MariposaBlocks.SEQUOIA_HANGING_SIGN);
-    }
+	}
 }

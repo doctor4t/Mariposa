@@ -3,16 +3,16 @@
   "category": "misc",
   "group": "hanging_sign",
   "key": {
-    "#": "mariposa:stripped_sequoia_log",
-    "X": "minecraft:iron_chain"
+	"#": "mariposa:stripped_sequoia_log",
+	"X": "minecraft:iron_chain"
   },
   "pattern": [
-    "X X",
-    "###",
-    "###"
+	"X X",
+	"###",
+	"###"
   ],
   "result": {
-    "count": 6,
-    "id": "mariposa:sequoia_hanging_sign"
+	"count": 6,
+	"id": "mariposa:sequoia_hanging_sign"
   }
 }

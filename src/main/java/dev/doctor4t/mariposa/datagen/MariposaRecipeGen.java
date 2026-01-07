@@ -17,15 +17,15 @@ import net.minecraft.resource.featuretoggle.FeatureSet;
 import java.util.concurrent.CompletableFuture;
 
 public class MariposaRecipeGen extends FabricRecipeProvider {
-    public MariposaRecipeGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-        super(output, registriesFuture);
-    }
+	public MariposaRecipeGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+		super(output, registriesFuture);
+	}
 
-    @Override
-    protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup wrapperLookup, RecipeExporter recipeExporter) {
-        return new RecipeGenerator(wrapperLookup, recipeExporter) {
-            @Override
-            public void generate() {
+	@Override
+	protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup wrapperLookup, RecipeExporter recipeExporter) {
+		return new RecipeGenerator(wrapperLookup, recipeExporter) {
+			@Override
+			public void generate() {
 				offerBarkBlockRecipe(MariposaBlocks.SEQUOIA_WOOD, MariposaBlocks.SEQUOIA_LOG);
 				offerBarkBlockRecipe(MariposaBlocks.STRIPPED_SEQUOIA_WOOD, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
 				offerStackedBlockRecipe(this, recipeExporter, MariposaBlocks.STACKED_SEQUOIA_LOGS, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
@@ -34,22 +34,22 @@ public class MariposaRecipeGen extends FabricRecipeProvider {
 				offerHangingSignRecipe(MariposaItems.SEQUOIA_HANGING_SIGN, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
 				offerBoatRecipe(MariposaItems.SEQUOIA_BOAT, MariposaBlocks.SEQUOIA_PLANKS);
 				offerChestBoatRecipe(MariposaItems.SEQUOIA_CHEST_BOAT, MariposaItems.SEQUOIA_BOAT);
-            }
-        };
-    }
+			}
+		};
+	}
 
-    public static void offerStackedBlockRecipe(RecipeGenerator generator, RecipeExporter exporter, ItemConvertible output, ItemConvertible input) {
-        generator.createShaped(RecipeCategory.BUILDING_BLOCKS, output, 6)
-                .input('#', input)
-                .pattern("###")
-                .pattern("###")
-                .group("stacked")
-                .criterion("has_log", generator.conditionsFromItem(input))
-                .offerTo(exporter);
-    }
+	public static void offerStackedBlockRecipe(RecipeGenerator generator, RecipeExporter exporter, ItemConvertible output, ItemConvertible input) {
+		generator.createShaped(RecipeCategory.BUILDING_BLOCKS, output, 6)
+				.input('#', input)
+				.pattern("###")
+				.pattern("###")
+				.group("stacked")
+				.criterion("has_log", generator.conditionsFromItem(input))
+				.offerTo(exporter);
+	}
 
-    @Override
-    public String getName() {
-        return Mariposa.MOD_ID;
-    }
+	@Override
+	public String getName() {
+		return Mariposa.MOD_ID;
+	}
 }

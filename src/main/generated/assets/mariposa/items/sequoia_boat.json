@@ -1,6 +1,6 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "mariposa:item/sequoia_boat"
+	"type": "minecraft:model",
+	"model": "mariposa:item/sequoia_boat"
   }
 }
