@@ -81,9 +81,6 @@ public class MariposaTagGen {
 					.add(MariposaBlocks.SEQUOIA_HANGING_SIGN);
 			valueLookupBuilder(BlockTags.WALL_HANGING_SIGNS)
 					.add(MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN);
-
-			valueLookupBuilder(BlockTags.HOE_MINEABLE)
-					.add(MariposaBlocks.SEQUOIA_LEAVES);
 		}
 	}
 
