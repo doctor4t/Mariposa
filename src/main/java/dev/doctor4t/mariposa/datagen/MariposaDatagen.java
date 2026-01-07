@@ -11,8 +11,8 @@ public class MariposaDatagen implements DataGeneratorEntrypoint {
 		FabricDataGenerator.Pack pack = dataGenerator.createPack();
 		pack.addProvider(MariposaModelGen::new);
 
-		pack.addProvider(MariposaTagGen.MariposaBlockTagGen::new);
-		pack.addProvider(MariposaTagGen.MariposaItemTagGen::new);
+		MariposaTagGen.MariposaBlockTagGen blockGen = pack.addProvider(MariposaTagGen.MariposaBlockTagGen::new);
+		pack.addProvider((fabricDataOutput, completableFuture) -> new MariposaTagGen.MariposaItemTagGen(fabricDataOutput, completableFuture, blockGen));
 		pack.addProvider(MariposaTagGen.MariposaEntityTypeTagGen::new);
 		pack.addProvider(MariposaTagGen.MariposaBiomeTagGen::new);
 
