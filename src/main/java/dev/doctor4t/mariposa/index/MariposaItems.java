@@ -53,6 +53,7 @@ public interface MariposaItems {
 	}
 
 	private static void addFunctionalEntries(FabricItemGroupEntries entries) {
+		entries.addAfter(Blocks.CHERRY_SHELF, MariposaBlocks.SEQUOIA_SHELF);
 		entries.addAfter(Blocks.CHERRY_HANGING_SIGN, MariposaItems.SEQUOIA_SIGN, MariposaItems.SEQUOIA_HANGING_SIGN);
 	}
 

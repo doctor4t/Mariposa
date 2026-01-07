@@ -116,6 +116,12 @@ public interface MariposaBlocks {
 			.pistonBehavior(PistonBehavior.DESTROY)
 	);
 	Block SEQUOIA_BUTTON = registerWithItem("sequoia_button", settings -> new ButtonBlock(SEQUOIA_BLOCK_SET_TYPE, 30, settings), Blocks.createButtonSettings());
+	Block SEQUOIA_SHELF = registerWithItem("sequoia_shelf", ShelfBlock::new, create()
+			.mapColor(SEQUOIA_PLANKS.getDefaultMapColor())
+			.instrument(NoteBlockInstrument.BASS)
+			.sounds(BlockSoundGroup.SHELF)
+			.strength(2, 3)
+			.burnable());
 	Block SEQUOIA_SIGN = register("sequoia_sign", settings -> new SignBlock(SEQUOIA_WOOD_TYPE, settings), create()
 			.mapColor(SEQUOIA_LOG.getDefaultMapColor())
 			.solid()
@@ -164,6 +170,7 @@ public interface MariposaBlocks {
 	static void initialize() {
 		StrippableBlockRegistry.register(MariposaBlocks.SEQUOIA_WOOD, MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
 		StrippableBlockRegistry.register(MariposaBlocks.SEQUOIA_LOG, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
+		BlockEntityType.SHELF.addSupportedBlock(SEQUOIA_SHELF);
 		BlockEntityType.SIGN.addSupportedBlock(MariposaBlocks.SEQUOIA_SIGN);
 		BlockEntityType.SIGN.addSupportedBlock(MariposaBlocks.SEQUOIA_WALL_SIGN);
 		BlockEntityType.HANGING_SIGN.addSupportedBlock(MariposaBlocks.SEQUOIA_HANGING_SIGN);

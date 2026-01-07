@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_shelf_left",
+  "textures": {
+	"all": "mariposa:block/sequoia_shelf",
+	"particle": "mariposa:block/stripped_sequoia_log"
+  }
+}

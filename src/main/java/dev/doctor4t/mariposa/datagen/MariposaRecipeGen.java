@@ -31,6 +31,7 @@ public class MariposaRecipeGen extends FabricRecipeProvider {
 				offerStackedBlockRecipe(this, recipeExporter, MariposaBlocks.STACKED_SEQUOIA_LOGS, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
 				offerPlanksRecipe(MariposaBlocks.SEQUOIA_PLANKS, MariposaTags.SEQUOIA_LOGS_ITEM, 4);
 				generateFamily(MariposaModelGen.SEQUOIA_BLOCK_FAMILY, FeatureSet.of(FeatureFlags.VANILLA));
+				offerShelfRecipe(MariposaBlocks.SEQUOIA_SHELF, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
 				offerHangingSignRecipe(MariposaItems.SEQUOIA_HANGING_SIGN, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
 				offerBoatRecipe(MariposaItems.SEQUOIA_BOAT, MariposaBlocks.SEQUOIA_PLANKS);
 				offerChestBoatRecipe(MariposaItems.SEQUOIA_CHEST_BOAT, MariposaItems.SEQUOIA_BOAT);

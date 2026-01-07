@@ -37,6 +37,7 @@ public class MariposaModelGen extends FabricModelProvider {
 		generator.createLogTexturePool(MariposaBlocks.STACKED_SEQUOIA_LOGS).uvLockedLog(MariposaBlocks.STACKED_SEQUOIA_LOGS);
 		generator.registerSimpleCubeAll(MariposaBlocks.SEQUOIA_LEAVES);
 		generator.registerCubeAllModelTexturePool(SEQUOIA_BLOCK_FAMILY.getBaseBlock()).family(SEQUOIA_BLOCK_FAMILY);
+		generator.registerShelf(MariposaBlocks.SEQUOIA_SHELF, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
 		generator.registerHangingSign(MariposaBlocks.STRIPPED_SEQUOIA_LOG, MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN);
 	}
 

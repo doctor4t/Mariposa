@@ -70,6 +70,8 @@ public class MariposaTagGen {
 					.add(MariposaBlocks.SEQUOIA_PRESSURE_PLATE);
 			valueLookupBuilder(BlockTags.WOODEN_BUTTONS)
 					.add(MariposaBlocks.SEQUOIA_BUTTON);
+			valueLookupBuilder(BlockTags.WOODEN_SHELVES)
+					.add(MariposaBlocks.SEQUOIA_SHELF);
 			valueLookupBuilder(BlockTags.STANDING_SIGNS)
 					.add(MariposaBlocks.SEQUOIA_SIGN);
 			valueLookupBuilder(BlockTags.WALL_SIGNS)

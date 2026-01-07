@@ -31,6 +31,7 @@ public class MariposaBlockLootTableGen extends FabricBlockLootTableProvider {
 		addDrop(MariposaBlocks.SEQUOIA_TRAPDOOR);
 		addDrop(MariposaBlocks.SEQUOIA_PRESSURE_PLATE);
 		addDrop(MariposaBlocks.SEQUOIA_BUTTON);
+		addDrop(MariposaBlocks.SEQUOIA_SHELF);
 		addDrop(MariposaBlocks.SEQUOIA_SIGN);
 		addDrop(MariposaBlocks.SEQUOIA_HANGING_SIGN);
 	}
