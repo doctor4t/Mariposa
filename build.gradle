@@ -19,26 +19,10 @@ chenille {
 }
 
 repositories {
-    mavenLocal()
-
-    // Modrinth
-    exclusiveContent {
-        forRepository {
-            maven {
-                name = "Modrinth"
-                url = "https://api.modrinth.com/maven"
-            }
-        }
-        filter {
-            includeGroup "maven.modrinth"
-        }
+    maven {
+        name = "terrablender"
+        url = "https://maven.minecraftforge.net/"
     }
-
-    // Mod Menu
-    maven { url "https://maven.terraformersmc.com/releases/" }
-
-    // Terrablender
-    maven { url = 'https://maven.minecraftforge.net/' }
 }
 
 fabricApi {
