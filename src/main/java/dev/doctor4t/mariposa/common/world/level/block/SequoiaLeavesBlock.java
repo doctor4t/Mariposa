@@ -13,13 +13,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.TintedParticleLeavesBlock;
 
 public class SequoiaLeavesBlock extends TintedParticleLeavesBlock {
-	public SequoiaLeavesBlock(float leafParticleChance, Properties settings) {
-		super(leafParticleChance, settings);
+	public SequoiaLeavesBlock(float leafParticleChance, Properties properties) {
+		super(leafParticleChance, properties);
 	}
 
 	@Override
-	protected void spawnFallingLeavesParticle(Level world, BlockPos pos, RandomSource random) {
-		ColorParticleOption tintedParticleEffect = ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x4d6533);
-		ParticleUtils.spawnParticleBelow(world, pos, random, tintedParticleEffect);
+	protected void spawnFallingLeavesParticle(Level level, BlockPos pos, RandomSource random) {
+		ColorParticleOption particle = ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x4d6533);
+		ParticleUtils.spawnParticleBelow(level, pos, random, particle);
 	}
 }

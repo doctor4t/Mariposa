@@ -43,14 +43,14 @@ public class MariposaRecipeProvider extends FabricRecipeProvider {
 		};
 	}
 
-	public static void offerStackedBlockRecipe(RecipeProvider provider, RecipeOutput output1, ItemLike output, ItemLike input) {
-		provider.shaped(RecipeCategory.BUILDING_BLOCKS, output, 6)
+	public static void offerStackedBlockRecipe(RecipeProvider provider, RecipeOutput output, ItemLike created, ItemLike input) {
+		provider.shaped(RecipeCategory.BUILDING_BLOCKS, created, 6)
 				.define('#', input)
 				.pattern("###")
 				.pattern("###")
 				.group("stacked")
 				.unlockedBy("has_log", provider.has(input))
-				.save(output1);
+				.save(output);
 	}
 
 	@Override

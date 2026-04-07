@@ -13,6 +13,7 @@ import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.grower.TreeGrower;
@@ -43,7 +44,7 @@ public interface MariposaBlocks {
 			Optional.empty()
 	);
 
-	Block SEQUOIA_SAPLING = registerWithItem("sequoia_sapling", settings -> new SaplingBlock(SEQUOIA_SAPLING_GENERATOR, settings), of()
+	Block SEQUOIA_SAPLING = registerWithItem("sequoia_sapling", properties -> new SaplingBlock(SEQUOIA_SAPLING_GENERATOR, properties), of()
 			.mapColor(MapColor.PLANT)
 			.noCollision()
 			.randomTicks()
@@ -51,7 +52,7 @@ public interface MariposaBlocks {
 			.sound(SoundType.GRASS)
 			.pushReaction(PushReaction.DESTROY)
 	);
-	Block POTTED_SEQUOIA_SAPLING = register("potted_sequoia_sapling", settings -> new FlowerPotBlock(SEQUOIA_SAPLING, settings), Blocks.flowerPotProperties());
+	Block POTTED_SEQUOIA_SAPLING = register("potted_sequoia_sapling", properties -> new FlowerPotBlock(SEQUOIA_SAPLING, properties), Blocks.flowerPotProperties());
 	Block SEQUOIA_LOG = registerWithItem("sequoia_log", RotatedPillarBlock::new, Blocks.logProperties(MapColor.COLOR_RED, MapColor.COLOR_BROWN, SoundType.WOOD));
 	Block SEQUOIA_WOOD = registerWithItem("sequoia_wood", RotatedPillarBlock::new, of()
 			.mapColor(MapColor.COLOR_RED)
@@ -67,7 +68,7 @@ public interface MariposaBlocks {
 			.sound(SoundType.WOOD)
 			.ignitedByLava());
 	Block STACKED_SEQUOIA_LOGS = registerWithItem("stacked_sequoia_logs", RotatedPillarBlock::new, Blocks.logProperties(MapColor.COLOR_RED, MapColor.COLOR_BROWN, SoundType.WOOD));
-	Block SEQUOIA_LEAVES = registerWithItem("sequoia_leaves", settings -> new SequoiaLeavesBlock(0.01F, settings), Blocks.leavesProperties(SoundType.GRASS));
+	Block SEQUOIA_LEAVES = registerWithItem("sequoia_leaves", properties -> new SequoiaLeavesBlock(0.01F, properties), Blocks.leavesProperties(SoundType.GRASS));
 	Block SEQUOIA_PLANKS = registerWithItem("sequoia_planks", Block::new, of()
 			.mapColor(MapColor.COLOR_RED)
 			.instrument(NoteBlockInstrument.BASS)
@@ -75,7 +76,7 @@ public interface MariposaBlocks {
 			.sound(SoundType.WOOD)
 			.ignitedByLava()
 	);
-	Block SEQUOIA_STAIRS = registerWithItem("sequoia_stairs", settings -> new StairBlock(SEQUOIA_PLANKS.defaultBlockState(), settings), ofFullCopy(SEQUOIA_PLANKS));
+	Block SEQUOIA_STAIRS = registerWithItem("sequoia_stairs", properties -> new StairBlock(SEQUOIA_PLANKS.defaultBlockState(), properties), ofFullCopy(SEQUOIA_PLANKS));
 	Block SEQUOIA_SLAB = registerWithItem("sequoia_slab", SlabBlock::new, of()
 			.mapColor(MapColor.COLOR_RED)
 			.instrument(NoteBlockInstrument.BASS)
@@ -90,14 +91,14 @@ public interface MariposaBlocks {
 			.ignitedByLava()
 			.sound(SoundType.WOOD)
 	);
-	Block SEQUOIA_FENCE_GATE = registerWithItem("sequoia_fence_gate", settings -> new FenceGateBlock(SEQUOIA_WOOD_TYPE, settings), of()
+	Block SEQUOIA_FENCE_GATE = registerWithItem("sequoia_fence_gate", properties -> new FenceGateBlock(SEQUOIA_WOOD_TYPE, properties), of()
 			.mapColor(SEQUOIA_PLANKS.defaultMapColor())
 			.forceSolidOn()
 			.instrument(NoteBlockInstrument.BASS)
 			.strength(2, 3)
 			.ignitedByLava()
 	);
-	Block SEQUOIA_DOOR = register("sequoia_door", settings -> new DoorBlock(SEQUOIA_BLOCK_SET_TYPE, settings), of()
+	Block SEQUOIA_DOOR = register("sequoia_door", properties -> new DoorBlock(SEQUOIA_BLOCK_SET_TYPE, properties), of()
 			.mapColor(SEQUOIA_PLANKS.defaultMapColor())
 			.instrument(NoteBlockInstrument.BASS)
 			.strength(3)
@@ -105,7 +106,7 @@ public interface MariposaBlocks {
 			.ignitedByLava()
 			.pushReaction(PushReaction.DESTROY)
 	);
-	Block SEQUOIA_TRAPDOOR = registerWithItem("sequoia_trapdoor", settings -> new TrapDoorBlock(SEQUOIA_BLOCK_SET_TYPE, settings), of()
+	Block SEQUOIA_TRAPDOOR = registerWithItem("sequoia_trapdoor", properties -> new TrapDoorBlock(SEQUOIA_BLOCK_SET_TYPE, properties), of()
 			.mapColor(MapColor.COLOR_RED)
 			.instrument(NoteBlockInstrument.BASS)
 			.strength(3)
@@ -113,7 +114,7 @@ public interface MariposaBlocks {
 			.isValidSpawn(Blocks::never)
 			.ignitedByLava()
 	);
-	Block SEQUOIA_PRESSURE_PLATE = registerWithItem("sequoia_pressure_plate", settings -> new PressurePlateBlock(SEQUOIA_BLOCK_SET_TYPE, settings), of()
+	Block SEQUOIA_PRESSURE_PLATE = registerWithItem("sequoia_pressure_plate", properties -> new PressurePlateBlock(SEQUOIA_BLOCK_SET_TYPE, properties), of()
 			.mapColor(SEQUOIA_PLANKS.defaultMapColor())
 			.forceSolidOn()
 			.instrument(NoteBlockInstrument.BASS)
@@ -122,14 +123,14 @@ public interface MariposaBlocks {
 			.ignitedByLava()
 			.pushReaction(PushReaction.DESTROY)
 	);
-	Block SEQUOIA_BUTTON = registerWithItem("sequoia_button", settings -> new ButtonBlock(SEQUOIA_BLOCK_SET_TYPE, 30, settings), Blocks.buttonProperties());
+	Block SEQUOIA_BUTTON = registerWithItem("sequoia_button", properties -> new ButtonBlock(SEQUOIA_BLOCK_SET_TYPE, 30, properties), Blocks.buttonProperties());
 	Block SEQUOIA_SHELF = registerWithItem("sequoia_shelf", ShelfBlock::new, of()
 			.mapColor(SEQUOIA_PLANKS.defaultMapColor())
 			.instrument(NoteBlockInstrument.BASS)
 			.sound(SoundType.SHELF)
 			.strength(2, 3)
 			.ignitedByLava());
-	Block SEQUOIA_SIGN = register("sequoia_sign", settings -> new StandingSignBlock(SEQUOIA_WOOD_TYPE, settings), of()
+	Block SEQUOIA_SIGN = register("sequoia_sign", properties -> new StandingSignBlock(SEQUOIA_WOOD_TYPE, properties), of()
 			.mapColor(SEQUOIA_LOG.defaultMapColor())
 			.forceSolidOn()
 			.instrument(NoteBlockInstrument.BASS)
@@ -137,7 +138,7 @@ public interface MariposaBlocks {
 			.strength(1)
 			.ignitedByLava()
 	);
-	Block SEQUOIA_WALL_SIGN = register("sequoia_wall_sign", settings -> new WallSignBlock(SEQUOIA_WOOD_TYPE, settings), of()
+	Block SEQUOIA_WALL_SIGN = register("sequoia_wall_sign", properties -> new WallSignBlock(SEQUOIA_WOOD_TYPE, properties), of()
 			.mapColor(SEQUOIA_LOG.defaultMapColor())
 			.forceSolidOn()
 			.instrument(NoteBlockInstrument.BASS)
@@ -146,7 +147,7 @@ public interface MariposaBlocks {
 			.overrideLootTable(SEQUOIA_SIGN.getLootTable())
 			.ignitedByLava()
 	);
-	Block SEQUOIA_HANGING_SIGN = register("sequoia_hanging_sign", settings -> new CeilingHangingSignBlock(SEQUOIA_WOOD_TYPE, settings), of()
+	Block SEQUOIA_HANGING_SIGN = register("sequoia_hanging_sign", properties -> new CeilingHangingSignBlock(SEQUOIA_WOOD_TYPE, properties), of()
 			.mapColor(SEQUOIA_LOG.defaultMapColor())
 			.forceSolidOn()
 			.instrument(NoteBlockInstrument.BASS)
@@ -154,7 +155,7 @@ public interface MariposaBlocks {
 			.strength(1)
 			.ignitedByLava()
 	);
-	Block SEQUOIA_WALL_HANGING_SIGN = register("sequoia_wall_hanging_sign", settings -> new WallHangingSignBlock(SEQUOIA_WOOD_TYPE, settings), of()
+	Block SEQUOIA_WALL_HANGING_SIGN = register("sequoia_wall_hanging_sign", properties -> new WallHangingSignBlock(SEQUOIA_WOOD_TYPE, properties), of()
 			.mapColor(MapColor.WOOD)
 			.forceSolidOn()
 			.instrument(NoteBlockInstrument.BASS)
@@ -164,13 +165,13 @@ public interface MariposaBlocks {
 			.ignitedByLava()
 	);
 
-	static Block register(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings) {
-		return Blocks.register(ResourceKey.create(Registries.BLOCK, Mariposa.id(name)), factory, settings);
+	static Block register(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
+		return Blocks.register(ResourceKey.create(Registries.BLOCK, Mariposa.id(name)), factory, properties);
 	}
 
-	static Block registerWithItem(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings) {
-		Block block = register(name, factory, settings);
-		MariposaItems.register(name, itemSettings -> new BlockItem(block, itemSettings), new net.minecraft.world.item.Item.Properties().useBlockDescriptionPrefix());
+	static Block registerWithItem(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
+		Block block = register(name, factory, properties);
+		MariposaItems.register(name, itemProperties -> new BlockItem(block, itemProperties), new Item.Properties().useBlockDescriptionPrefix());
 		return block;
 	}
 

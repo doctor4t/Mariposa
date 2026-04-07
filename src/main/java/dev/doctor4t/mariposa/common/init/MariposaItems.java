@@ -17,11 +17,11 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.function.Function;
 
 public interface MariposaItems {
-	Item SEQUOIA_DOOR = register("sequoia_door", settings -> new DoubleHighBlockItem(MariposaBlocks.SEQUOIA_DOOR, settings), new Item.Properties().useBlockDescriptionPrefix());
-	Item SEQUOIA_SIGN = register("sequoia_sign", settings -> new SignItem(MariposaBlocks.SEQUOIA_SIGN, MariposaBlocks.SEQUOIA_WALL_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(16));
-	Item SEQUOIA_HANGING_SIGN = register("sequoia_hanging_sign", settings -> new HangingSignItem(MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(16));
-	Item SEQUOIA_BOAT = register("sequoia_boat", settings -> new BoatItem(MariposaEntityTypes.SEQUOIA_BOAT, settings), new Item.Properties().stacksTo(1));
-	Item SEQUOIA_CHEST_BOAT = register("sequoia_chest_boat", settings -> new BoatItem(MariposaEntityTypes.SEQUOIA_CHEST_BOAT, settings), new Item.Properties().stacksTo(1));
+	Item SEQUOIA_DOOR = register("sequoia_door", properties -> new DoubleHighBlockItem(MariposaBlocks.SEQUOIA_DOOR, properties), new Item.Properties().useBlockDescriptionPrefix());
+	Item SEQUOIA_SIGN = register("sequoia_sign", properties -> new SignItem(MariposaBlocks.SEQUOIA_SIGN, MariposaBlocks.SEQUOIA_WALL_SIGN, properties), new Item.Properties().useBlockDescriptionPrefix().stacksTo(16));
+	Item SEQUOIA_HANGING_SIGN = register("sequoia_hanging_sign", properties -> new HangingSignItem(MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN, properties), new Item.Properties().useBlockDescriptionPrefix().stacksTo(16));
+	Item SEQUOIA_BOAT = register("sequoia_boat", properties -> new BoatItem(MariposaEntityTypes.SEQUOIA_BOAT, properties), new Item.Properties().stacksTo(1));
+	Item SEQUOIA_CHEST_BOAT = register("sequoia_chest_boat", properties -> new BoatItem(MariposaEntityTypes.SEQUOIA_CHEST_BOAT, properties), new Item.Properties().stacksTo(1));
 
 	static Item register(String name, Function<Item.Properties, Item> factory, Item.Properties properties) {
 		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Mariposa.id(name));
@@ -33,13 +33,13 @@ public interface MariposaItems {
 	}
 
 	static void initialize() {
-		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(MariposaItems::addBuildingEntries);
-		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(MariposaItems::addNaturalEntries);
-		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(MariposaItems::addFunctionalEntries);
-		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(MariposaItems::addToolsEntries);
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(MariposaItems::addBuilding);
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(MariposaItems::addNatural);
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(MariposaItems::addFunctional);
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(MariposaItems::addTools);
 	}
 
-	private static void addBuildingEntries(FabricCreativeModeTabOutput output) {
+	private static void addBuilding(FabricCreativeModeTabOutput output) {
 		output.insertAfter(Blocks.CHERRY_BUTTON,
 				MariposaBlocks.SEQUOIA_LOG,
 				MariposaBlocks.SEQUOIA_WOOD,
@@ -57,18 +57,18 @@ public interface MariposaItems {
 				MariposaBlocks.SEQUOIA_BUTTON);
 	}
 
-	private static void addNaturalEntries(FabricCreativeModeTabOutput output) {
+	private static void addNatural(FabricCreativeModeTabOutput output) {
 		output.insertAfter(Blocks.CHERRY_LOG, MariposaBlocks.SEQUOIA_LOG);
 		output.insertAfter(Blocks.CHERRY_LEAVES, MariposaBlocks.SEQUOIA_LEAVES);
 		output.insertAfter(Blocks.CHERRY_SAPLING, MariposaBlocks.SEQUOIA_SAPLING);
 	}
 
-	private static void addFunctionalEntries(FabricCreativeModeTabOutput output) {
+	private static void addFunctional(FabricCreativeModeTabOutput output) {
 		output.insertAfter(Blocks.CHERRY_SHELF, MariposaBlocks.SEQUOIA_SHELF);
 		output.insertAfter(Blocks.CHERRY_HANGING_SIGN, MariposaItems.SEQUOIA_SIGN, MariposaItems.SEQUOIA_HANGING_SIGN);
 	}
 
-	private static void addToolsEntries(FabricCreativeModeTabOutput output) {
+	private static void addTools(FabricCreativeModeTabOutput output) {
 		output.insertAfter(Items.CHERRY_CHEST_BOAT, SEQUOIA_BOAT, SEQUOIA_CHEST_BOAT);
 	}
 }
