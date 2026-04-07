@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) doctor4t. All Rights Reserved.
+ */
+
 package dev.doctor4t.mariposa.client;
 
 import dev.doctor4t.mariposa.common.Mariposa;

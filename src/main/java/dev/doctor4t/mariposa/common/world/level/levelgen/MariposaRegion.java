@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) doctor4t. All Rights Reserved.
+ */
+
 /**
  * Copyright (C) Glitchfiend
  * <p>

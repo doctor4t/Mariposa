@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) doctor4t. All Rights Reserved.
+ */
+
 package dev.doctor4t.mariposa.common.world.level.levelgen.feature.configurations;
 
 import com.mojang.serialization.Codec;
