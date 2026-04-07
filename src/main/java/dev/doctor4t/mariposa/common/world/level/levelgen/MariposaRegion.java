@@ -15,15 +15,16 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package dev.doctor4t.mariposa.world.gen;
+package dev.doctor4t.mariposa.common.world.level.levelgen;
 
 import com.mojang.datafixers.util.Pair;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeKeys;
-import net.minecraft.world.biome.source.util.MultiNoiseUtil;
+import dev.doctor4t.mariposa.common.init.MariposaBiomes;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.biome.Climate;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
 
@@ -35,10 +36,10 @@ public class MariposaRegion extends Region {
 	}
 
 	@Override
-	public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
+	public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
 		this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
-			builder.replaceBiome(BiomeKeys.TAIGA, MariposaBiomes.REDWOOD_FOREST);
-			builder.replaceBiome(BiomeKeys.SNOWY_TAIGA, MariposaBiomes.SNOWY_REDWOOD_FOREST);
+			builder.replaceBiome(Biomes.TAIGA, MariposaBiomes.REDWOOD_FOREST);
+			builder.replaceBiome(Biomes.SNOWY_TAIGA, MariposaBiomes.SNOWY_REDWOOD_FOREST);
 		});
 	}
 }

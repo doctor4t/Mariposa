@@ -17,22 +17,22 @@
   "environment": "*",
   "entrypoints": {
 	"main": [
-	  "dev.doctor4t.mariposa.Mariposa"
+	  "dev.doctor4t.mariposa.common.Mariposa"
 	],
 	"client": [
 	  "dev.doctor4t.mariposa.client.MariposaClient"
 	],
 	"fabric-datagen": [
-	  "dev.doctor4t.mariposa.datagen.MariposaDatagen"
+	  "dev.doctor4t.mariposa.data.MariposaDataGenerator"
 	],
 	"terrablender": [
-	  "dev.doctor4t.mariposa.Mariposa"
+	  "dev.doctor4t.mariposa.common.Mariposa"
 	]
   },
   "depends": {
 	"fabricloader": "*",
-	"minecraft": "~1.21.10",
-	"java": ">=21",
+	"minecraft": "~26.1.1",
+	"java": ">=25",
 	"fabric-api": "*",
 	"terrablender": "*"
   }

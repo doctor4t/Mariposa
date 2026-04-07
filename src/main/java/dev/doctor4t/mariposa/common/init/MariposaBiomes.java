@@ -15,19 +15,19 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package dev.doctor4t.mariposa.world.gen;
+package dev.doctor4t.mariposa.common.init;
 
-import dev.doctor4t.mariposa.Mariposa;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.biome.Biome;
+import dev.doctor4t.mariposa.common.Mariposa;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.biome.Biome;
 
-public class MariposaBiomes {
-	public static final RegistryKey<Biome> REDWOOD_FOREST = register("redwood_forest");
-	public static final RegistryKey<Biome> SNOWY_REDWOOD_FOREST = register("snowy_redwood_forest");
+public interface MariposaBiomes {
+	ResourceKey<Biome> REDWOOD_FOREST = register("redwood_forest");
+	ResourceKey<Biome> SNOWY_REDWOOD_FOREST = register("snowy_redwood_forest");
 
-	private static RegistryKey<Biome> register(String name) {
-		return RegistryKey.of(RegistryKeys.BIOME, Identifier.of(Mariposa.MOD_ID, name));
+	private static ResourceKey<Biome> register(String name) {
+		return ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(Mariposa.MOD_ID, name));
 	}
 }

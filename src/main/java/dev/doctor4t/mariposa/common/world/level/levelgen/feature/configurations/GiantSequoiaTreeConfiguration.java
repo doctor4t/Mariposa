@@ -1,21 +1,21 @@
-package dev.doctor4t.mariposa.world.gen.feature.config;
+package dev.doctor4t.mariposa.common.world.level.levelgen.feature.configurations;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.gen.feature.FeatureConfig;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 
 import java.util.List;
 
-public record GiantSequoiaTreeFeatureConfig(
+public record GiantSequoiaTreeConfiguration(
 		List<Identifier> sequoiaStructures,
 		int minCornersInFloor
-) implements FeatureConfig {
-	public static final Codec<GiantSequoiaTreeFeatureConfig> CODEC = RecordCodecBuilder.create(
+) implements FeatureConfiguration {
+	public static final Codec<GiantSequoiaTreeConfiguration> CODEC = RecordCodecBuilder.create(
 			instance -> instance.group(
 							Identifier.CODEC.listOf().fieldOf("sequoia_structures").forGetter(config -> config.sequoiaStructures),
 							Codec.intRange(0, 7).fieldOf("min_floor_corners_allowed").forGetter(config -> config.minCornersInFloor)
 					)
-					.apply(instance, GiantSequoiaTreeFeatureConfig::new)
+					.apply(instance, GiantSequoiaTreeConfiguration::new)
 	);
 }

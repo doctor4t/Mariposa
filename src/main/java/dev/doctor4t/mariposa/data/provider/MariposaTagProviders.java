@@ -1,34 +1,35 @@
-package dev.doctor4t.mariposa.datagen;
+package dev.doctor4t.mariposa.data.provider;
 
-import dev.doctor4t.mariposa.index.MariposaBlocks;
-import dev.doctor4t.mariposa.index.MariposaEntityTypes;
-import dev.doctor4t.mariposa.index.MariposaItems;
-import dev.doctor4t.mariposa.index.MariposaTags;
-import dev.doctor4t.mariposa.world.gen.MariposaBiomes;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import dev.doctor4t.mariposa.common.init.MariposaBiomes;
+import dev.doctor4t.mariposa.common.init.MariposaBlocks;
+import dev.doctor4t.mariposa.common.init.MariposaEntityTypes;
+import dev.doctor4t.mariposa.common.init.MariposaItems;
+import dev.doctor4t.mariposa.common.tag.MariposaTags;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalEntityTypeTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BiomeTags;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.EntityTypeTags;
-import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.world.biome.Biome;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.level.biome.Biome;
+import org.jspecify.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
-public class MariposaTagGen {
-	public static class MariposaBlockTagGen extends FabricTagProvider.BlockTagProvider {
-		public MariposaBlockTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+public class MariposaTagProviders {
+	public static class MariposaBlockTags extends FabricTagsProvider.BlockTagsProvider {
+		public MariposaBlockTags(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
 			super(output, registriesFuture);
 		}
 
 		@Override
-		protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+		protected void addTags(HolderLookup.Provider registries) {
 			valueLookupBuilder(MariposaTags.SEQUOIA_LOGS).add(
 					MariposaBlocks.SEQUOIA_LOG,
 					MariposaBlocks.SEQUOIA_WOOD,
@@ -84,13 +85,13 @@ public class MariposaTagGen {
 		}
 	}
 
-	public static class MariposaItemTagGen extends FabricTagProvider.ItemTagProvider {
-		public MariposaItemTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture, BlockTagProvider blockTagProvider) {
-			super(output, registriesFuture, blockTagProvider);
+	public static class MariposaItemTags extends FabricTagsProvider.ItemTagsProvider {
+		public MariposaItemTags(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture, @Nullable BlockTagsProvider blockTagsProvider) {
+			super(output, registriesFuture, blockTagsProvider);
 		}
 
 		@Override
-		protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+		protected void addTags(HolderLookup.Provider registries) {
 			copy(MariposaTags.SEQUOIA_LOGS, MariposaTags.SEQUOIA_LOGS_ITEM);
 			copy(ConventionalBlockTags.STRIPPED_LOGS, ConventionalItemTags.STRIPPED_LOGS);
 			copy(ConventionalBlockTags.STRIPPED_WOODS, ConventionalItemTags.STRIPPED_WOODS);
@@ -120,13 +121,13 @@ public class MariposaTagGen {
 		}
 	}
 
-	public static class MariposaEntityTypeTagGen extends FabricTagProvider.EntityTypeTagProvider {
-		public MariposaEntityTypeTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+	public static class MariposaEntityTypeTags extends FabricTagsProvider.EntityTypeTagsProvider {
+		public MariposaEntityTypeTags(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
 			super(output, registriesFuture);
 		}
 
 		@Override
-		protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+		protected void addTags(HolderLookup.Provider registries) {
 			// CONVENTIONAL
 			valueLookupBuilder(ConventionalEntityTypeTags.BOATS)
 					.add(MariposaEntityTypes.SEQUOIA_CHEST_BOAT);
@@ -136,13 +137,13 @@ public class MariposaTagGen {
 		}
 	}
 
-	public static class MariposaBiomeTagGen extends FabricTagProvider<Biome> {
-		public MariposaBiomeTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-			super(output, RegistryKeys.BIOME, registriesFuture);
+	public static class MariposaBiomeTags extends FabricTagsProvider<Biome> {
+		public MariposaBiomeTags(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+			super(output, Registries.BIOME, registriesFuture);
 		}
 
 		@Override
-		protected void configure(RegistryWrapper.WrapperLookup arg) {
+		protected void addTags(HolderLookup.Provider registries) {
 			builder(ConventionalBiomeTags.IS_FOREST)
 					.addOptional(MariposaBiomes.REDWOOD_FOREST)
 					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
