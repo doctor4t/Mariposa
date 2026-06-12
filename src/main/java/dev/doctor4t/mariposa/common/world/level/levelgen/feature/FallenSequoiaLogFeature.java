@@ -5,7 +5,7 @@
 package dev.doctor4t.mariposa.common.world.level.levelgen.feature;
 
 import com.mojang.serialization.Codec;
-import dev.doctor4t.mariposa.common.world.level.levelgen.feature.configurations.GiantSequoiaLogConfiguration;
+import dev.doctor4t.mariposa.common.world.level.levelgen.feature.configurations.FallenSequoiaLogConfiguration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.tags.BlockTags;
@@ -22,13 +22,13 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlac
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 
-public class GiantSequoiaLogFeature extends Feature<GiantSequoiaLogConfiguration> {
-	public GiantSequoiaLogFeature(Codec<GiantSequoiaLogConfiguration> codec) {
+public class FallenSequoiaLogFeature extends Feature<FallenSequoiaLogConfiguration> {
+	public FallenSequoiaLogFeature(Codec<FallenSequoiaLogConfiguration> codec) {
 		super(codec);
 	}
 
 	@Override
-	public boolean place(FeaturePlaceContext<GiantSequoiaLogConfiguration> context) {
+	public boolean place(FeaturePlaceContext<FallenSequoiaLogConfiguration> context) {
 		RandomSource random = context.random();
 		WorldGenLevel level = context.level();
 
@@ -41,7 +41,7 @@ public class GiantSequoiaLogFeature extends Feature<GiantSequoiaLogConfiguration
 
 		blockPos.setY(blockPos.getY() - 1);
 		Rotation rotation = Rotation.getRandom(random);
-		GiantSequoiaLogConfiguration config = context.config();
+		FallenSequoiaLogConfiguration config = context.config();
 		int i = random.nextInt(config.sequoiaStructures().size());
 		StructureTemplateManager manager = level.getLevel().getServer().getStructureManager();
 		StructureTemplate template = manager.getOrCreate(config.sequoiaStructures().get(i));

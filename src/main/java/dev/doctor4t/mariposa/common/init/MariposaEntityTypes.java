@@ -19,25 +19,22 @@ import net.minecraft.world.item.Item;
 import java.util.function.Supplier;
 
 public interface MariposaEntityTypes {
-	EntityType<Boat> SEQUOIA_BOAT = registerEntityType("sequoia_boat",
+	EntityType<Boat> SEQUOIA_BOAT = register("sequoia_boat",
 			EntityType.Builder.of(getBoatFactory(() -> MariposaItems.SEQUOIA_BOAT), MobCategory.MISC)
 					.noLootTable()
 					.sized(1.375F, 0.5625F)
 					.eyeHeight(0.5625F)
 					.clientTrackingRange(10));
-	EntityType<ChestBoat> SEQUOIA_CHEST_BOAT = registerEntityType("sequoia_chest_boat",
+	EntityType<ChestBoat> SEQUOIA_CHEST_BOAT = register("sequoia_chest_boat",
 			EntityType.Builder.of(getChestBoatFactory(() -> MariposaItems.SEQUOIA_CHEST_BOAT), MobCategory.MISC)
 					.noLootTable()
 					.sized(1.375F, 0.5625F)
 					.eyeHeight(0.5625F)
 					.clientTrackingRange(10));
 
-	static <T extends Entity> EntityType<T> registerEntityType(String name, EntityType.Builder<T> builder) {
+	private static <T extends Entity> EntityType<T> register(String name, EntityType.Builder<T> builder) {
 		ResourceKey<EntityType<?>> key = ResourceKey.create(Registries.ENTITY_TYPE, Mariposa.id(name));
 		return Registry.register(BuiltInRegistries.ENTITY_TYPE, key.identifier(), builder.build(key));
-	}
-
-	static void initialize() {
 	}
 
 	private static EntityType.EntityFactory<Boat> getBoatFactory(Supplier<Item> itemSupplier) {
@@ -46,5 +43,8 @@ public interface MariposaEntityTypes {
 
 	private static EntityType.EntityFactory<ChestBoat> getChestBoatFactory(Supplier<Item> itemSupplier) {
 		return (type, world) -> new ChestBoat(type, world, itemSupplier);
+	}
+
+	static void initialize() {
 	}
 }

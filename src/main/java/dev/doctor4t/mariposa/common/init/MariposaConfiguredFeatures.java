@@ -6,7 +6,7 @@ package dev.doctor4t.mariposa.common.init;
 
 import com.google.common.collect.ImmutableList;
 import dev.doctor4t.mariposa.common.Mariposa;
-import dev.doctor4t.mariposa.common.world.level.levelgen.feature.configurations.GiantSequoiaLogConfiguration;
+import dev.doctor4t.mariposa.common.world.level.levelgen.feature.configurations.FallenSequoiaLogConfiguration;
 import dev.doctor4t.mariposa.common.world.level.levelgen.feature.configurations.GiantSequoiaTreeConfiguration;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
@@ -36,14 +36,14 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import java.util.List;
 
 public interface MariposaConfiguredFeatures {
-	ResourceKey<ConfiguredFeature<?, ?>> FALLEN_SEQUOIA_LOG = of("fallen_sequoia_log");
-	ResourceKey<ConfiguredFeature<?, ?>> GIANT_SEQUOIA_TREE = of("giant_sequoia_tree");
-	ResourceKey<ConfiguredFeature<?, ?>> SEQUOIA = of("sequoia");
-	ResourceKey<ConfiguredFeature<?, ?>> SNOWY_SEQUOIA = of("snowy_sequoia");
-	ResourceKey<ConfiguredFeature<?, ?>> TREES_REDWOOD_FOREST = of("trees_redwood_forest");
-	ResourceKey<ConfiguredFeature<?, ?>> TREES_SNOWY_REDWOOD_FOREST = of("trees_snowy_redwood_forest");
+	ResourceKey<ConfiguredFeature<?, ?>> FALLEN_SEQUOIA_LOG = key("fallen_sequoia_log");
+	ResourceKey<ConfiguredFeature<?, ?>> GIANT_SEQUOIA_TREE = key("giant_sequoia_tree");
+	ResourceKey<ConfiguredFeature<?, ?>> SEQUOIA = key("sequoia");
+	ResourceKey<ConfiguredFeature<?, ?>> SNOWY_SEQUOIA = key("snowy_sequoia");
+	ResourceKey<ConfiguredFeature<?, ?>> TREES_REDWOOD_FOREST = key("trees_redwood_forest");
+	ResourceKey<ConfiguredFeature<?, ?>> TREES_SNOWY_REDWOOD_FOREST = key("trees_snowy_redwood_forest");
 
-	static ResourceKey<ConfiguredFeature<?, ?>> of(String name) {
+	private static ResourceKey<ConfiguredFeature<?, ?>> key(String name) {
 		return ResourceKey.create(Registries.CONFIGURED_FEATURE, Mariposa.id(name));
 	}
 
@@ -58,7 +58,7 @@ public interface MariposaConfiguredFeatures {
 				registry,
 				FALLEN_SEQUOIA_LOG,
 				MariposaFeatureConfigurations.FALLEN_SEQUOIA_LOG,
-				new GiantSequoiaLogConfiguration(List.of(
+				new FallenSequoiaLogConfiguration(List.of(
 						Mariposa.id("fallen_sequoia_log")
 				))
 		);

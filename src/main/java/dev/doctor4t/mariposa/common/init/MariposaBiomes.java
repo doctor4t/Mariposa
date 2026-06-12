@@ -42,10 +42,10 @@ import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public interface MariposaBiomes {
-	ResourceKey<Biome> REDWOOD_FOREST = of("redwood_forest");
-	ResourceKey<Biome> SNOWY_REDWOOD_FOREST = of("snowy_redwood_forest");
+	ResourceKey<Biome> REDWOOD_FOREST = key("redwood_forest");
+	ResourceKey<Biome> SNOWY_REDWOOD_FOREST = key("snowy_redwood_forest");
 
-	private static ResourceKey<Biome> of(String name) {
+	private static ResourceKey<Biome> key(String name) {
 		return ResourceKey.create(Registries.BIOME, Mariposa.id(name));
 	}
 

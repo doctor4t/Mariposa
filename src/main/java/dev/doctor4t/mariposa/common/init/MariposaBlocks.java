@@ -164,11 +164,11 @@ public interface MariposaBlocks {
 			.ignitedByLava()
 	);
 
-	static Block register(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
+	private static Block register(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
 		return Blocks.register(ResourceKey.create(Registries.BLOCK, Mariposa.id(name)), factory, properties);
 	}
 
-	static Block registerWithItem(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
+	private static Block registerWithItem(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
 		Block block = register(name, factory, properties);
 		MariposaItems.register(name, itemProperties -> new BlockItem(block, itemProperties), new Item.Properties().useBlockDescriptionPrefix());
 		return block;

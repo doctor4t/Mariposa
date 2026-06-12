@@ -18,14 +18,14 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
 
 public interface MariposaPlacedFeatures {
-	ResourceKey<PlacedFeature> FALLEN_SEQUOIA_LOG = of("fallen_sequoia_log");
-	ResourceKey<PlacedFeature> GIANT_SEQUOIA_TREE = of("giant_sequoia_tree");
-	ResourceKey<PlacedFeature> SEQUOIA_CHECKED = of("sequoia_checked");
-	ResourceKey<PlacedFeature> SNOWY_SEQUOIA_CHECKED = of("snowy_sequoia_checked");
-	ResourceKey<PlacedFeature> TREES_REDWOOD_FOREST = of("trees_redwood_forest");
-	ResourceKey<PlacedFeature> TREES_SNOWY_REDWOOD_FOREST = of("trees_snowy_redwood_forest");
+	ResourceKey<PlacedFeature> FALLEN_SEQUOIA_LOG = key("fallen_sequoia_log");
+	ResourceKey<PlacedFeature> GIANT_SEQUOIA_TREE = key("giant_sequoia_tree");
+	ResourceKey<PlacedFeature> SEQUOIA_CHECKED = key("sequoia_checked");
+	ResourceKey<PlacedFeature> SNOWY_SEQUOIA_CHECKED = key("snowy_sequoia_checked");
+	ResourceKey<PlacedFeature> TREES_REDWOOD_FOREST = key("trees_redwood_forest");
+	ResourceKey<PlacedFeature> TREES_SNOWY_REDWOOD_FOREST = key("trees_snowy_redwood_forest");
 
-	private static ResourceKey<PlacedFeature> of(String name) {
+	private static ResourceKey<PlacedFeature> key(String name) {
 		return ResourceKey.create(Registries.PLACED_FEATURE, Mariposa.id(name));
 	}
 

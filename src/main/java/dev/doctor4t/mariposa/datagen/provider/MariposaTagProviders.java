@@ -98,27 +98,20 @@ public class MariposaTagProviders {
 		protected void addTags(HolderLookup.Provider registries) {
 			builder(ConventionalBiomeTags.IS_FOREST)
 					.addOptional(MariposaBiomes.REDWOOD_FOREST)
-					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-			;
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST);
 			builder(ConventionalBiomeTags.IS_OVERWORLD)
 					.addOptional(MariposaBiomes.REDWOOD_FOREST)
-					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-			;
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST);
 			builder(ConventionalBiomeTags.IS_TEMPERATE_OVERWORLD)
-					.addOptional(MariposaBiomes.REDWOOD_FOREST)
-			;
+					.addOptional(MariposaBiomes.REDWOOD_FOREST);
 			builder(ConventionalBiomeTags.IS_COLD_OVERWORLD)
-					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-			;
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST);
 			builder(ConventionalBiomeTags.IS_SNOWY)
-					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-			;
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST);
 			builder(BiomeTags.SPAWNS_SNOW_FOXES)
-					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-			;
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST);
 			builder(BiomeTags.SPAWNS_WHITE_RABBITS)
-					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-			;
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST);
 		}
 	}
 

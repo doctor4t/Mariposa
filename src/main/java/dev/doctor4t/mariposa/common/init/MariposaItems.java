@@ -32,13 +32,6 @@ public interface MariposaItems {
 		return Registry.register(BuiltInRegistries.ITEM, key, item);
 	}
 
-	static void initialize() {
-		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(MariposaItems::addBuilding);
-		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(MariposaItems::addNatural);
-		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(MariposaItems::addFunctional);
-		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(MariposaItems::addTools);
-	}
-
 	private static void addBuilding(FabricCreativeModeTabOutput output) {
 		output.insertAfter(Blocks.CHERRY_BUTTON,
 				MariposaBlocks.SEQUOIA_LOG,
@@ -70,5 +63,12 @@ public interface MariposaItems {
 
 	private static void addTools(FabricCreativeModeTabOutput output) {
 		output.insertAfter(Items.CHERRY_CHEST_BOAT, SEQUOIA_BOAT, SEQUOIA_CHEST_BOAT);
+	}
+
+	static void initialize() {
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(MariposaItems::addBuilding);
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(MariposaItems::addNatural);
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(MariposaItems::addFunctional);
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(MariposaItems::addTools);
 	}
 }
