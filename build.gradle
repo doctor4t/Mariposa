@@ -6,10 +6,6 @@ plugins {
 version = project.mod_version
 group = project.maven_group
 
-base {
-    archivesName = project.archives_base_name
-}
-
 chenille {
     customLicense = rootProject.file("LICENSE")
     github = new URL("https://github.com/doctor4t/Mariposa")
@@ -31,24 +27,26 @@ repositories {
 fabricApi {
     configureDataGeneration() {
         client = true
+        modId = project.archives_base_name
     }
 }
 
 dependencies {
     // To change the versions see the gradle.properties file
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    implementation "net.fabricmc:fabric-loader:${loader_version}"
 
     // Libraries
-    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    implementation "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+    implementation "com.github.glitchfiend:TerraBlender-fabric:${terrablender_version}"
 }
 
 processResources {
-    inputs.property "version", project.version
+    def version = project.version
+    inputs.property "version", version
 
     filesMatching("fabric.mod.json") {
-        expand "version": inputs.properties.version
+        expand "version": version
     }
 }
 
@@ -64,9 +62,10 @@ java {
 }
 
 jar {
-    inputs.property "archivesName", project.base.archivesName
+    def projectName = project.name
+    inputs.property "projectName", projectName
 
     from("LICENSE") {
-        rename { "${it}_${inputs.properties.archivesName}" }
+        rename { "${it}_$projectName"}
     }
 }
