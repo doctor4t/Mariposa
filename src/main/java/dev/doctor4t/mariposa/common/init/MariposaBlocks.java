@@ -6,7 +6,6 @@ package dev.doctor4t.mariposa.common.init;
 
 import dev.doctor4t.mariposa.common.Mariposa;
 import dev.doctor4t.mariposa.common.world.level.block.SequoiaLeavesBlock;
-import dev.doctor4t.mariposa.data.provider.MariposaConfiguredFeatures;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;

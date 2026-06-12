@@ -6,8 +6,8 @@ package dev.doctor4t.mariposa.common;
 
 import dev.doctor4t.mariposa.common.init.MariposaBlocks;
 import dev.doctor4t.mariposa.common.init.MariposaEntityTypes;
+import dev.doctor4t.mariposa.common.init.MariposaFeatureConfigurations;
 import dev.doctor4t.mariposa.common.init.MariposaItems;
-import dev.doctor4t.mariposa.common.init.MariposaWorldgenFeatures;
 import dev.doctor4t.mariposa.common.world.level.levelgen.MariposaRegion;
 import dev.doctor4t.mariposa.common.world.level.levelgen.MariposaSurfaceRuleData;
 import net.fabricmc.api.ModInitializer;
@@ -28,7 +28,7 @@ public class Mariposa implements ModInitializer, TerraBlenderApi {
 		MariposaItems.initialize();
 		MariposaBlocks.initialize();
 		MariposaEntityTypes.initialize();
-		MariposaWorldgenFeatures.initialize();
+		MariposaFeatureConfigurations.initialize();
 	}
 
 	@Override

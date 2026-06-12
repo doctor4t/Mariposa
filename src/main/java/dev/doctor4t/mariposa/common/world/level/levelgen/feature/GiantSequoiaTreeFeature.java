@@ -59,8 +59,7 @@ public class GiantSequoiaTreeFeature extends Feature<GiantSequoiaTreeConfigurati
 				case NONE -> chunkCenterPos = chunkCenterPos.offset(-size.getX() / 2, 0, -size.getZ() / 2);
 				case CLOCKWISE_90 -> chunkCenterPos = chunkCenterPos.offset(size.getX() / 2, 0, -size.getZ() / 2);
 				case CLOCKWISE_180 -> chunkCenterPos = chunkCenterPos.offset(size.getX() / 2, 0, size.getZ() / 2);
-				case COUNTERCLOCKWISE_90 ->
-						chunkCenterPos = chunkCenterPos.offset(-size.getX() / 2, 0, size.getZ() / 2);
+				case COUNTERCLOCKWISE_90 -> chunkCenterPos = chunkCenterPos.offset(-size.getX() / 2, 0, size.getZ() / 2);
 			}
 
 			StructurePlaceSettings settings = new StructurePlaceSettings().setRotation(rotation).setBoundingBox(blockBox).setRandom(random);

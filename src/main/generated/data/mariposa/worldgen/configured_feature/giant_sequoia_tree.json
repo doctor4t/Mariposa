@@ -1,6 +1,7 @@
 {
   "type": "mariposa:giant_sequoia_tree",
   "config": {
+	"min_floor_corners_allowed": 4,
 	"sequoia_structures": [
 	  "mariposa:giant_sequoia_1",
 	  "mariposa:giant_sequoia_2",
@@ -9,7 +10,6 @@
 	  "mariposa:giant_sequoia_5",
 	  "mariposa:giant_sequoia_6",
 	  "mariposa:giant_sequoia_7"
-	],
-	"min_floor_corners_allowed": 4
+	]
   }
 }

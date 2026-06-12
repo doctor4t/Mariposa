@@ -5,11 +5,11 @@
 	"features": [
 	  {
 		"chance": 0.33333334,
-		"feature": "minecraft:spruce_checked"
+		"feature": "minecraft:pine_checked"
 	  },
 	  {
 		"chance": 0.33333334,
-		"feature": "minecraft:pine_checked"
+		"feature": "minecraft:spruce_checked"
 	  }
 	]
   }

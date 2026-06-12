@@ -1,9 +1,9 @@
 {
-  "feature": "mariposa:giant_sequoia",
+  "feature": "mariposa:fallen_sequoia_log",
   "placement": [
 	{
 	  "type": "minecraft:rarity_filter",
-	  "chance": 1
+	  "chance": 128
 	},
 	{
 	  "type": "minecraft:in_square"

@@ -1,4 +1,14 @@
 {
+  "attributes": {
+	"minecraft:audio/background_music": {
+	  "default": {
+		"max_delay": 24000,
+		"min_delay": 12000,
+		"sound": "minecraft:music.overworld.old_growth_taiga"
+	  }
+	},
+	"minecraft:visual/sky_color": "#839eff"
+  },
   "carvers": [
 	"minecraft:cave",
 	"minecraft:cave_extra_underground",
@@ -6,22 +16,7 @@
   ],
   "downfall": 0.8,
   "effects": {
-	"fog_color": 12638463,
-	"mood_sound": {
-	  "block_search_extent": 8,
-	  "offset": 2.0,
-	  "sound": "minecraft:ambient.cave",
-	  "tick_delay": 6000
-	},
-	"music": {
-	  "max_delay": 24000,
-	  "min_delay": 12000,
-	  "replace_current_music": false,
-	  "sound": "minecraft:music.overworld.old_growth_taiga"
-	},
-	"sky_color": 8168447,
-	"water_color": 4159204,
-	"water_fog_color": 329011
+	"water_color": "#3f76e4"
   },
   "features": [
 	[],
@@ -32,8 +27,8 @@
 	[
 	  "minecraft:amethyst_geode",
 	  "minecraft:forest_rock",
-	  "mariposa:fallen_sequoia_logs_redwood_forest",
-	  "mariposa:giant_sequoias_redwood_forest"
+	  "mariposa:giant_sequoia_tree",
+	  "mariposa:fallen_sequoia_log"
 	],
 	[
 	  "minecraft:monster_room",
@@ -75,8 +70,7 @@
 	[],
 	[
 	  "minecraft:spring_water",
-	  "minecraft:spring_lava",
-	  "mariposa:trees_snowy_redwood_forest"
+	  "minecraft:spring_lava"
 	],
 	[
 	  "minecraft:glow_lichen",
@@ -88,7 +82,7 @@
 	  "minecraft:red_mushroom_old_growth",
 	  "minecraft:brown_mushroom_normal",
 	  "minecraft:red_mushroom_normal",
-	  "minecraft:patch_sugar_cane"
+	  "mariposa:trees_snowy_redwood_forest"
 	],
 	[
 	  "minecraft:freeze_top_layer"
@@ -162,13 +156,13 @@
 		"type": "minecraft:zombie",
 		"maxCount": 4,
 		"minCount": 4,
-		"weight": 100
+		"weight": 95
 	  },
 	  {
 		"type": "minecraft:zombie_villager",
 		"maxCount": 1,
 		"minCount": 1,
-		"weight": 25
+		"weight": 5
 	  },
 	  {
 		"type": "minecraft:skeleton",

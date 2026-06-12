@@ -2,7 +2,7 @@
  * Copyright (c) doctor4t. All Rights Reserved.
  */
 
-package dev.doctor4t.mariposa.data.provider;
+package dev.doctor4t.mariposa.datagen.provider;
 
 import dev.doctor4t.mariposa.common.init.MariposaBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;

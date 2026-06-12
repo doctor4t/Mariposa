@@ -2,7 +2,7 @@
  * Copyright (c) doctor4t. All Rights Reserved.
  */
 
-package dev.doctor4t.mariposa.data.provider;
+package dev.doctor4t.mariposa.datagen.provider;
 
 import dev.doctor4t.mariposa.common.init.MariposaBiomes;
 import dev.doctor4t.mariposa.common.init.MariposaBlocks;
@@ -89,6 +89,39 @@ public class MariposaTagProviders {
 		}
 	}
 
+	public static class MariposaBiomeTags extends FabricTagsProvider<Biome> {
+		public MariposaBiomeTags(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+			super(output, Registries.BIOME, registriesFuture);
+		}
+
+		@Override
+		protected void addTags(HolderLookup.Provider registries) {
+			builder(ConventionalBiomeTags.IS_FOREST)
+					.addOptional(MariposaBiomes.REDWOOD_FOREST)
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+			;
+			builder(ConventionalBiomeTags.IS_OVERWORLD)
+					.addOptional(MariposaBiomes.REDWOOD_FOREST)
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+			;
+			builder(ConventionalBiomeTags.IS_TEMPERATE_OVERWORLD)
+					.addOptional(MariposaBiomes.REDWOOD_FOREST)
+			;
+			builder(ConventionalBiomeTags.IS_COLD_OVERWORLD)
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+			;
+			builder(ConventionalBiomeTags.IS_SNOWY)
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+			;
+			builder(BiomeTags.SPAWNS_SNOW_FOXES)
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+			;
+			builder(BiomeTags.SPAWNS_WHITE_RABBITS)
+					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
+			;
+		}
+	}
+
 	public static class MariposaItemTags extends FabricTagsProvider.ItemTagsProvider {
 		public MariposaItemTags(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture, @Nullable BlockTagsProvider blockTagsProvider) {
 			super(output, registriesFuture, blockTagsProvider);
@@ -138,39 +171,6 @@ public class MariposaTagProviders {
 			// VANILLA
 			valueLookupBuilder(EntityTypeTags.BOAT)
 					.add(MariposaEntityTypes.SEQUOIA_BOAT);
-		}
-	}
-
-	public static class MariposaBiomeTags extends FabricTagsProvider<Biome> {
-		public MariposaBiomeTags(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
-			super(output, Registries.BIOME, registriesFuture);
-		}
-
-		@Override
-		protected void addTags(HolderLookup.Provider registries) {
-			builder(ConventionalBiomeTags.IS_FOREST)
-					.addOptional(MariposaBiomes.REDWOOD_FOREST)
-					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-			;
-			builder(ConventionalBiomeTags.IS_OVERWORLD)
-					.addOptional(MariposaBiomes.REDWOOD_FOREST)
-					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-			;
-			builder(ConventionalBiomeTags.IS_TEMPERATE_OVERWORLD)
-					.addOptional(MariposaBiomes.REDWOOD_FOREST)
-			;
-			builder(ConventionalBiomeTags.IS_COLD_OVERWORLD)
-					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-			;
-			builder(ConventionalBiomeTags.IS_SNOWY)
-					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-			;
-			builder(BiomeTags.SPAWNS_SNOW_FOXES)
-					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-			;
-			builder(BiomeTags.SPAWNS_WHITE_RABBITS)
-					.addOptional(MariposaBiomes.SNOWY_REDWOOD_FOREST)
-			;
 		}
 	}
 }

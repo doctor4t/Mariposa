@@ -14,13 +14,14 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 
-public interface MariposaWorldgenFeatures {
-	static void create(String name, Feature<? extends FeatureConfiguration> feature) {
-		Registry.register(BuiltInRegistries.FEATURE, Mariposa.id(name), feature);
+public interface MariposaFeatureConfigurations {
+	Feature<GiantSequoiaLogConfiguration> FALLEN_SEQUOIA_LOG = create("fallen_sequoia_log", new GiantSequoiaLogFeature(GiantSequoiaLogConfiguration.CODEC));
+	Feature<GiantSequoiaTreeConfiguration> GIANT_SEQUOIA_TREE = create("giant_sequoia_tree", new GiantSequoiaTreeFeature(GiantSequoiaTreeConfiguration.CODEC));
+
+	static <T extends FeatureConfiguration> Feature<T> create(String name, Feature<T> feature) {
+		return Registry.register(BuiltInRegistries.FEATURE, Mariposa.id(name), feature);
 	}
 
 	static void initialize() {
-		create("giant_sequoia_tree", new GiantSequoiaTreeFeature(GiantSequoiaTreeConfiguration.CODEC));
-		create("giant_sequoia_log", new GiantSequoiaLogFeature(GiantSequoiaLogConfiguration.CODEC));
 	}
 }
