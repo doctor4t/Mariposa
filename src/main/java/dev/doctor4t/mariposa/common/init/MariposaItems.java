@@ -4,12 +4,12 @@
 
 package dev.doctor4t.mariposa.common.init;
 
-import dev.doctor4t.mariposa.common.Mariposa;
+import dev.doctor4t.mariposa.common.references.MariposaBlockItemIds;
+import dev.doctor4t.mariposa.common.references.MariposaItemIds;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTabOutput;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Blocks;
@@ -17,14 +17,13 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.function.Function;
 
 public interface MariposaItems {
-	Item SEQUOIA_DOOR = register("sequoia_door", properties -> new DoubleHighBlockItem(MariposaBlocks.SEQUOIA_DOOR, properties), new Item.Properties().useBlockDescriptionPrefix());
-	Item SEQUOIA_SIGN = register("sequoia_sign", properties -> new SignItem(MariposaBlocks.SEQUOIA_SIGN, MariposaBlocks.SEQUOIA_WALL_SIGN, properties), new Item.Properties().useBlockDescriptionPrefix().stacksTo(16));
-	Item SEQUOIA_HANGING_SIGN = register("sequoia_hanging_sign", properties -> new HangingSignItem(MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN, properties), new Item.Properties().useBlockDescriptionPrefix().stacksTo(16));
-	Item SEQUOIA_BOAT = register("sequoia_boat", properties -> new BoatItem(MariposaEntityTypes.SEQUOIA_BOAT, properties), new Item.Properties().stacksTo(1));
-	Item SEQUOIA_CHEST_BOAT = register("sequoia_chest_boat", properties -> new BoatItem(MariposaEntityTypes.SEQUOIA_CHEST_BOAT, properties), new Item.Properties().stacksTo(1));
+	Item SEQUOIA_DOOR = register(MariposaBlockItemIds.SEQUOIA_DOOR.item(), properties -> new DoubleHighBlockItem(MariposaBlocks.SEQUOIA_DOOR, properties), new Item.Properties().useBlockDescriptionPrefix());
+	Item SEQUOIA_SIGN = register(MariposaBlockItemIds.SEQUOIA_SIGN.item(), properties -> new SignItem(MariposaBlocks.SEQUOIA_SIGN, MariposaBlocks.SEQUOIA_WALL_SIGN, properties), new Item.Properties().useBlockDescriptionPrefix().stacksTo(16));
+	Item SEQUOIA_HANGING_SIGN = register(MariposaBlockItemIds.SEQUOIA_HANGING_SIGN.item(), properties -> new HangingSignItem(MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN, properties), new Item.Properties().useBlockDescriptionPrefix().stacksTo(16));
+	Item SEQUOIA_BOAT = register(MariposaItemIds.SEQUOIA_BOAT, properties -> new BoatItem(MariposaEntityTypes.SEQUOIA_BOAT, properties), new Item.Properties().stacksTo(1));
+	Item SEQUOIA_CHEST_BOAT = register(MariposaItemIds.SEQUOIA_CHEST_BOAT, properties -> new BoatItem(MariposaEntityTypes.SEQUOIA_CHEST_BOAT, properties), new Item.Properties().stacksTo(1));
 
-	static Item register(String name, Function<Item.Properties, Item> factory, Item.Properties properties) {
-		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Mariposa.id(name));
+	static Item register(ResourceKey<Item> key, Function<Item.Properties, Item> factory, Item.Properties properties) {
 		Item item = factory.apply(properties.setId(key));
 		if (item instanceof BlockItem blockItem) {
 			blockItem.registerBlocks(Item.BY_BLOCK, item);
