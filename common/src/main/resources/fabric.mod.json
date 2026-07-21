@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
+  "authors": [
+	"doctor4t",
+	"Luxintrus"
+  ],
+  "contributors": [
+	"MoriyaShiine"
+  ],
+  "contact": {
+	"homepage": "https://modrinth.com/mod/${project_name}",
+	"sources": "https://github.com/MoriyaShiine/${project_name}",
+	"issues": "https://github.com/MoriyaShiine/${project_name}/issues"
+  },
+  "license": "All Rights Reserved",
+  "icon": "assets/${mod_id}/icon.png",
+  "environment": "*",
+  "entrypoints": {
+	"main": [
+	  "dev.doctor4t.mariposa.common.Mariposa"
+	],
+	"client": [
+	  "dev.doctor4t.mariposa.client.MariposaClient"
+	],
+	"fabric-datagen": [
+	  "dev.doctor4t.mariposa.datagen.MariposaDataGenerator"
+	]
+  },
+  "accessWidener": "${mod_id}.classtweaker",
+  "depends": {
+	"fabricloader": "*",
+	"minecraft": "~26.1",
+	"java": ">=25",
+	"fabric-api": "*",
+	"terrablender": "*"
+  },
+  "custom": {
+	"launchpad:compatible": true
+  }
+}
