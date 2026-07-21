@@ -24,10 +24,10 @@ public class Mariposa implements ModInitializer {
 		MariposaBlocks.initialize();
 		MariposaEntityTypes.initialize();
 		MariposaFeatureConfigurations.initialize();
-		initTerraBlender();
+		MariposaService.INSTANCE.initTerraBlender();
 	}
 
-	private static void initTerraBlender() {
+	public static void initTerraBlender() {
 		// Weights are kept intentionally low as we add minimal biomes
 		Regions.register(new MariposaRegion(id("overworld"), 4));
 

@@ -28,6 +28,9 @@
 	],
 	"fabric-datagen": [
 	  "dev.doctor4t.mariposa.datagen.MariposaDataGenerator"
+	],
+	"terrablender": [
+	  "dev.doctor4t.mariposa.fabric.common.MariposaTerraBlender"
 	]
   },
   "accessWidener": "${mod_id}.classtweaker",
