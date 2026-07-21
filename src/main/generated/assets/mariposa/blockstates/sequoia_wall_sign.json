@@ -1,19 +1,7 @@
 {
   "variants": {
-	"facing=east": {
-	  "model": "mariposa:block/sequoia_wall_sign",
-	  "y": 270
-	},
-	"facing=north": {
-	  "model": "mariposa:block/sequoia_wall_sign",
-	  "y": 180
-	},
-	"facing=south": {
-	  "model": "mariposa:block/sequoia_wall_sign"
-	},
-	"facing=west": {
-	  "model": "mariposa:block/sequoia_wall_sign",
-	  "y": 90
+	"": {
+	  "model": "mariposa:block/sequoia_sign"
 	}
   }
 }

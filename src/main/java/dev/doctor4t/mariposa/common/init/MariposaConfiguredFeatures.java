@@ -18,7 +18,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -49,10 +48,7 @@ public interface MariposaConfiguredFeatures {
 	}
 
 	static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> registry) {
-		HolderGetter<Biome> biomes = registry.lookup(Registries.BIOME);
 		HolderGetter<PlacedFeature> placedFeatures = registry.lookup(Registries.PLACED_FEATURE);
-
-		BlockStateProvider belowTrunkProvider = TreeConfiguration.defaultPlaceBelowTreeTrunkProvider(biomes);
 
 		Holder<PlacedFeature> pineChecked = placedFeatures.getOrThrow(TreePlacements.PINE_CHECKED);
 		Holder<PlacedFeature> spruceChecked = placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED);
@@ -90,8 +86,7 @@ public interface MariposaConfiguredFeatures {
 						new GiantTrunkPlacer(13, 2, 14),
 						BlockStateProvider.simple(MariposaBlocks.SEQUOIA_LEAVES),
 						new MegaPineFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), UniformInt.of(10, 14)),
-						new TwoLayersFeatureSize(1, 1, 2),
-						belowTrunkProvider
+						new TwoLayersFeatureSize(1, 1, 2)
 				)
 						.decorators(ImmutableList.of(new AlterGroundDecorator(RuleBasedStateProvider.ifTrueThenProvide(BlockPredicate.matchesTag(BlockTags.BENEATH_TREE_PODZOL_REPLACEABLE), Blocks.PODZOL))))
 						.build()
@@ -105,8 +100,7 @@ public interface MariposaConfiguredFeatures {
 						new GiantTrunkPlacer(13, 2, 14),
 						BlockStateProvider.simple(MariposaBlocks.SEQUOIA_LEAVES),
 						new MegaPineFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), UniformInt.of(10, 14)),
-						new TwoLayersFeatureSize(1, 1, 2),
-						belowTrunkProvider
+						new TwoLayersFeatureSize(1, 1, 2)
 				)
 						.decorators(ImmutableList.of(new AlterGroundDecorator(RuleBasedStateProvider.ifTrueThenProvide(BlockPredicate.matchesTag(BlockTags.BENEATH_TREE_PODZOL_REPLACEABLE), Blocks.SNOW_BLOCK))))
 						.build()

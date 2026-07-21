@@ -5,7 +5,7 @@
 package dev.doctor4t.mariposa.common.references;
 
 import dev.doctor4t.mariposa.common.Mariposa;
-import net.minecraft.references.BlockItemId;
+import dev.doctor4t.mariposa.common.util.BlockItemId;
 import net.minecraft.resources.Identifier;
 
 public class MariposaBlockItemIds {

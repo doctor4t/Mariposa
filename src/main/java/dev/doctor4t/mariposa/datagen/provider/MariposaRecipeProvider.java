@@ -36,6 +36,7 @@ public class MariposaRecipeProvider extends FabricRecipeProvider {
 				planksFromLogs(MariposaBlocks.SEQUOIA_PLANKS, MariposaTags.SEQUOIA_LOGS_ITEM, 4);
 				generateRecipes(MariposaModelProvider.SEQUOIA_PLANKS, FeatureFlagSet.of(FeatureFlags.VANILLA));
 				shelf(MariposaBlocks.SEQUOIA_SHELF, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
+				hangingSign(MariposaItems.SEQUOIA_HANGING_SIGN, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
 				woodenBoat(MariposaItems.SEQUOIA_BOAT, MariposaBlocks.SEQUOIA_PLANKS);
 				chestBoat(MariposaItems.SEQUOIA_CHEST_BOAT, MariposaItems.SEQUOIA_BOAT);
 			}

@@ -5,10 +5,9 @@
 package dev.doctor4t.mariposa.datagen.provider;
 
 import dev.doctor4t.mariposa.common.init.MariposaBiomes;
-import dev.doctor4t.mariposa.common.references.MariposaBlockIds;
-import dev.doctor4t.mariposa.common.references.MariposaBlockItemIds;
-import dev.doctor4t.mariposa.common.references.MariposaEntityTypeIds;
-import dev.doctor4t.mariposa.common.references.MariposaItemIds;
+import dev.doctor4t.mariposa.common.init.MariposaBlocks;
+import dev.doctor4t.mariposa.common.init.MariposaEntityTypes;
+import dev.doctor4t.mariposa.common.init.MariposaItems;
 import dev.doctor4t.mariposa.common.tag.MariposaTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
@@ -18,7 +17,10 @@ import net.fabricmc.fabric.api.tag.convention.v2.ConventionalEntityTypeTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.tags.*;
+import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.biome.Biome;
 import org.jspecify.annotations.Nullable;
 
@@ -32,58 +34,58 @@ public class MariposaTagProviders {
 
 		@Override
 		protected void addTags(HolderLookup.Provider registries) {
-			builder(MariposaTags.SEQUOIA_LOGS).add(
-					MariposaBlockItemIds.SEQUOIA_LOG,
-					MariposaBlockItemIds.SEQUOIA_WOOD,
-					MariposaBlockItemIds.STRIPPED_SEQUOIA_LOG,
-					MariposaBlockItemIds.STRIPPED_SEQUOIA_WOOD,
-					MariposaBlockItemIds.STACKED_SEQUOIA_LOGS);
-			builder(ConventionalBlockTags.STRIPPED_LOGS)
-					.add(MariposaBlockItemIds.STRIPPED_SEQUOIA_LOG);
-			builder(ConventionalBlockTags.STRIPPED_WOODS)
-					.add(MariposaBlockItemIds.STRIPPED_SEQUOIA_WOOD);
-			builder(ConventionalBlockTags.WOODEN_FENCES)
-					.add(MariposaBlockItemIds.SEQUOIA_FENCE);
-			builder(ConventionalBlockTags.WOODEN_FENCE_GATES)
-					.add(MariposaBlockItemIds.SEQUOIA_FENCE_GATE);
-			builder(BlockItemTags.LOGS_THAT_BURN.block())
+			valueLookupBuilder(MariposaTags.SEQUOIA_LOGS).add(
+					MariposaBlocks.SEQUOIA_LOG,
+					MariposaBlocks.SEQUOIA_WOOD,
+					MariposaBlocks.STRIPPED_SEQUOIA_LOG,
+					MariposaBlocks.STRIPPED_SEQUOIA_WOOD,
+					MariposaBlocks.STACKED_SEQUOIA_LOGS);
+			valueLookupBuilder(ConventionalBlockTags.STRIPPED_LOGS)
+					.add(MariposaBlocks.STRIPPED_SEQUOIA_LOG);
+			valueLookupBuilder(ConventionalBlockTags.STRIPPED_WOODS)
+					.add(MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
+			valueLookupBuilder(ConventionalBlockTags.WOODEN_FENCES)
+					.add(MariposaBlocks.SEQUOIA_FENCE);
+			valueLookupBuilder(ConventionalBlockTags.WOODEN_FENCE_GATES)
+					.add(MariposaBlocks.SEQUOIA_FENCE_GATE);
+			valueLookupBuilder(BlockTags.LOGS_THAT_BURN)
 					.addTag(MariposaTags.SEQUOIA_LOGS);
-			builder(BlockTags.OVERWORLD_NATURAL_LOGS)
-					.add(MariposaBlockItemIds.SEQUOIA_LOG);
-			builder(BlockItemTags.SAPLINGS.block())
-					.add(MariposaBlockItemIds.SEQUOIA_SAPLING);
-			builder(BlockTags.FLOWER_POTS)
-					.add(MariposaBlockIds.POTTED_SEQUOIA_SAPLING);
-			builder(BlockTags.LEAVES)
-					.add(MariposaBlockItemIds.SEQUOIA_LEAVES);
-			builder(BlockTags.PLANKS)
-					.add(MariposaBlockItemIds.SEQUOIA_PLANKS);
-			builder(BlockTags.WOODEN_STAIRS)
-					.add(MariposaBlockItemIds.SEQUOIA_STAIRS);
-			builder(BlockTags.WOODEN_SLABS)
-					.add(MariposaBlockItemIds.SEQUOIA_SLAB);
-			builder(BlockTags.WOODEN_FENCES)
-					.add(MariposaBlockItemIds.SEQUOIA_FENCE);
-			builder(BlockTags.FENCE_GATES)
-					.add(MariposaBlockItemIds.SEQUOIA_FENCE_GATE);
-			builder(BlockTags.WOODEN_DOORS)
-					.add(MariposaBlockItemIds.SEQUOIA_DOOR);
-			builder(BlockTags.WOODEN_TRAPDOORS)
-					.add(MariposaBlockItemIds.SEQUOIA_TRAPDOOR);
-			builder(BlockTags.WOODEN_PRESSURE_PLATES)
-					.add(MariposaBlockItemIds.SEQUOIA_PRESSURE_PLATE);
-			builder(BlockTags.WOODEN_BUTTONS)
-					.add(MariposaBlockItemIds.SEQUOIA_BUTTON);
-			builder(BlockTags.WOODEN_SHELVES)
-					.add(MariposaBlockItemIds.SEQUOIA_SHELF);
-			builder(BlockTags.STANDING_SIGNS)
-					.add(MariposaBlockItemIds.SEQUOIA_SIGN);
-			builder(BlockTags.WALL_SIGNS)
-					.add(MariposaBlockIds.SEQUOIA_WALL_SIGN);
-			builder(BlockTags.CEILING_HANGING_SIGNS)
-					.add(MariposaBlockItemIds.SEQUOIA_HANGING_SIGN);
-			builder(BlockTags.WALL_HANGING_SIGNS)
-					.add(MariposaBlockIds.SEQUOIA_WALL_HANGING_SIGN);
+			valueLookupBuilder(BlockTags.OVERWORLD_NATURAL_LOGS)
+					.add(MariposaBlocks.SEQUOIA_LOG);
+			valueLookupBuilder(BlockTags.SAPLINGS)
+					.add(MariposaBlocks.SEQUOIA_SAPLING);
+			valueLookupBuilder(BlockTags.FLOWER_POTS)
+					.add(MariposaBlocks.POTTED_SEQUOIA_SAPLING);
+			valueLookupBuilder(BlockTags.LEAVES)
+					.add(MariposaBlocks.SEQUOIA_LEAVES);
+			valueLookupBuilder(BlockTags.PLANKS)
+					.add(MariposaBlocks.SEQUOIA_PLANKS);
+			valueLookupBuilder(BlockTags.WOODEN_STAIRS)
+					.add(MariposaBlocks.SEQUOIA_STAIRS);
+			valueLookupBuilder(BlockTags.WOODEN_SLABS)
+					.add(MariposaBlocks.SEQUOIA_SLAB);
+			valueLookupBuilder(BlockTags.WOODEN_FENCES)
+					.add(MariposaBlocks.SEQUOIA_FENCE);
+			valueLookupBuilder(BlockTags.FENCE_GATES)
+					.add(MariposaBlocks.SEQUOIA_FENCE_GATE);
+			valueLookupBuilder(BlockTags.WOODEN_DOORS)
+					.add(MariposaBlocks.SEQUOIA_DOOR);
+			valueLookupBuilder(BlockTags.WOODEN_TRAPDOORS)
+					.add(MariposaBlocks.SEQUOIA_TRAPDOOR);
+			valueLookupBuilder(BlockTags.WOODEN_PRESSURE_PLATES)
+					.add(MariposaBlocks.SEQUOIA_PRESSURE_PLATE);
+			valueLookupBuilder(BlockTags.WOODEN_BUTTONS)
+					.add(MariposaBlocks.SEQUOIA_BUTTON);
+			valueLookupBuilder(BlockTags.WOODEN_SHELVES)
+					.add(MariposaBlocks.SEQUOIA_SHELF);
+			valueLookupBuilder(BlockTags.STANDING_SIGNS)
+					.add(MariposaBlocks.SEQUOIA_SIGN);
+			valueLookupBuilder(BlockTags.WALL_SIGNS)
+					.add(MariposaBlocks.SEQUOIA_WALL_SIGN);
+			valueLookupBuilder(BlockTags.CEILING_HANGING_SIGNS)
+					.add(MariposaBlocks.SEQUOIA_HANGING_SIGN);
+			valueLookupBuilder(BlockTags.WALL_HANGING_SIGNS)
+					.add(MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN);
 		}
 	}
 
@@ -125,8 +127,8 @@ public class MariposaTagProviders {
 			copy(ConventionalBlockTags.STRIPPED_WOODS, ConventionalItemTags.STRIPPED_WOODS);
 			copy(ConventionalBlockTags.WOODEN_FENCES, ConventionalItemTags.WOODEN_FENCES);
 			copy(ConventionalBlockTags.WOODEN_FENCE_GATES, ConventionalItemTags.WOODEN_FENCE_GATES);
-			copy(BlockItemTags.LOGS_THAT_BURN.block(), ItemTags.LOGS_THAT_BURN);
-			copy(BlockItemTags.SAPLINGS.block(), ItemTags.SAPLINGS);
+			copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
+			copy(BlockTags.SAPLINGS, ItemTags.SAPLINGS);
 			copy(BlockTags.LEAVES, ItemTags.LEAVES);
 			copy(BlockTags.PLANKS, ItemTags.PLANKS);
 			copy(BlockTags.WOODEN_STAIRS, ItemTags.WOODEN_STAIRS);
@@ -138,14 +140,14 @@ public class MariposaTagProviders {
 			copy(BlockTags.WOODEN_PRESSURE_PLATES, ItemTags.WOODEN_PRESSURE_PLATES);
 			copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);
 			copy(BlockTags.WOODEN_SHELVES, ItemTags.WOODEN_SHELVES);
-			builder(ItemTags.SIGNS)
-					.add(MariposaBlockItemIds.SEQUOIA_SIGN);
-			builder(ItemTags.HANGING_SIGNS)
-					.add(MariposaBlockItemIds.SEQUOIA_HANGING_SIGN);
-			builder(ItemTags.BOATS)
-					.add(MariposaItemIds.SEQUOIA_BOAT);
-			builder(ItemTags.CHEST_BOATS)
-					.add(MariposaItemIds.SEQUOIA_CHEST_BOAT);
+			valueLookupBuilder(ItemTags.SIGNS)
+					.add(MariposaItems.SEQUOIA_SIGN);
+			valueLookupBuilder(ItemTags.HANGING_SIGNS)
+					.add(MariposaItems.SEQUOIA_HANGING_SIGN);
+			valueLookupBuilder(ItemTags.BOATS)
+					.add(MariposaItems.SEQUOIA_BOAT);
+			valueLookupBuilder(ItemTags.CHEST_BOATS)
+					.add(MariposaItems.SEQUOIA_CHEST_BOAT);
 		}
 	}
 
@@ -157,11 +159,11 @@ public class MariposaTagProviders {
 		@Override
 		protected void addTags(HolderLookup.Provider registries) {
 			// CONVENTIONAL
-			builder(ConventionalEntityTypeTags.BOATS)
-					.add(MariposaEntityTypeIds.SEQUOIA_CHEST_BOAT);
+			valueLookupBuilder(ConventionalEntityTypeTags.BOATS)
+					.add(MariposaEntityTypes.SEQUOIA_CHEST_BOAT);
 			// VANILLA
-			builder(EntityTypeTags.BOAT)
-					.add(MariposaEntityTypeIds.SEQUOIA_BOAT);
+			valueLookupBuilder(EntityTypeTags.BOAT)
+					.add(MariposaEntityTypes.SEQUOIA_BOAT);
 		}
 	}
 }
