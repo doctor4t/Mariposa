@@ -3,16 +3,16 @@ package dev.doctor4t.mariposa.common.init;
 import dev.doctor4t.mariposa.common.Mariposa;
 import dev.doctor4t.mariposa.common.references.MariposaBlockIds;
 import dev.doctor4t.mariposa.common.references.MariposaBlockItemIds;
-import dev.doctor4t.mariposa.common.util.BlockItemId;
 import dev.doctor4t.mariposa.common.world.level.block.SequoiaLeavesBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.BlockEntityTypes;
 import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -179,10 +179,10 @@ public interface MariposaBlocks {
 	static void initialize() {
 		StrippableBlockRegistry.register(MariposaBlocks.SEQUOIA_WOOD, MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
 		StrippableBlockRegistry.register(MariposaBlocks.SEQUOIA_LOG, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
-		BlockEntityType.SHELF.addValidBlock(SEQUOIA_SHELF);
-		BlockEntityType.SIGN.addValidBlock(MariposaBlocks.SEQUOIA_SIGN);
-		BlockEntityType.SIGN.addValidBlock(MariposaBlocks.SEQUOIA_WALL_SIGN);
-		BlockEntityType.HANGING_SIGN.addValidBlock(MariposaBlocks.SEQUOIA_HANGING_SIGN);
-		BlockEntityType.HANGING_SIGN.addValidBlock(MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN);
+		BlockEntityTypes.SHELF.addValidBlock(SEQUOIA_SHELF);
+		BlockEntityTypes.SIGN.addValidBlock(MariposaBlocks.SEQUOIA_SIGN);
+		BlockEntityTypes.SIGN.addValidBlock(MariposaBlocks.SEQUOIA_WALL_SIGN);
+		BlockEntityTypes.HANGING_SIGN.addValidBlock(MariposaBlocks.SEQUOIA_HANGING_SIGN);
+		BlockEntityTypes.HANGING_SIGN.addValidBlock(MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN);
 	}
 }

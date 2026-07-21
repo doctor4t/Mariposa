@@ -12,9 +12,12 @@ import net.minecraft.data.BlockFamily;
 
 public class MariposaModelProvider extends FabricModelProvider {
 	public static final BlockFamily SEQUOIA_PLANKS = BlockFamilies.familyBuilder(MariposaBlocks.SEQUOIA_PLANKS)
+			.log(MariposaBlocks.SEQUOIA_LOG)
+			.strippedLog(MariposaBlocks.STRIPPED_SEQUOIA_LOG)
 			.button(MariposaBlocks.SEQUOIA_BUTTON)
 			.fence(MariposaBlocks.SEQUOIA_FENCE)
 			.fenceGate(MariposaBlocks.SEQUOIA_FENCE_GATE)
+			.hangingSign(MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN)
 			.pressurePlate(MariposaBlocks.SEQUOIA_PRESSURE_PLATE)
 			.sign(MariposaBlocks.SEQUOIA_SIGN, MariposaBlocks.SEQUOIA_WALL_SIGN)
 			.slab(MariposaBlocks.SEQUOIA_SLAB)
@@ -38,7 +41,6 @@ public class MariposaModelProvider extends FabricModelProvider {
 		generators.createTrivialCube(MariposaBlocks.SEQUOIA_LEAVES);
 		generators.family(SEQUOIA_PLANKS.getBaseBlock()).generateFor(SEQUOIA_PLANKS);
 		generators.createShelf(MariposaBlocks.SEQUOIA_SHELF, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
-		generators.createHangingSign(MariposaBlocks.STRIPPED_SEQUOIA_LOG, MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN);
 	}
 
 	@Override
