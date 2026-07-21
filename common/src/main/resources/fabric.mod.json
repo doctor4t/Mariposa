@@ -20,14 +20,14 @@
   "icon": "assets/${mod_id}/icon.png",
   "environment": "*",
   "entrypoints": {
+	"fabric-datagen": [
+	  "dev.doctor4t.mariposa.datagen.MariposaDataGenerator"
+	],
 	"main": [
 	  "dev.doctor4t.mariposa.common.Mariposa"
 	],
 	"client": [
 	  "dev.doctor4t.mariposa.client.MariposaClient"
-	],
-	"fabric-datagen": [
-	  "dev.doctor4t.mariposa.fabric.datagen.MariposaDataGenerator"
 	],
 	"terrablender": [
 	  "dev.doctor4t.mariposa.fabric.common.MariposaTerraBlender"

@@ -13,8 +13,6 @@ pluginManagement {
 	}
 }
 
-rootProject.name = "mariposa"
-
 includeBuild("build-logic")
 ["common", "fabric", "neoforge"]
 //["common", "fabric"]
