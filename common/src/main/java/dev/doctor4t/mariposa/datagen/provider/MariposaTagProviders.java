@@ -1,4 +1,4 @@
-package dev.doctor4t.mariposa.fabric.datagen.provider;
+package dev.doctor4t.mariposa.datagen.provider;
 
 import dev.doctor4t.mariposa.common.init.MariposaBiomes;
 import dev.doctor4t.mariposa.common.references.MariposaBlockIds;

@@ -1,9 +1,9 @@
-package dev.doctor4t.mariposa.fabric.datagen;
+package dev.doctor4t.mariposa.datagen;
 
 import dev.doctor4t.mariposa.common.init.MariposaBiomes;
 import dev.doctor4t.mariposa.common.init.MariposaConfiguredFeatures;
 import dev.doctor4t.mariposa.common.init.MariposaPlacedFeatures;
-import dev.doctor4t.mariposa.fabric.datagen.provider.*;
+import dev.doctor4t.mariposa.datagen.provider.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.core.RegistrySetBuilder;
