@@ -27,13 +27,12 @@
 	  "dev.doctor4t.mariposa.client.MariposaClient"
 	],
 	"fabric-datagen": [
-	  "dev.doctor4t.mariposa.datagen.MariposaDataGenerator"
+	  "dev.doctor4t.mariposa.fabric.datagen.MariposaDataGenerator"
 	],
 	"terrablender": [
 	  "dev.doctor4t.mariposa.fabric.common.MariposaTerraBlender"
 	]
   },
-  "accessWidener": "${mod_id}.classtweaker",
   "depends": {
 	"fabricloader": "*",
 	"minecraft": "~26.2",
