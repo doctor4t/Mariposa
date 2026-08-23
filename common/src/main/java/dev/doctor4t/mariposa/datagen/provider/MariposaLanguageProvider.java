@@ -1,7 +1,9 @@
 package dev.doctor4t.mariposa.datagen.provider;
 
 import dev.doctor4t.mariposa.common.init.MariposaBlocks;
+import dev.doctor4t.mariposa.common.init.MariposaEntityTypes;
 import dev.doctor4t.mariposa.common.init.MariposaItems;
+import dev.doctor4t.mariposa.common.tag.MariposaTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.core.HolderLookup;
@@ -37,7 +39,9 @@ public class MariposaLanguageProvider extends FabricLanguageProvider {
 		builder.add(MariposaItems.SEQUOIA_HANGING_SIGN, "Sequoia Hanging Sign");
 		builder.add(MariposaItems.SEQUOIA_BOAT, "Sequoia Boat");
 		builder.add(MariposaItems.SEQUOIA_CHEST_BOAT, "Sequoia Chest Boat");
+		builder.add(MariposaEntityTypes.SEQUOIA_BOAT, "Sequoia Boat");
+		builder.add(MariposaEntityTypes.SEQUOIA_CHEST_BOAT, "Sequoia Chest Boat");
 
-		builder.add("tag.item.mariposa.sequoia_logs", "Sequoia Logs");
+		builder.add(MariposaTags.SEQUOIA_LOGS_ITEM, "Sequoia Logs");
 	}
 }
