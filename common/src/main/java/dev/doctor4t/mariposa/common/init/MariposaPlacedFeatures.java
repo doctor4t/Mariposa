@@ -7,7 +7,7 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -26,13 +26,13 @@ public interface MariposaPlacedFeatures {
 	}
 
 	static void bootstrap(BootstrapContext<PlacedFeature> registry) {
-		HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = registry.lookup(Registries.CONFIGURED_FEATURE);
+		HolderGetter<Feature> features = registry.lookup(Registries.FEATURE);
 
-		PlacementUtils.register(registry, FALLEN_SEQUOIA_LOG, configuredFeatures.getOrThrow(MariposaConfiguredFeatures.FALLEN_SEQUOIA_LOG), RarityFilter.onAverageOnceEvery(128), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
-		PlacementUtils.register(registry, GIANT_SEQUOIA_TREE, configuredFeatures.getOrThrow(MariposaConfiguredFeatures.GIANT_SEQUOIA_TREE), RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
-		PlacementUtils.register(registry, SEQUOIA_CHECKED, configuredFeatures.getOrThrow(MariposaConfiguredFeatures.SEQUOIA), PlacementUtils.filteredByBlockSurvival(MariposaBlocks.SEQUOIA_SAPLING));
-		PlacementUtils.register(registry, SNOWY_SEQUOIA_CHECKED, configuredFeatures.getOrThrow(MariposaConfiguredFeatures.SNOWY_SEQUOIA), PlacementUtils.filteredByBlockSurvival(MariposaBlocks.SEQUOIA_SAPLING));
-		PlacementUtils.register(registry, TREES_REDWOOD_FOREST, configuredFeatures.getOrThrow(MariposaConfiguredFeatures.TREES_REDWOOD_FOREST), VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
-		PlacementUtils.register(registry, TREES_SNOWY_REDWOOD_FOREST, configuredFeatures.getOrThrow(MariposaConfiguredFeatures.TREES_SNOWY_REDWOOD_FOREST), VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
+		PlacementUtils.register(registry, FALLEN_SEQUOIA_LOG, features.getOrThrow(MariposaFeatures.FALLEN_SEQUOIA_LOG), RarityFilter.onAverageOnceEvery(128), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+		PlacementUtils.register(registry, GIANT_SEQUOIA_TREE, features.getOrThrow(MariposaFeatures.GIANT_SEQUOIA_TREE), RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+		PlacementUtils.register(registry, SEQUOIA_CHECKED, features.getOrThrow(MariposaFeatures.SEQUOIA), PlacementUtils.filteredByBlockSurvival(MariposaBlocks.SEQUOIA_SAPLING));
+		PlacementUtils.register(registry, SNOWY_SEQUOIA_CHECKED, features.getOrThrow(MariposaFeatures.SNOWY_SEQUOIA), PlacementUtils.filteredByBlockSurvival(MariposaBlocks.SEQUOIA_SAPLING));
+		PlacementUtils.register(registry, TREES_REDWOOD_FOREST, features.getOrThrow(MariposaFeatures.TREES_REDWOOD_FOREST), VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
+		PlacementUtils.register(registry, TREES_SNOWY_REDWOOD_FOREST, features.getOrThrow(MariposaFeatures.TREES_SNOWY_REDWOOD_FOREST), VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
 	}
 }

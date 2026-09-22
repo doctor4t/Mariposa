@@ -13,7 +13,7 @@
 	},
 	"has_the_recipe": {
 	  "conditions": {
-		"recipe": "mariposa:stacked_sequoia_logs"
+		"recipes": "mariposa:stacked_sequoia_logs"
 	  },
 	  "trigger": "minecraft:recipe_unlocked"
 	}

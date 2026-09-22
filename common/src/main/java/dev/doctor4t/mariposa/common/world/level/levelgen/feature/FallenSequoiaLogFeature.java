@@ -1,34 +1,39 @@
 package dev.doctor4t.mariposa.common.world.level.levelgen.feature;
 
-import com.mojang.serialization.Codec;
-import dev.doctor4t.mariposa.common.world.level.levelgen.feature.configurations.FallenSequoiaLogConfiguration;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockIgnoreProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 
-public class FallenSequoiaLogFeature extends Feature<FallenSequoiaLogConfiguration> {
-	public FallenSequoiaLogFeature(Codec<FallenSequoiaLogConfiguration> codec) {
-		super(codec);
+import java.util.List;
+
+public record FallenSequoiaLogFeature(List<Identifier> sequoiaStructures) implements Feature {
+	public static final MapCodec<FallenSequoiaLogFeature> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+					Identifier.CODEC.listOf().fieldOf("sequoia_structures").forGetter(config -> config.sequoiaStructures)
+			).apply(instance, FallenSequoiaLogFeature::new)
+	);
+
+	@Override
+	public MapCodec<FallenSequoiaLogFeature> codec() {
+		return CODEC;
 	}
 
 	@Override
-	public boolean place(FeaturePlaceContext<FallenSequoiaLogConfiguration> context) {
-		RandomSource random = context.random();
-		WorldGenLevel level = context.level();
-
-		BlockPos origin = context.origin();
+	public boolean place(WorldGenLevel level, ChunkGenerator chunkGenerator, RandomSource random, BlockPos origin) {
 		BlockPos.MutableBlockPos blockPos = origin.atY(level.getHeight(Heightmap.Types.WORLD_SURFACE_WG, origin.getX(), origin.getZ()) - 3).mutable();
 
 		if (!level.getBlockState(blockPos.below()).is(BlockTags.DIRT)) {
@@ -37,10 +42,9 @@ public class FallenSequoiaLogFeature extends Feature<FallenSequoiaLogConfigurati
 
 		blockPos.setY(blockPos.getY() - 1);
 		Rotation rotation = Rotation.getRandom(random);
-		FallenSequoiaLogConfiguration config = context.config();
-		int i = random.nextInt(config.sequoiaStructures().size());
-		StructureTemplateManager manager = level.getLevel().getServer().getStructureManager();
-		StructureTemplate template = manager.getOrCreate(config.sequoiaStructures().get(i));
+		int i = random.nextInt(sequoiaStructures().size());
+		StructureTemplateManager manager = level.getLevel().getServer().getStructureTemplateManager();
+		StructureTemplate template = manager.getOrCreate(sequoiaStructures().get(i));
 		ChunkPos chunkPos = ChunkPos.containing(blockPos);
 		BoundingBox blockBox = new BoundingBox(
 				chunkPos.getMinBlockX() - 16,

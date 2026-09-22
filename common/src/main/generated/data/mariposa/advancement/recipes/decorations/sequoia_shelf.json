@@ -13,7 +13,7 @@
 	},
 	"has_the_recipe": {
 	  "conditions": {
-		"recipe": "mariposa:sequoia_shelf"
+		"recipes": "mariposa:sequoia_shelf"
 	  },
 	  "trigger": "minecraft:recipe_unlocked"
 	}

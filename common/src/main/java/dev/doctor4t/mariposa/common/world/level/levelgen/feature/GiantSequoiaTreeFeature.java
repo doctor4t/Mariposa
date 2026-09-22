@@ -1,17 +1,19 @@
 package dev.doctor4t.mariposa.common.world.level.levelgen.feature;
 
 import com.mojang.serialization.Codec;
-import dev.doctor4t.mariposa.common.world.level.levelgen.feature.configurations.GiantSequoiaTreeConfiguration;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockIgnoreProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
@@ -19,25 +21,29 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemp
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 import org.apache.commons.lang3.mutable.MutableInt;
 
-public class GiantSequoiaTreeFeature extends Feature<GiantSequoiaTreeConfiguration> {
-	public GiantSequoiaTreeFeature(Codec<GiantSequoiaTreeConfiguration> codec) {
-		super(codec);
+import java.util.List;
+
+public record GiantSequoiaTreeFeature(List<Identifier> sequoiaStructures, int minCornersInFloor) implements Feature {
+	public static final MapCodec<GiantSequoiaTreeFeature> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+					Identifier.CODEC.listOf().fieldOf("sequoia_structures").forGetter(config -> config.sequoiaStructures),
+					Codec.intRange(0, 7).fieldOf("min_corners_in_floor").forGetter(config -> config.minCornersInFloor)
+			).apply(instance, GiantSequoiaTreeFeature::new)
+	);
+
+	@Override
+	public MapCodec<GiantSequoiaTreeFeature> codec() {
+		return CODEC;
 	}
 
 	@Override
-	public boolean place(FeaturePlaceContext<GiantSequoiaTreeConfiguration> context) {
-		RandomSource random = context.random();
-		WorldGenLevel level = context.level();
-
-		BlockPos origin = context.origin();
+	public boolean place(WorldGenLevel level, ChunkGenerator chunkGenerator, RandomSource random, BlockPos origin) {
 		BlockPos.MutableBlockPos blockPos = origin.atY(level.getMaxY()).mutable();
 		for (int y = 0; y < 500; y++) {
 			blockPos.setY(blockPos.getY() - 1);
 			Rotation rotation = Rotation.getRandom(random);
-			GiantSequoiaTreeConfiguration config = context.config();
-			int i = random.nextInt(config.sequoiaStructures().size());
-			StructureTemplateManager manager = level.getLevel().getServer().getStructureManager();
-			StructureTemplate template = manager.getOrCreate(config.sequoiaStructures().get(i));
+			int i = random.nextInt(sequoiaStructures().size());
+			StructureTemplateManager manager = level.getLevel().getServer().getStructureTemplateManager();
+			StructureTemplate template = manager.getOrCreate(sequoiaStructures().get(i));
 			ChunkPos chunkPos = ChunkPos.containing(blockPos);
 			BoundingBox blockBox = new BoundingBox(
 					chunkPos.getMinBlockX() - 16,
@@ -65,7 +71,7 @@ public class GiantSequoiaTreeFeature extends Feature<GiantSequoiaTreeConfigurati
 				return false;
 			}
 
-			if (cornersInGround >= config.minCornersInFloor()) {
+			if (cornersInGround >= minCornersInFloor()) {
 				settings.clearProcessors();
 				settings.addProcessor(BlockIgnoreProcessor.STRUCTURE_AND_AIR);
 				template.placeInWorld(level, chunkCenterPos, chunkCenterPos, settings, random, 4);

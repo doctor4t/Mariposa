@@ -13,7 +13,7 @@
 	},
 	"has_the_recipe": {
 	  "conditions": {
-		"recipe": "mariposa:sequoia_fence"
+		"recipes": "mariposa:sequoia_fence"
 	  },
 	  "trigger": "minecraft:recipe_unlocked"
 	}

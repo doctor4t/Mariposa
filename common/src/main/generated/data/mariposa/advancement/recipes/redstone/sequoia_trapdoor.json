@@ -13,7 +13,7 @@
 	},
 	"has_the_recipe": {
 	  "conditions": {
-		"recipe": "mariposa:sequoia_trapdoor"
+		"recipes": "mariposa:sequoia_trapdoor"
 	  },
 	  "trigger": "minecraft:recipe_unlocked"
 	}

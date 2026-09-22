@@ -2,14 +2,14 @@ package dev.doctor4t.mariposa.common;
 
 import dev.doctor4t.mariposa.common.init.MariposaBlocks;
 import dev.doctor4t.mariposa.common.init.MariposaEntityTypes;
-import dev.doctor4t.mariposa.common.init.MariposaFeatureConfigurations;
+import dev.doctor4t.mariposa.common.init.MariposaFeatureTypes;
 import dev.doctor4t.mariposa.common.init.MariposaItems;
+import dev.doctor4t.mariposa.common.world.level.levelgen.MariposaMaterialRuleData;
 import dev.doctor4t.mariposa.common.world.level.levelgen.MariposaRegion;
-import dev.doctor4t.mariposa.common.world.level.levelgen.MariposaSurfaceRuleData;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.resources.Identifier;
+import terrablender.api.MaterialRuleManager;
 import terrablender.api.Regions;
-import terrablender.api.SurfaceRuleManager;
 
 public class Mariposa implements ModInitializer {
 	public static final String MOD_ID = "mariposa";
@@ -23,7 +23,7 @@ public class Mariposa implements ModInitializer {
 		MariposaItems.initialize();
 		MariposaBlocks.initialize();
 		MariposaEntityTypes.initialize();
-		MariposaFeatureConfigurations.initialize();
+		MariposaFeatureTypes.initialize();
 		MariposaService.INSTANCE.initTerraBlender();
 	}
 
@@ -32,6 +32,6 @@ public class Mariposa implements ModInitializer {
 		Regions.register(new MariposaRegion(id("overworld"), 4));
 
 		// Register our surface rules
-		SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, MariposaSurfaceRuleData::makeRules);
+		MaterialRuleManager.addRules(MaterialRuleManager.RuleCategory.OVERWORLD, MOD_ID, MariposaMaterialRuleData::makeRules);
 	}
 }

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:rule_based",
+  "rules": [
+	{
+	  "if_true": {
+		"type": "minecraft:matching_block_tag",
+		"tag": "minecraft:beneath_tree_podzol_replaceable"
+	  },
+	  "then": {
+		"id": "minecraft:snow_block"
+	  }
+	}
+  ]
+}

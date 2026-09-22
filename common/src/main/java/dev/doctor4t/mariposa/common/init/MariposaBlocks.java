@@ -4,11 +4,12 @@ import dev.doctor4t.mariposa.common.Mariposa;
 import dev.doctor4t.mariposa.common.references.MariposaBlockIds;
 import dev.doctor4t.mariposa.common.references.MariposaBlockItemIds;
 import dev.doctor4t.mariposa.common.world.level.block.SequoiaLeavesBlock;
+import net.fabricmc.fabric.api.item.v1.BlockTransformerHelper;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
-import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -21,7 +22,6 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 
-import java.util.Optional;
 import java.util.function.Function;
 
 import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
@@ -31,14 +31,11 @@ public interface MariposaBlocks {
 	BlockSetType SEQUOIA_BLOCK_SET_TYPE = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Mariposa.id("sequoia"));
 	WoodType SEQUOIA_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).register(Mariposa.id("sequoia"), SEQUOIA_BLOCK_SET_TYPE);
 	TreeGrower SEQUOIA_SAPLING_GENERATOR = new TreeGrower(
-			"sequoia",
-			0.5F,
-			Optional.of(MariposaConfiguredFeatures.SEQUOIA),
-			Optional.empty(),
-			Optional.empty(),
-			Optional.empty(),
-			Optional.empty(),
-			Optional.empty()
+			Mariposa.id("sequoia").toString(),
+			WeightedList.of(),
+			WeightedList.of(MariposaFeatures.SEQUOIA),
+			WeightedList.of(),
+			MariposaFeatures.SEQUOIA
 	);
 
 	Block SEQUOIA_SAPLING = registerWithItem(MariposaBlockItemIds.SEQUOIA_SAPLING, properties -> new SaplingBlock(SEQUOIA_SAPLING_GENERATOR, properties), of()
@@ -47,7 +44,7 @@ public interface MariposaBlocks {
 			.randomTicks()
 			.instabreak()
 			.sound(SoundType.GRASS)
-			.pushReaction(PushReaction.DESTROY)
+			.pushReaction(PushReaction.POPPED)
 	);
 	Block POTTED_SEQUOIA_SAPLING = register(MariposaBlockIds.POTTED_SEQUOIA_SAPLING, properties -> new FlowerPotBlock(SEQUOIA_SAPLING, properties), Blocks.flowerPotProperties());
 	Block SEQUOIA_LOG = registerWithItem(MariposaBlockItemIds.SEQUOIA_LOG, RotatedPillarBlock::new, Blocks.logProperties(MapColor.COLOR_RED, MapColor.COLOR_BROWN, SoundType.WOOD));
@@ -101,7 +98,7 @@ public interface MariposaBlocks {
 			.strength(3)
 			.noOcclusion()
 			.ignitedByLava()
-			.pushReaction(PushReaction.DESTROY)
+			.pushReaction(PushReaction.POPPED)
 	);
 	Block SEQUOIA_TRAPDOOR = registerWithItem(MariposaBlockItemIds.SEQUOIA_TRAPDOOR, properties -> new TrapDoorBlock(SEQUOIA_BLOCK_SET_TYPE, properties), of()
 			.mapColor(MapColor.COLOR_RED)
@@ -118,7 +115,7 @@ public interface MariposaBlocks {
 			.noCollision()
 			.strength(0.5F)
 			.ignitedByLava()
-			.pushReaction(PushReaction.DESTROY)
+			.pushReaction(PushReaction.POPPED)
 	);
 	Block SEQUOIA_BUTTON = registerWithItem(MariposaBlockItemIds.SEQUOIA_BUTTON, properties -> new ButtonBlock(SEQUOIA_BLOCK_SET_TYPE, 30, properties), Blocks.buttonProperties());
 	Block SEQUOIA_SHELF = registerWithItem(MariposaBlockItemIds.SEQUOIA_SHELF, ShelfBlock::new, of()
@@ -177,8 +174,8 @@ public interface MariposaBlocks {
 	}
 
 	static void initialize() {
-		StrippableBlockRegistry.register(MariposaBlocks.SEQUOIA_WOOD, MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
-		StrippableBlockRegistry.register(MariposaBlocks.SEQUOIA_LOG, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
+		BlockTransformerHelper.registerStripping(MariposaBlocks.SEQUOIA_WOOD, MariposaBlocks.STRIPPED_SEQUOIA_WOOD);
+		BlockTransformerHelper.registerStripping(MariposaBlocks.SEQUOIA_LOG, MariposaBlocks.STRIPPED_SEQUOIA_LOG);
 		BlockEntityTypes.SHELF.addValidBlock(SEQUOIA_SHELF);
 		BlockEntityTypes.SIGN.addValidBlock(MariposaBlocks.SEQUOIA_SIGN);
 		BlockEntityTypes.SIGN.addValidBlock(MariposaBlocks.SEQUOIA_WALL_SIGN);

@@ -4,6 +4,7 @@ import dev.doctor4t.mariposa.common.references.MariposaBlockItemIds;
 import dev.doctor4t.mariposa.common.references.MariposaItemIds;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTabOutput;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
@@ -14,7 +15,7 @@ import java.util.function.Function;
 
 public interface MariposaItems {
 	Item SEQUOIA_DOOR = register(MariposaBlockItemIds.SEQUOIA_DOOR.item(), properties -> new DoubleHighBlockItem(MariposaBlocks.SEQUOIA_DOOR, properties), new Item.Properties().useBlockDescriptionPrefix());
-	Item SEQUOIA_SIGN = register(MariposaBlockItemIds.SEQUOIA_SIGN.item(), properties -> new SignItem(MariposaBlocks.SEQUOIA_SIGN, MariposaBlocks.SEQUOIA_WALL_SIGN, properties), new Item.Properties().useBlockDescriptionPrefix().stacksTo(16));
+	Item SEQUOIA_SIGN = register(MariposaBlockItemIds.SEQUOIA_SIGN.item(), properties -> new StandingAndWallBlockItem(MariposaBlocks.SEQUOIA_SIGN, MariposaBlocks.SEQUOIA_WALL_SIGN, Direction.DOWN, properties), new Item.Properties().useBlockDescriptionPrefix().stacksTo(16));
 	Item SEQUOIA_HANGING_SIGN = register(MariposaBlockItemIds.SEQUOIA_HANGING_SIGN.item(), properties -> new HangingSignItem(MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN, properties), new Item.Properties().useBlockDescriptionPrefix().stacksTo(16));
 	Item SEQUOIA_BOAT = register(MariposaItemIds.SEQUOIA_BOAT, properties -> new BoatItem(MariposaEntityTypes.SEQUOIA_BOAT, properties), new Item.Properties().stacksTo(1));
 	Item SEQUOIA_CHEST_BOAT = register(MariposaItemIds.SEQUOIA_CHEST_BOAT, properties -> new BoatItem(MariposaEntityTypes.SEQUOIA_CHEST_BOAT, properties), new Item.Properties().stacksTo(1));

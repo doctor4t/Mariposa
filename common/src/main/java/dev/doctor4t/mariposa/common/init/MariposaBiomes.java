@@ -26,15 +26,16 @@ import net.minecraft.data.worldgen.biome.OverworldBiomes;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.attribute.BackgroundMusic;
 import net.minecraft.world.attribute.EnvironmentAttributes;
 import net.minecraft.world.entity.EntityTypes;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
+import net.minecraft.world.level.levelgen.carver.WorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public interface MariposaBiomes {
@@ -45,15 +46,15 @@ public interface MariposaBiomes {
 		return ResourceKey.create(Registries.BIOME, Mariposa.id(name));
 	}
 
-	private static Biome redwoodForest(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> carvers, boolean snowy) {
+	private static Biome redwoodForest(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<WorldCarver> worldCarvers, boolean snowy) {
 		MobSpawnSettings.Builder mobs = new MobSpawnSettings.Builder();
 		BiomeDefaultFeatures.commonSpawns(mobs);
 		BiomeDefaultFeatures.farmAnimals(mobs);
-		mobs.addSpawn(MobCategory.CREATURE, 8, new MobSpawnSettings.SpawnerData(EntityTypes.WOLF, 4, 4));
-		mobs.addSpawn(MobCategory.CREATURE, 4, new MobSpawnSettings.SpawnerData(EntityTypes.RABBIT, 2, 3));
-		mobs.addSpawn(MobCategory.CREATURE, 8, new MobSpawnSettings.SpawnerData(EntityTypes.FOX, 2, 4));
+		mobs.addSpawn(EntityTypes.WOLF, 8, ConstantInt.of(4));
+		mobs.addSpawn(EntityTypes.RABBIT, 4, UniformInt.of(2, 3));
+		mobs.addSpawn(EntityTypes.FOX, 8, UniformInt.of(2, 4));
 
-		BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
+		BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers);
 		OverworldBiomes.globalOverworldGeneration(generation);
 		BiomeDefaultFeatures.addMossyStoneBlock(generation);
 		BiomeDefaultFeatures.addFerns(generation);
@@ -77,8 +78,8 @@ public interface MariposaBiomes {
 
 	static void bootstrap(BootstrapContext<Biome> registry) {
 		HolderGetter<PlacedFeature> placedFeatures = registry.lookup(Registries.PLACED_FEATURE);
-		HolderGetter<ConfiguredWorldCarver<?>> carvers = registry.lookup(Registries.CONFIGURED_CARVER);
-		registry.register(REDWOOD_FOREST, redwoodForest(placedFeatures, carvers, false));
-		registry.register(SNOWY_REDWOOD_FOREST, redwoodForest(placedFeatures, carvers, true));
+		HolderGetter<WorldCarver> worldCarvers = registry.lookup(Registries.CARVER);
+		registry.register(REDWOOD_FOREST, redwoodForest(placedFeatures, worldCarvers, false));
+		registry.register(SNOWY_REDWOOD_FOREST, redwoodForest(placedFeatures, worldCarvers, true));
 	}
 }

@@ -13,7 +13,7 @@
 	},
 	"has_the_recipe": {
 	  "conditions": {
-		"recipe": "mariposa:sequoia_button"
+		"recipes": "mariposa:sequoia_button"
 	  },
 	  "trigger": "minecraft:recipe_unlocked"
 	}

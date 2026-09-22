@@ -1,7 +1,8 @@
 package dev.doctor4t.mariposa.datagen;
 
 import dev.doctor4t.mariposa.common.init.MariposaBiomes;
-import dev.doctor4t.mariposa.common.init.MariposaConfiguredFeatures;
+import dev.doctor4t.mariposa.common.init.MariposaBlockStateProviders;
+import dev.doctor4t.mariposa.common.init.MariposaFeatures;
 import dev.doctor4t.mariposa.common.init.MariposaPlacedFeatures;
 import dev.doctor4t.mariposa.datagen.provider.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -27,7 +28,8 @@ public class MariposaDataGenerator implements DataGeneratorEntrypoint {
 	@Override
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
 		registryBuilder.add(Registries.BIOME, MariposaBiomes::bootstrap);
-		registryBuilder.add(Registries.CONFIGURED_FEATURE, MariposaConfiguredFeatures::bootstrap);
+		registryBuilder.add(Registries.BLOCK_STATE_PROVIDER, MariposaBlockStateProviders::bootstrap);
+		registryBuilder.add(Registries.FEATURE, MariposaFeatures::bootstrap);
 		registryBuilder.add(Registries.PLACED_FEATURE, MariposaPlacedFeatures::bootstrap);
 	}
 }

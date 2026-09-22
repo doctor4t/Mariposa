@@ -13,7 +13,7 @@
 	},
 	"has_the_recipe": {
 	  "conditions": {
-		"recipe": "mariposa:sequoia_slab"
+		"recipes": "mariposa:sequoia_slab"
 	  },
 	  "trigger": "minecraft:recipe_unlocked"
 	}
