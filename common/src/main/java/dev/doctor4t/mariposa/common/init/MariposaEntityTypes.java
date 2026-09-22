@@ -31,12 +31,12 @@ public interface MariposaEntityTypes {
 		return Registry.register(BuiltInRegistries.ENTITY_TYPE, key.identifier(), builder.build(key));
 	}
 
-	private static EntityType.EntityFactory<Boat> getBoatFactory(Supplier<Item> itemSupplier) {
-		return (type, world) -> new Boat(type, world, itemSupplier);
+	private static EntityType.EntityFactory<Boat> getBoatFactory(Supplier<Item> dropItem) {
+		return (type, level) -> new Boat(type, level, dropItem);
 	}
 
-	private static EntityType.EntityFactory<ChestBoat> getChestBoatFactory(Supplier<Item> itemSupplier) {
-		return (type, world) -> new ChestBoat(type, world, itemSupplier);
+	private static EntityType.EntityFactory<ChestBoat> getChestBoatFactory(Supplier<Item> dropItem) {
+		return (type, level) -> new ChestBoat(type, level, dropItem);
 	}
 
 	static void initialize() {

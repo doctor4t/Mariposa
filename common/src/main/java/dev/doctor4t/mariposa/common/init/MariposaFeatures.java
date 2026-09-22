@@ -38,9 +38,9 @@ public interface MariposaFeatures {
 		return ResourceKey.create(Registries.FEATURE, Mariposa.id(name));
 	}
 
-	static void bootstrap(BootstrapContext<Feature> registry) {
-		HolderGetter<BlockStateProvider> blockStateProviders = registry.lookup(Registries.BLOCK_STATE_PROVIDER);
-		HolderGetter<PlacedFeature> placedFeatures = registry.lookup(Registries.PLACED_FEATURE);
+	static void bootstrap(BootstrapContext<Feature> context) {
+		HolderGetter<BlockStateProvider> blockStateProviders = context.lookup(Registries.BLOCK_STATE_PROVIDER);
+		HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
 
 		Holder<BlockStateProvider> belowTrunkProvider = blockStateProviders.getOrThrow(BlockStateProviders.SOIL_BENEATH_TREE);
 		Holder<BlockStateProvider> podzol = blockStateProviders.getOrThrow(BlockStateProviders.PODZOL_BENEATH_TREE);
@@ -51,13 +51,13 @@ public interface MariposaFeatures {
 		Holder<PlacedFeature> sequoiaChecked = placedFeatures.getOrThrow(MariposaPlacedFeatures.SEQUOIA_CHECKED);
 		Holder<PlacedFeature> snowySequoiaChecked = placedFeatures.getOrThrow(MariposaPlacedFeatures.SNOWY_SEQUOIA_CHECKED);
 
-		registry.register(
+		context.register(
 				FALLEN_SEQUOIA_LOG,
 				new FallenSequoiaLogFeature(List.of(
 						Mariposa.id("fallen_sequoia_log")
 				))
 		);
-		registry.register(
+		context.register(
 				GIANT_SEQUOIA_TREE,
 				new GiantSequoiaTreeFeature(List.of(
 						Mariposa.id("giant_sequoia_1"),
@@ -69,15 +69,15 @@ public interface MariposaFeatures {
 						Mariposa.id("giant_sequoia_7")
 				), 4)
 		);
-		registry.register(
+		context.register(
 				SEQUOIA,
 				sequoiaTree(belowTrunkProvider, podzol).build()
 		);
-		registry.register(
+		context.register(
 				SNOWY_SEQUOIA,
 				sequoiaTree(belowTrunkProvider, snow).build()
 		);
-		registry.register(
+		context.register(
 				TREES_REDWOOD_FOREST,
 				new RandomSelectorFeature(
 						List.of(
@@ -87,7 +87,7 @@ public interface MariposaFeatures {
 						sequoiaChecked
 				)
 		);
-		registry.register(
+		context.register(
 				TREES_SNOWY_REDWOOD_FOREST,
 				new RandomSelectorFeature(
 						List.of(

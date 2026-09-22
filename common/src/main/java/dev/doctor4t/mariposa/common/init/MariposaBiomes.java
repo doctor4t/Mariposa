@@ -76,10 +76,11 @@ public interface MariposaBiomes {
 				.build();
 	}
 
-	static void bootstrap(BootstrapContext<Biome> registry) {
-		HolderGetter<PlacedFeature> placedFeatures = registry.lookup(Registries.PLACED_FEATURE);
-		HolderGetter<WorldCarver> worldCarvers = registry.lookup(Registries.CARVER);
-		registry.register(REDWOOD_FOREST, redwoodForest(placedFeatures, worldCarvers, false));
-		registry.register(SNOWY_REDWOOD_FOREST, redwoodForest(placedFeatures, worldCarvers, true));
+	static void bootstrap(BootstrapContext<Biome> context) {
+		HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
+		HolderGetter<WorldCarver> worldCarvers = context.lookup(Registries.CARVER);
+
+		context.register(REDWOOD_FOREST, redwoodForest(placedFeatures, worldCarvers, false));
+		context.register(SNOWY_REDWOOD_FOREST, redwoodForest(placedFeatures, worldCarvers, true));
 	}
 }

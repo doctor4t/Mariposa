@@ -14,11 +14,18 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.function.Function;
 
 public interface MariposaItems {
-	Item SEQUOIA_DOOR = register(MariposaBlockItemIds.SEQUOIA_DOOR.item(), properties -> new DoubleHighBlockItem(MariposaBlocks.SEQUOIA_DOOR, properties), new Item.Properties().useBlockDescriptionPrefix());
-	Item SEQUOIA_SIGN = register(MariposaBlockItemIds.SEQUOIA_SIGN.item(), properties -> new StandingAndWallBlockItem(MariposaBlocks.SEQUOIA_SIGN, MariposaBlocks.SEQUOIA_WALL_SIGN, Direction.DOWN, properties), new Item.Properties().useBlockDescriptionPrefix().stacksTo(16));
-	Item SEQUOIA_HANGING_SIGN = register(MariposaBlockItemIds.SEQUOIA_HANGING_SIGN.item(), properties -> new HangingSignItem(MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN, properties), new Item.Properties().useBlockDescriptionPrefix().stacksTo(16));
-	Item SEQUOIA_BOAT = register(MariposaItemIds.SEQUOIA_BOAT, properties -> new BoatItem(MariposaEntityTypes.SEQUOIA_BOAT, properties), new Item.Properties().stacksTo(1));
-	Item SEQUOIA_CHEST_BOAT = register(MariposaItemIds.SEQUOIA_CHEST_BOAT, properties -> new BoatItem(MariposaEntityTypes.SEQUOIA_CHEST_BOAT, properties), new Item.Properties().stacksTo(1));
+	Item SEQUOIA_DOOR = register(MariposaBlockItemIds.SEQUOIA_DOOR.item(), properties -> new DoubleHighBlockItem(MariposaBlocks.SEQUOIA_DOOR, properties), new Item.Properties()
+			.useBlockDescriptionPrefix());
+	Item SEQUOIA_SIGN = register(MariposaBlockItemIds.SEQUOIA_SIGN.item(), properties -> new StandingAndWallBlockItem(MariposaBlocks.SEQUOIA_SIGN, MariposaBlocks.SEQUOIA_WALL_SIGN, Direction.DOWN, properties), new Item.Properties()
+			.useBlockDescriptionPrefix()
+			.stacksTo(16));
+	Item SEQUOIA_HANGING_SIGN = register(MariposaBlockItemIds.SEQUOIA_HANGING_SIGN.item(), properties -> new HangingSignItem(MariposaBlocks.SEQUOIA_HANGING_SIGN, MariposaBlocks.SEQUOIA_WALL_HANGING_SIGN, properties), new Item.Properties()
+			.useBlockDescriptionPrefix()
+			.stacksTo(16));
+	Item SEQUOIA_BOAT = register(MariposaItemIds.SEQUOIA_BOAT, properties -> new BoatItem(MariposaEntityTypes.SEQUOIA_BOAT, properties), new Item.Properties()
+			.stacksTo(1));
+	Item SEQUOIA_CHEST_BOAT = register(MariposaItemIds.SEQUOIA_CHEST_BOAT, properties -> new BoatItem(MariposaEntityTypes.SEQUOIA_CHEST_BOAT, properties), new Item.Properties()
+			.stacksTo(1));
 
 	static Item register(ResourceKey<Item> key, Function<Item.Properties, Item> factory, Item.Properties properties) {
 		Item item = factory.apply(properties.setId(key));
