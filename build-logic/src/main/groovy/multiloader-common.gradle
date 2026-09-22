@@ -15,8 +15,6 @@ repositories {
 		name = "RelativityMC"
 		url = "https://repo.codemc.io/repository/relativitymc"
 	}
-	chenille.repositories.ladysnake()
-	chenille.repositories.up()
 	maven {
 		name = "TerraBlender"
 		url = "https://maven.minecraftforge.net/"
